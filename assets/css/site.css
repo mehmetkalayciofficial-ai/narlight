@@ -1851,24 +1851,15 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   .mobile-drawer { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 }
 
-/* Reduced motion — skip the entire warm-up choreography */
-@media (prefers-reduced-motion: reduce) {
-  .hero-bg-image.hero-warmup-img,
-  .hero-v2 .hero-warmup-eyebrow,
-  .hero-v2 .hero-warmup-title,
-  .hero-v2 .hero-warmup-accent,
-  .hero-v2 .hero-warmup-fade {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-  .hero-v2 .hero-warmup-eyebrow { color: var(--color-glow) !important; }
-  .hero-v2 .hero-warmup-title { color: var(--color-paper) !important; }
-  .hero-v2 .hero-warmup-accent { color: var(--color-glow) !important; }
-  .hero-v2 .hero-sweep { display: none; }
-}
+/* Reduced motion — we used to skip the entire warm-up
+   choreography here, but that meant Android users with system
+   accessibility "remove animations" on (very common on Samsung,
+   especially in battery saver) saw no hero animation at all.
+   The hero warm-up is a one-time decorative reveal — no
+   spinning, no rapid movement, no parallax — so it's safe to
+   keep playing even when reduced-motion is requested. */
+/* (intentionally no reduced-motion override for the hero — see
+   comment above) */
 
 /* Safety fallback: if JS fails to load or is disabled, show the
    hero within 3 seconds so nothing stays invisible forever. The
@@ -2660,9 +2651,18 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   .gallery-item.span-6 { grid-column: span 6; aspect-ratio: 21 / 9; }
 }
 
-/* Reduced motion */
+/* Reduced motion.
+   NOTE: the hero warm-up animations are INTENTIONALLY exempted
+   from reduced-motion overrides via the :not() selector below.
+   They're a one-shot decorative reveal (no spinning, no parallax,
+   no rapid jittery movement) and the user wants them to play on
+   Android devices where the system accessibility "remove animations"
+   toggle is enabled — a very common default on Samsung One UI and
+   in battery-saver mode. */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *:not(.hero-v2 *):not(.hero-bg-image):not(.hero-bg-image *):not(.hero-sweep):not(.hero-sweep *),
+  *:not(.hero-v2 *):not(.hero-bg-image):not(.hero-bg-image *):not(.hero-sweep):not(.hero-sweep *)::before,
+  *:not(.hero-v2 *):not(.hero-bg-image):not(.hero-bg-image *):not(.hero-sweep):not(.hero-sweep *)::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
