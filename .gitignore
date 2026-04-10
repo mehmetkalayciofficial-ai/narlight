@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output (regenerated with `node build.mjs`)
+dist/
+
+# Screenshots (local-only development artifact)
+temporary screenshots/
+
+# Raw HTML backup of the original site (not needed for build)
+brand_assets/raw-html/
+
+# Scratch / intermediate files
+brand_assets/_links.txt
+brand_assets/fetch-all-pages.mjs
+brand_assets/fetch-all-images.mjs
+brand_assets/extract-content.mjs
+brand_assets/build-inventory.mjs
+brand_assets/vectorize-logo.mjs
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude Code local state
+.claude/settings.local.json

@@ -1,0 +1,1510 @@
+{
+  "corporate": [
+    {
+      "slug": "tr__akilli-aydinlatma-1035",
+      "urlPath": "/tr/akilli-aydinlatma-1035",
+      "title": "AKILLI AYDINLATMA",
+      "h1": "",
+      "paragraphCount": 7,
+      "imageCount": 10
+    },
+    {
+      "slug": "tr__aydinlatma-tasarimi-1036",
+      "urlPath": "/tr/aydinlatma-tasarimi-1036",
+      "title": "AYDINLATMA TASARIMI",
+      "h1": "",
+      "paragraphCount": 4,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__basin-odasi-2033",
+      "urlPath": "/tr/basin-odasi-2033",
+      "title": "BASIN ODASI",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 11
+    },
+    {
+      "slug": "tr__belgelerimiz-1069",
+      "urlPath": "/tr/belgelerimiz-1069",
+      "title": "BELGELERİMİZ",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__cozumlerimiz-1068",
+      "urlPath": "/tr/cozumlerimiz-1068",
+      "title": "ÇÖZÜMLERİMİZ",
+      "h1": "",
+      "paragraphCount": 8,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__download-1026",
+      "urlPath": "/tr/download-1026",
+      "title": "DOWNLOAD",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__hakkimizda-1012",
+      "urlPath": "/tr/hakkimizda-1012",
+      "title": "HAKKIMIZDA",
+      "h1": "",
+      "paragraphCount": 6,
+      "imageCount": 13
+    },
+    {
+      "slug": "tr__iletisim-bilgileri-2528",
+      "urlPath": "/tr/iletisim-bilgileri-2528",
+      "title": "İLETİŞİM BİLGİLERİ",
+      "h1": "",
+      "paragraphCount": 4,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__katalogumuz-1032",
+      "urlPath": "/tr/katalogumuz-1032",
+      "title": "KATALOĞUMUZ",
+      "h1": "",
+      "paragraphCount": 11,
+      "imageCount": 6
+    },
+    {
+      "slug": "tr__proje-bilgi-formu-2378",
+      "urlPath": "/tr/proje-bilgi-formu-2378",
+      "title": "PROJE BİLGİ FORMU",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__teklif-talep-formu-2479",
+      "urlPath": "/tr/teklif-talep-formu-2479",
+      "title": "TEKLİF TALEP FORMU",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__vizyonumuz-1031",
+      "urlPath": "/tr/vizyonumuz-1031",
+      "title": "VİZYONUMUZ",
+      "h1": "",
+      "paragraphCount": 7,
+      "imageCount": 7
+    }
+  ],
+  "projects": [
+    {
+      "slug": "tr__10-ekim-aniti-hayat-cemberi-alsancak-izmir-15146",
+      "urlPath": "/tr/10-ekim-aniti-hayat-cemberi-alsancak-izmir-15146",
+      "title": "10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR",
+      "h1": "10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__15-temmuz-demokrasi-sehitleri-meydani-konak-izmir-15155",
+      "urlPath": "/tr/15-temmuz-demokrasi-sehitleri-meydani-konak-izmir-15155",
+      "title": "15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR",
+      "h1": "15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__7800-otel-cesme-izmir-1551",
+      "urlPath": "/tr/7800-otel-cesme-izmir-1551",
+      "title": "7800 Otel - Çeşme / İZMİR",
+      "h1": "7800 Otel - Çeşme / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__akcay-yasa-avm-balikesir-15116",
+      "urlPath": "/tr/akcay-yasa-avm-balikesir-15116",
+      "title": "Akçay Yasa AVM - BALIKESİR",
+      "h1": "Akçay Yasa AVM - BALIKESİR",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__aktepe-kultur-merkezi-pamukkale-belediyesi-denizli-15153",
+      "urlPath": "/tr/aktepe-kultur-merkezi-pamukkale-belediyesi-denizli-15153",
+      "title": "Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ",
+      "h1": "Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__ayrancilar-yeni-meydani-izmir-15175",
+      "urlPath": "/tr/ayrancilar-yeni-meydani-izmir-15175",
+      "title": "Ayrancılar Yeni Meydanı - İZMİR",
+      "h1": "Ayrancılar Yeni Meydanı - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__bilal-saygili-camii-ve-kulliyesi-izmir-15115",
+      "urlPath": "/tr/bilal-saygili-camii-ve-kulliyesi-izmir-15115",
+      "title": "Bilal Saygılı Camii ve Külliyesi - İZMİR",
+      "h1": "Bilal Saygılı Camii ve Külliyesi - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 12
+    },
+    {
+      "slug": "tr__birikim-koleji-izmir-1599",
+      "urlPath": "/tr/birikim-koleji-izmir-1599",
+      "title": "Birikim Koleji - İZMİR",
+      "h1": "Birikim Koleji - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__buyuk-esenler-otogari-istanbul-15137",
+      "urlPath": "/tr/buyuk-esenler-otogari-istanbul-15137",
+      "title": "Büyük Esenler Otogarı - İSTANBUL",
+      "h1": "Büyük Esenler Otogarı - İSTANBUL",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__cadde-75-otel-alacati-izmir-1552",
+      "urlPath": "/tr/cadde-75-otel-alacati-izmir-1552",
+      "title": "Cadde 75 Otel - Alaçatı / İZMİR",
+      "h1": "Cadde 75 Otel - Alaçatı / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__can-otel-canakkale-1557",
+      "urlPath": "/tr/can-otel-canakkale-1557",
+      "title": "Çan Otel - ÇANAKKALE",
+      "h1": "Çan Otel - ÇANAKKALE",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__canakkale-sehitligi-canakkale-1589",
+      "urlPath": "/tr/canakkale-sehitligi-canakkale-1589",
+      "title": "Çanakkale Şehitliği - ÇANAKKALE",
+      "h1": "Çanakkale Şehitliği - ÇANAKKALE",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__cine-otogari-aydin-1592",
+      "urlPath": "/tr/cine-otogari-aydin-1592",
+      "title": "Çine Otogarı - AYDIN",
+      "h1": "Çine Otogarı - AYDIN",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__doga-koleji-izmir-1542",
+      "urlPath": "/tr/doga-koleji-izmir-1542",
+      "title": "Doğa Koleji - İZMİR",
+      "h1": "Doğa Koleji - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__dulkadiroglu-belediyesi-cadde-aydinlatmasi-kahramanmaras-15157",
+      "urlPath": "/tr/dulkadiroglu-belediyesi-cadde-aydinlatmasi-kahramanmaras-15157",
+      "title": "Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ",
+      "h1": "Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__efes-antik-kenti-selcuk-izmir-15149",
+      "urlPath": "/tr/efes-antik-kenti-selcuk-izmir-15149",
+      "title": "Efes Antik Kenti - Selçuk / İZMİR",
+      "h1": "Efes Antik Kenti - Selçuk / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__efes-celsus-kutuphanesi-selcuk-izmir-15148",
+      "urlPath": "/tr/efes-celsus-kutuphanesi-selcuk-izmir-15148",
+      "title": "Efes Celsus Kütüphanesi - Selçuk / İZMİR",
+      "h1": "Efes Celsus Kütüphanesi - Selçuk / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__ekiciler-bp-akaryakit-istasyonu-bornova-izmir-15101",
+      "urlPath": "/tr/ekiciler-bp-akaryakit-istasyonu-bornova-izmir-15101",
+      "title": "Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR",
+      "h1": "Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__ekonomi-universitesi-balcova-izmir-1543",
+      "urlPath": "/tr/ekonomi-universitesi-balcova-izmir-1543",
+      "title": "Ekonomi Üniversitesi - Balçova / İZMİR",
+      "h1": "Ekonomi Üniversitesi - Balçova / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__emmioglu-mermer-fabrikasi-izmir-15135",
+      "urlPath": "/tr/emmioglu-mermer-fabrikasi-izmir-15135",
+      "title": "Emmioğlu Mermer Fabrikası - İZMİR",
+      "h1": "Emmioğlu Mermer Fabrikası - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__eskisehir-osb-idari-bina-cevre-aydinlatmalari-eskisehir-15161",
+      "urlPath": "/tr/eskisehir-osb-idari-bina-cevre-aydinlatmalari-eskisehir-15161",
+      "title": "Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR",
+      "h1": "Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__fiat-plaza-marfi-kahramanmaras-1583",
+      "urlPath": "/tr/fiat-plaza-marfi-kahramanmaras-1583",
+      "title": "Fiat Plaza Marfi - KAHRAMANMARAŞ",
+      "h1": "Fiat Plaza Marfi - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__forbes-caddesi-buca-izmir-15147",
+      "urlPath": "/tr/forbes-caddesi-buca-izmir-15147",
+      "title": "Forbes Caddesi - Buca / İZMİR",
+      "h1": "Forbes Caddesi - Buca / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__glas-cam-fabrikasi-izmir-15136",
+      "urlPath": "/tr/glas-cam-fabrikasi-izmir-15136",
+      "title": "Glas Cam Fabrikası - İZMİR",
+      "h1": "Glas Cam Fabrikası - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__gurmar-marketler-zinciri-izmir-1598",
+      "urlPath": "/tr/gurmar-marketler-zinciri-izmir-1598",
+      "title": "Gürmar Marketler Zinciri - İZMİR",
+      "h1": "Gürmar Marketler Zinciri - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__havelsan-teknoloji-kampusu-ankara-15150",
+      "urlPath": "/tr/havelsan-teknoloji-kampusu-ankara-15150",
+      "title": "Havelsan Teknoloji Kampüsü - ANKARA",
+      "h1": "Havelsan Teknoloji Kampüsü - ANKARA",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__integrity-insaat-alacati-villalari-alacati-izmir-15145",
+      "urlPath": "/tr/integrity-insaat-alacati-villalari-alacati-izmir-15145",
+      "title": "Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR",
+      "h1": "Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__is-bankasi-sosyal-tesisleri-cesme-izmir-1553",
+      "urlPath": "/tr/is-bankasi-sosyal-tesisleri-cesme-izmir-1553",
+      "title": "İş Bankası Sosyal Tesisleri - Çeşme / İZMİR",
+      "h1": "İş Bankası Sosyal Tesisleri - Çeşme / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__istanbul-market-ohio-columbus-abd-15172",
+      "urlPath": "/tr/istanbul-market-ohio-columbus-abd-15172",
+      "title": "Istanbul Market - Ohio Columbus / ABD",
+      "h1": "Istanbul Market - Ohio Columbus / ABD",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__izmir-buyuksehir-belediyesi-150-yil-sergi-salonu-izmir-1586",
+      "urlPath": "/tr/izmir-buyuksehir-belediyesi-150-yil-sergi-salonu-izmir-1586",
+      "title": "İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR",
+      "h1": "İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 9
+    },
+    {
+      "slug": "tr__kahramanmaras-madalyali-kavsak-kahramanmaras-1565",
+      "urlPath": "/tr/kahramanmaras-madalyali-kavsak-kahramanmaras-1565",
+      "title": "Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ",
+      "h1": "Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__karapinar-su-parki-turkoglu-beledisi-kahramanmaras-15182",
+      "urlPath": "/tr/karapinar-su-parki-turkoglu-beledisi-kahramanmaras-15182",
+      "title": "Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ",
+      "h1": "Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__kefaluka-resort-hotel-bodrum-mugla-1561",
+      "urlPath": "/tr/kefaluka-resort-hotel-bodrum-mugla-1561",
+      "title": "Kefaluka Resort Hotel - Bodrum / MUĞLA",
+      "h1": "Kefaluka Resort Hotel - Bodrum / MUĞLA",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__koc-insaat-gaziemir-izmir-1549",
+      "urlPath": "/tr/koc-insaat-gaziemir-izmir-1549",
+      "title": "Koç İnşaat - Gaziemir / İZMİR",
+      "h1": "Koç İnşaat - Gaziemir / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__la-bonita-residence-cigli-izmir-1590",
+      "urlPath": "/tr/la-bonita-residence-cigli-izmir-1590",
+      "title": "La Bonita Residence - Çiğli / İZMİR",
+      "h1": "La Bonita Residence - Çiğli / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__la-mahzen-restaurant-torbali-izmir-1516",
+      "urlPath": "/tr/la-mahzen-restaurant-torbali-izmir-1516",
+      "title": "LA Mahzen Restaurant - Torbalı / İZMİR",
+      "h1": "LA Mahzen Restaurant - Torbalı / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__marmara-forum-bakirkoy-istanbul-1514",
+      "urlPath": "/tr/marmara-forum-bakirkoy-istanbul-1514",
+      "title": "Marmara Forum - Bakırköy / İSTANBUL",
+      "h1": "Marmara Forum - Bakırköy / İSTANBUL",
+      "paragraphCount": 1,
+      "imageCount": 6
+    },
+    {
+      "slug": "tr__metas-seracilik-fabrika-binasi-menderes-izmir-15170",
+      "urlPath": "/tr/metas-seracilik-fabrika-binasi-menderes-izmir-15170",
+      "title": "Metaş Seracılık Fabrika Binası - Menderes / İZMİR",
+      "h1": "Metaş Seracılık Fabrika Binası - Menderes / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__mev-koleji-izmir-15158",
+      "urlPath": "/tr/mev-koleji-izmir-15158",
+      "title": "MEV Koleji - İZMİR",
+      "h1": "MEV Koleji - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__mia-residence-gaziemir-izmir-1555",
+      "urlPath": "/tr/mia-residence-gaziemir-izmir-1555",
+      "title": "Mia Residence - Gaziemir / İZMİR",
+      "h1": "Mia Residence - Gaziemir / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__millet-meydani-turkoglu-belediyesi-kahramanmaras-1582",
+      "urlPath": "/tr/millet-meydani-turkoglu-belediyesi-kahramanmaras-1582",
+      "title": "Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ",
+      "h1": "Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__milli-gazete-genel-merkez-binasi-istanbul-15174",
+      "urlPath": "/tr/milli-gazete-genel-merkez-binasi-istanbul-15174",
+      "title": "Milli Gazete Genel Merkez Binası - İSTANBUL",
+      "h1": "Milli Gazete Genel Merkez Binası - İSTANBUL",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__nazua-insaat-aalacati-villalari-izmir-15154",
+      "urlPath": "/tr/nazua-insaat-aalacati-villalari-izmir-15154",
+      "title": "Nazua İnşaat Aalaçatı Villaları - İZMİR",
+      "h1": "Nazua İnşaat Aalaçatı Villaları - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__onikisubat-belediyesi-tekerek-meydani-kahramanmaras-15120",
+      "urlPath": "/tr/onikisubat-belediyesi-tekerek-meydani-kahramanmaras-15120",
+      "title": "Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ",
+      "h1": "Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__onikisubat-bisiklet-yolu-kahramanmaras-15159",
+      "urlPath": "/tr/onikisubat-bisiklet-yolu-kahramanmaras-15159",
+      "title": "Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ",
+      "h1": "Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__onkapi-beytepe-villalari-ankara-15177",
+      "urlPath": "/tr/onkapi-beytepe-villalari-ankara-15177",
+      "title": "Onkapı Beytepe Villaları - ANKARA",
+      "h1": "Onkapı Beytepe Villaları - ANKARA",
+      "paragraphCount": 1,
+      "imageCount": 10
+    },
+    {
+      "slug": "tr__pakistan-pavyonu-kulturpark-izmir-15176",
+      "urlPath": "/tr/pakistan-pavyonu-kulturpark-izmir-15176",
+      "title": "Pakistan Pavyonu Kültürpark - İZMİR",
+      "h1": "Pakistan Pavyonu Kültürpark - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 11
+    },
+    {
+      "slug": "tr__projeler-1910",
+      "urlPath": "/tr/projeler-1910",
+      "title": "Projeler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 110
+    },
+    {
+      "slug": "tr__ramsa-mobilya-home-garden-menemen-izmir-15173",
+      "urlPath": "/tr/ramsa-mobilya-home-garden-menemen-izmir-15173",
+      "title": "Ramsa Mobilya Home Garden - Menemen / İZMİR",
+      "h1": "Ramsa Mobilya Home Garden - Menemen / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__saruhan-otel-manisa-15117",
+      "urlPath": "/tr/saruhan-otel-manisa-15117",
+      "title": "Saruhan Otel - MANİSA",
+      "h1": "Saruhan Otel - MANİSA",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__saygili-rulman-izmir-15151",
+      "urlPath": "/tr/saygili-rulman-izmir-15151",
+      "title": "Saygılı Rulman - İZMİR",
+      "h1": "Saygılı Rulman - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__sehir-parki-bursa-1546",
+      "urlPath": "/tr/sehir-parki-bursa-1546",
+      "title": "Şehir Parkı - BURSA",
+      "h1": "Şehir Parkı - BURSA",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__sehir-parki-karsiyaka-izmir-1547",
+      "urlPath": "/tr/sehir-parki-karsiyaka-izmir-1547",
+      "title": "Şehir Parkı - Karşıyaka / İZMİR",
+      "h1": "Şehir Parkı - Karşıyaka / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__selvili-otoparki-ve-meydani-izmir-buyuksehir-belediyesi-karabaglar-izmir-15118",
+      "urlPath": "/tr/selvili-otoparki-ve-meydani-izmir-buyuksehir-belediyesi-karabaglar-izmir-15118",
+      "title": "Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR",
+      "h1": "Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 18
+    },
+    {
+      "slug": "tr__simal-tekstil-westpark-avm-izmir-15171",
+      "urlPath": "/tr/simal-tekstil-westpark-avm-izmir-15171",
+      "title": "Şimal Tekstil Westpark AVM - İZMİR",
+      "h1": "Şimal Tekstil Westpark AVM - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__sir-giyim-sarnic-izmir-1550",
+      "urlPath": "/tr/sir-giyim-sarnic-izmir-1550",
+      "title": "Sir Giyim - Sarnıç / İZMİR",
+      "h1": "Sir Giyim - Sarnıç / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__sitki-kocman-universitesi-mugla-15156",
+      "urlPath": "/tr/sitki-kocman-universitesi-mugla-15156",
+      "title": "Sıtkı Koçman Üniversitesi - MUĞLA",
+      "h1": "Sıtkı Koçman Üniversitesi - MUĞLA",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__soyak-sosyal-tesisleri-urla-izmir-1556",
+      "urlPath": "/tr/soyak-sosyal-tesisleri-urla-izmir-1556",
+      "title": "Soyak Sosyal Tesisleri - Urla / İZMİR",
+      "h1": "Soyak Sosyal Tesisleri - Urla / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__t-c-diyanet-isleri-baskanligi-denizli-dini-yuksek-ihtisas-merkezi-denizli-15160",
+      "urlPath": "/tr/t-c-diyanet-isleri-baskanligi-denizli-dini-yuksek-ihtisas-merkezi-denizli-15160",
+      "title": "T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ",
+      "h1": "T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__t-c-tarim-ve-orman-bakanligi-orman-genel-mudurlugu-ankara-15144",
+      "urlPath": "/tr/t-c-tarim-ve-orman-bakanligi-orman-genel-mudurlugu-ankara-15144",
+      "title": "T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA",
+      "h1": "T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__tarihi-alsancak-gari-izmir-15138",
+      "urlPath": "/tr/tarihi-alsancak-gari-izmir-15138",
+      "title": "Tarihi Alsancak Garı - İZMİR",
+      "h1": "Tarihi Alsancak Garı - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__tarihi-saat-kulesi-konak-izmir-1584",
+      "urlPath": "/tr/tarihi-saat-kulesi-konak-izmir-1584",
+      "title": "Tarihi Saat Kulesi - Konak / İZMİR",
+      "h1": "Tarihi Saat Kulesi - Konak / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__teleferik-balcova-izmir-1548",
+      "urlPath": "/tr/teleferik-balcova-izmir-1548",
+      "title": "Teleferik - Balçova / İZMİR",
+      "h1": "Teleferik - Balçova / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 6
+    },
+    {
+      "slug": "tr__teras-villalari-bodrum-mugla-1559",
+      "urlPath": "/tr/teras-villalari-bodrum-mugla-1559",
+      "title": "Teras Villaları - Bodrum / MUĞLA",
+      "h1": "Teras Villaları - Bodrum / MUĞLA",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__torbali-belediyesi-baris-yapi-cadde-izmir-15180",
+      "urlPath": "/tr/torbali-belediyesi-baris-yapi-cadde-izmir-15180",
+      "title": "Torbalı Belediyesi Barış Yapı Cadde - İZMİR",
+      "h1": "Torbalı Belediyesi Barış Yapı Cadde - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "tr__torbali-belediyesi-cadde-aydinlatmalari-izmir-15133",
+      "urlPath": "/tr/torbali-belediyesi-cadde-aydinlatmalari-izmir-15133",
+      "title": "Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR",
+      "h1": "Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__tramvay-duraklari-izmir-buyuksehir-belediyesi-izmir-1564",
+      "urlPath": "/tr/tramvay-duraklari-izmir-buyuksehir-belediyesi-izmir-1564",
+      "title": "Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR",
+      "h1": "Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__turkuaz-avm-bursa-1515",
+      "urlPath": "/tr/turkuaz-avm-bursa-1515",
+      "title": "Turkuaz AVM - BURSA",
+      "h1": "Turkuaz AVM - BURSA",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "tr__up-life-konutlari-kahramanmaras-15142",
+      "urlPath": "/tr/up-life-konutlari-kahramanmaras-15142",
+      "title": "Up Life Konutları - KAHRAMANMARAŞ",
+      "h1": "Up Life Konutları - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__urunler-179",
+      "urlPath": "/tr/urunler-179",
+      "title": "Ürünler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 762
+    },
+    {
+      "slug": "tr__ve-otel-karsiyaka-izmir-1585",
+      "urlPath": "/tr/ve-otel-karsiyaka-izmir-1585",
+      "title": "VE Otel - Karşıyaka / İZMİR",
+      "h1": "VE Otel - Karşıyaka / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "tr__venedik-cafe-balcova-izmir-1517",
+      "urlPath": "/tr/venedik-cafe-balcova-izmir-1517",
+      "title": "Venedik Cafe - Balçova / İZMİR",
+      "h1": "Venedik Cafe - Balçova / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "tr__villa-cesme-izmir-15134",
+      "urlPath": "/tr/villa-cesme-izmir-15134",
+      "title": "VİLLA - Çeşme / İZMİR",
+      "h1": "VİLLA - Çeşme / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__yasar-universitesi-bornova-izmir-1544",
+      "urlPath": "/tr/yasar-universitesi-bornova-izmir-1544",
+      "title": "Yaşar Üniversitesi - Bornova / İZMİR",
+      "h1": "Yaşar Üniversitesi - Bornova / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 6
+    },
+    {
+      "slug": "tr__yasemin-cafe-bostanli-izmir-15140",
+      "urlPath": "/tr/yasemin-cafe-bostanli-izmir-15140",
+      "title": "Yasemin Cafe - Bostanlı / İZMİR",
+      "h1": "Yasemin Cafe - Bostanlı / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 6
+    },
+    {
+      "slug": "tr__yuksek-ogrenim-kredi-ve-yurtlar-kurumu-kahramanmaras-15119",
+      "urlPath": "/tr/yuksek-ogrenim-kredi-ve-yurtlar-kurumu-kahramanmaras-15119",
+      "title": "Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ",
+      "h1": "Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ",
+      "paragraphCount": 1,
+      "imageCount": 6
+    },
+    {
+      "slug": "tr__yuksek-teknoloji-enstitusu-urla-izmir-1545",
+      "urlPath": "/tr/yuksek-teknoloji-enstitusu-urla-izmir-1545",
+      "title": "Yüksek Teknoloji Enstitüsü - Urla / İZMİR",
+      "h1": "Yüksek Teknoloji Enstitüsü - Urla / İZMİR",
+      "paragraphCount": 1,
+      "imageCount": 6
+    }
+  ],
+  "products": [
+    {
+      "slug": "TR__acil-cikis-levhalari-18108",
+      "urlPath": "/TR/acil-cikis-levhalari-18108",
+      "title": "Acil Çıkış Levhaları",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 9
+    },
+    {
+      "slug": "TR__agrestis-50w-100w-150w-16412",
+      "urlPath": "/TR/agrestis-50w-100w-150w-16412",
+      "title": "AGRESTIS / 50W - 100W - 150W",
+      "h1": "AGRESTIS / 50W - 100W - 150W",
+      "paragraphCount": 17,
+      "imageCount": 28
+    },
+    {
+      "slug": "TR__alba-lec7026-10w-16434",
+      "urlPath": "/TR/alba-lec7026-10w-16434",
+      "title": "ALBA - LEC7026 / 10W",
+      "h1": "ALBA - LEC7026 / 10W",
+      "paragraphCount": 12,
+      "imageCount": 30
+    },
+    {
+      "slug": "TR__albus-lpd1061-40w-16558",
+      "urlPath": "/TR/albus-lpd1061-40w-16558",
+      "title": "ALBUS - LPD1061 / 40W",
+      "h1": "ALBUS - LPD1061 / 40W",
+      "paragraphCount": 7,
+      "imageCount": 29
+    },
+    {
+      "slug": "TR__alpinum-lpd1058-2-x-110w-16554",
+      "urlPath": "/TR/alpinum-lpd1058-2-x-110w-16554",
+      "title": "ALPINUM - LPD1058 / 2 x 110W",
+      "h1": "ALPINUM - LPD1058 / 2 X 110W",
+      "paragraphCount": 5,
+      "imageCount": 26
+    },
+    {
+      "slug": "TR__argemon-lpd1043-50w-16436",
+      "urlPath": "/TR/argemon-lpd1043-50w-16436",
+      "title": "ARGEMON - LPD1043 / 50W",
+      "h1": "ARGEMON - LPD1043 / 50W",
+      "paragraphCount": 12,
+      "imageCount": 29
+    },
+    {
+      "slug": "TR__carica-ltu1003-10w-16110",
+      "urlPath": "/TR/carica-ltu1003-10w-16110",
+      "title": "CARICA - LTU1003 / 10W",
+      "h1": "CARICA - LTU1003 / 10W",
+      "paragraphCount": 14,
+      "imageCount": 31
+    },
+    {
+      "slug": "TR__carica-ltu1004-15w-20w-16111",
+      "urlPath": "/TR/carica-ltu1004-15w-20w-16111",
+      "title": "CARICA - LTU1004 / 15W - 20W",
+      "h1": "CARICA - LTU1004 / 15W - 20W",
+      "paragraphCount": 14,
+      "imageCount": 32
+    },
+    {
+      "slug": "TR__carica-ltu1005-30w-16112",
+      "urlPath": "/TR/carica-ltu1005-30w-16112",
+      "title": "CARICA - LTU1005 / 30W",
+      "h1": "CARICA - LTU1005 / 30W",
+      "paragraphCount": 14,
+      "imageCount": 31
+    },
+    {
+      "slug": "TR__cedrus-lpd1050-50w-16487",
+      "urlPath": "/TR/cedrus-lpd1050-50w-16487",
+      "title": "CEDRUS - LPD1050 / 50W",
+      "h1": "CEDRUS - LPD1050 / 50W",
+      "paragraphCount": 4,
+      "imageCount": 22
+    },
+    {
+      "slug": "TR__clematis-lpd1056-2-x-110w-16552",
+      "urlPath": "/TR/clematis-lpd1056-2-x-110w-16552",
+      "title": "CLEMATIS - LPD1056 / 2 x 110W",
+      "h1": "CLEMATIS - LPD1056 / 2 X 110W",
+      "paragraphCount": 5,
+      "imageCount": 26
+    },
+    {
+      "slug": "TR__covid-19-sterilizatorleri-18104",
+      "urlPath": "/TR/covid-19-sterilizatorleri-18104",
+      "title": "COVID-19 STERILIZATÖRLERİ",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "TR__cupresus-lpd1055-50w-16538",
+      "urlPath": "/TR/cupresus-lpd1055-50w-16538",
+      "title": "CUPRESUS - LPD1055 / 50W",
+      "h1": "CUPRESUS - LPD1055 / 50W",
+      "paragraphCount": 5,
+      "imageCount": 22
+    },
+    {
+      "slug": "TR__dekoratif-merdiven-spotlari-18117",
+      "urlPath": "/TR/dekoratif-merdiven-spotlari-18117",
+      "title": "Dekoratif Merdiven Spotları",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 51
+    },
+    {
+      "slug": "TR__dekoratif-sarjli-masa-lambasi-18119",
+      "urlPath": "/TR/dekoratif-sarjli-masa-lambasi-18119",
+      "title": "Dekoratif Şarjlı Masa Lambası",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "TR__fagus-lpd1049-50w-16471",
+      "urlPath": "/TR/fagus-lpd1049-50w-16471",
+      "title": "FAGUS - LPD1049 / 50W",
+      "h1": "FAGUS - LPD1049 / 50W",
+      "paragraphCount": 12,
+      "imageCount": 29
+    },
+    {
+      "slug": "TR__farfara-lpd1057-2-x-110w-16553",
+      "urlPath": "/TR/farfara-lpd1057-2-x-110w-16553",
+      "title": "FARFARA - LPD1057 / 2 x 110W",
+      "h1": "FARFARA - LPD1057 / 2 X 110W",
+      "paragraphCount": 6,
+      "imageCount": 27
+    },
+    {
+      "slug": "TR__grandis-ldu1037-30w-16406",
+      "urlPath": "/TR/grandis-ldu1037-30w-16406",
+      "title": "GRANDIS - LDU1037 / 30W",
+      "h1": "GRANDIS - LDU1037 / 30W",
+      "paragraphCount": 11,
+      "imageCount": 23
+    },
+    {
+      "slug": "TR__ice-lpd1059-2-x-110w-16557",
+      "urlPath": "/TR/ice-lpd1059-2-x-110w-16557",
+      "title": "ICE - LPD1059 / 2 x 110W",
+      "h1": "ICE - LPD1059 / 2 X 110W",
+      "paragraphCount": 6,
+      "imageCount": 27
+    },
+    {
+      "slug": "TR__ilex-lpd1007-2-x-50w-16128",
+      "urlPath": "/TR/ilex-lpd1007-2-x-50w-16128",
+      "title": "ILEX - LPD1007 / 2 x 50W",
+      "h1": "ILEX - LPD1007 / 2 X 50W",
+      "paragraphCount": 17,
+      "imageCount": 31
+    },
+    {
+      "slug": "TR__jasminium-lpd1044-50w-16459",
+      "urlPath": "/TR/jasminium-lpd1044-50w-16459",
+      "title": "JASMINIUM - LPD1044 / 50W",
+      "h1": "JASMINIUM - LPD1044 / 50W",
+      "paragraphCount": 12,
+      "imageCount": 31
+    },
+    {
+      "slug": "TR__led-ampuller-18109",
+      "urlPath": "/TR/led-ampuller-18109",
+      "title": "LED AMPULLER",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "TR__lpb1047-camellia-20w-16433",
+      "urlPath": "/TR/lpb1047-camellia-20w-16433",
+      "title": "LPB1047 - CAMELLIA / 20W",
+      "h1": "LPB1047 - CAMELLIA / 20W",
+      "paragraphCount": 12,
+      "imageCount": 29
+    },
+    {
+      "slug": "TR__magnet-armatur-aksesuarlari-18115",
+      "urlPath": "/TR/magnet-armatur-aksesuarlari-18115",
+      "title": "Magnet Armatür Aksesuarları",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 14
+    },
+    {
+      "slug": "TR__magnet-ray-armaturler-18114",
+      "urlPath": "/TR/magnet-ray-armaturler-18114",
+      "title": "Magnet Ray Armatürler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 15
+    },
+    {
+      "slug": "TR__mimosa-lpd1059-2-x-50w-3-x-50w-16636",
+      "urlPath": "/TR/mimosa-lpd1059-2-x-50w-3-x-50w-16636",
+      "title": "MIMOSA - LPD1059 / 2 x 50W - 3 x 50W",
+      "h1": "MIMOSA - LPD1059 / 2 X 50W - 3 X 50W",
+      "paragraphCount": 5,
+      "imageCount": 23
+    },
+    {
+      "slug": "TR__nerium-lpd1052-60w-16522",
+      "urlPath": "/TR/nerium-lpd1052-60w-16522",
+      "title": "NERIUM - LPD1052 / 60W",
+      "h1": "NERIUM - LPD1052 / 60W",
+      "paragraphCount": 4,
+      "imageCount": 21
+    },
+    {
+      "slug": "TR__perennis-lpd1064-2-x-30w-16565",
+      "urlPath": "/TR/perennis-lpd1064-2-x-30w-16565",
+      "title": "PERENNIS - LPD1064 / 2 x 30W",
+      "h1": "PERENNIS - LPD1064 / 2 X 30W",
+      "paragraphCount": 7,
+      "imageCount": 15
+    },
+    {
+      "slug": "TR__rosa-ldu1036-30w-16405",
+      "urlPath": "/TR/rosa-ldu1036-30w-16405",
+      "title": "ROSA - LDU1036 / 30W",
+      "h1": "ROSA - LDU1036 / 30W",
+      "paragraphCount": 14,
+      "imageCount": 25
+    },
+    {
+      "slug": "TR__rosa-lpd1047-50w-16461",
+      "urlPath": "/TR/rosa-lpd1047-50w-16461",
+      "title": "ROSA - LPD1047 / 50W",
+      "h1": "ROSA - LPD1047 / 50W",
+      "paragraphCount": 12,
+      "imageCount": 29
+    },
+    {
+      "slug": "TR__sarkit-armaturler-18116",
+      "urlPath": "/TR/sarkit-armaturler-18116",
+      "title": "Sarkıt Armatürler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 15
+    },
+    {
+      "slug": "TR__soft-lga1030-21w-16407",
+      "urlPath": "/TR/soft-lga1030-21w-16407",
+      "title": "SOFT - LGA1030 / 21W",
+      "h1": "SOFT - LGA1030 / 21W",
+      "paragraphCount": 18,
+      "imageCount": 31
+    },
+    {
+      "slug": "TR__solida-lpd1054-2-x-110w-16536",
+      "urlPath": "/TR/solida-lpd1054-2-x-110w-16536",
+      "title": "SOLIDA - LPD1054 / 2 x 110W",
+      "h1": "SOLIDA - LPD1054 / 2 X 110W",
+      "paragraphCount": 5,
+      "imageCount": 25
+    },
+    {
+      "slug": "TR__topo-ltu1001-5w-10w-16108",
+      "urlPath": "/TR/topo-ltu1001-5w-10w-16108",
+      "title": "TOPO - LTU1001 / 5W - 10W",
+      "h1": "TOPO - LTU1001 / 5W - 10W",
+      "paragraphCount": 14,
+      "imageCount": 31
+    },
+    {
+      "slug": "TR__topo-ltu1002-15w-20w-16109",
+      "urlPath": "/TR/topo-ltu1002-15w-20w-16109",
+      "title": "TOPO - LTU1002 / 15W - 20W",
+      "h1": "TOPO - LTU1002 / 15W - 20W",
+      "paragraphCount": 14,
+      "imageCount": 32
+    },
+    {
+      "slug": "TR__urtica-lpd1048-50w-16470",
+      "urlPath": "/TR/urtica-lpd1048-50w-16470",
+      "title": "URTICA - LPD1048 / 50W",
+      "h1": "URTICA - LPD1048 / 50W",
+      "paragraphCount": 12,
+      "imageCount": 29
+    },
+    {
+      "slug": "TR__urun-secenekleri-18105",
+      "urlPath": "/TR/urun-secenekleri-18105",
+      "title": "ÜRÜN SEÇENEKLERİ",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 17
+    },
+    {
+      "slug": "TR__urun-secenekleri-18110",
+      "urlPath": "/TR/urun-secenekleri-18110",
+      "title": "ÜRÜN SEÇENEKLERİ",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "TR__vitalbe-lpd1053-2-x-125w-16528",
+      "urlPath": "/TR/vitalbe-lpd1053-2-x-125w-16528",
+      "title": "VITALBE - LPD1053 / 2 x 125W",
+      "h1": "VITALBE - LPD1053 / 2 X 125W",
+      "paragraphCount": 4,
+      "imageCount": 21
+    },
+    {
+      "slug": "TR__yatak-basi-aplikler-18118",
+      "urlPath": "/TR/yatak-basi-aplikler-18118",
+      "title": "Yatak Başı Aplikler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 7
+    }
+  ],
+  "product-categories": [
+    {
+      "slug": "TR__acil-aydinlatma-kiti-1886",
+      "urlPath": "/TR/acil-aydinlatma-kiti-1886",
+      "title": "Acil Aydınlatma Kiti",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "TR__alan-aydinlatma-projektorleri-1875",
+      "urlPath": "/TR/alan-aydinlatma-projektorleri-1875",
+      "title": "Alan Aydınlatma Projektörleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "TR__ankraj-1898",
+      "urlPath": "/TR/ankraj-1898",
+      "title": "Ankraj",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "TR__aski-teli-1896",
+      "urlPath": "/TR/aski-teli-1896",
+      "title": "Askı Teli",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__astronomik-zaman-saati-1885",
+      "urlPath": "/TR/astronomik-zaman-saati-1885",
+      "title": "Astronomik Zaman Saati",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__aydinlatma-direkleri-188",
+      "urlPath": "/TR/aydinlatma-direkleri-188",
+      "title": "Aydınlatma Direkleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 83
+    },
+    {
+      "slug": "TR__aydinlatma-elemanlari-ve-yedek-parcalari-1882",
+      "urlPath": "/TR/aydinlatma-elemanlari-ve-yedek-parcalari-1882",
+      "title": "AYDINLATMA ELEMANLARI VE YEDEK PARÇALARI",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 91
+    },
+    {
+      "slug": "TR__bollard-armaturleri-187",
+      "urlPath": "/TR/bollard-armaturleri-187",
+      "title": "Bollard Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 46
+    },
+    {
+      "slug": "TR__buat-klemensi-1887",
+      "urlPath": "/TR/buat-klemensi-1887",
+      "title": "Buat Klemensi",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__buat-kutusu-1892",
+      "urlPath": "/TR/buat-kutusu-1892",
+      "title": "Buat Kutusu",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__dairesel-yere-gomme-armaturleri-1815",
+      "urlPath": "/TR/dairesel-yere-gomme-armaturleri-1815",
+      "title": "Dairesel Yere Gömme Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 21
+    },
+    {
+      "slug": "TR__diktortgen-yere-gomme-armaturleri-1817",
+      "urlPath": "/TR/diktortgen-yere-gomme-armaturleri-1817",
+      "title": "Diktörtgen Yere Gömme Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "TR__dis-aydinlatma-182",
+      "urlPath": "/TR/dis-aydinlatma-182",
+      "title": "DIŞ AYDINLATMA",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 436
+    },
+    {
+      "slug": "TR__duvar-armaturleri-1813",
+      "urlPath": "/TR/duvar-armaturleri-1813",
+      "title": "Duvar Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 113
+    },
+    {
+      "slug": "TR__duvar-ustu-aydinlatma-1822",
+      "urlPath": "/TR/duvar-ustu-aydinlatma-1822",
+      "title": "Duvar Üstü Aydınlatma",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 22
+    },
+    {
+      "slug": "TR__duvara-montaj-kasasi-1891",
+      "urlPath": "/TR/duvara-montaj-kasasi-1891",
+      "title": "Duvara Montaj Kasası",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__elektrik-otomasyon-panosu-1888",
+      "urlPath": "/TR/elektrik-otomasyon-panosu-1888",
+      "title": "Elektrik / Otomasyon Panosu",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__endustriyel-aydinlatma-1828",
+      "urlPath": "/TR/endustriyel-aydinlatma-1828",
+      "title": "Endüstriyel Aydınlatma",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 16
+    },
+    {
+      "slug": "TR__gomme-duvar-armaturleri-1811",
+      "urlPath": "/TR/gomme-duvar-armaturleri-1811",
+      "title": "Gömme Duvar Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 9
+    },
+    {
+      "slug": "TR__hareket-sensorleri-1890",
+      "urlPath": "/TR/hareket-sensorleri-1890",
+      "title": "Hareket Sensörleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 5
+    },
+    {
+      "slug": "TR__havuz-armaturleri-1854",
+      "urlPath": "/TR/havuz-armaturleri-1854",
+      "title": "Havuz Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "TR__ic-aydinlatma-1827",
+      "urlPath": "/TR/ic-aydinlatma-1827",
+      "title": "İÇ AYDINLATMA",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 327
+    },
+    {
+      "slug": "TR__kare-yere-gomme-armaturleri-1816",
+      "urlPath": "/TR/kare-yere-gomme-armaturleri-1816",
+      "title": "Kare Yere Gömme Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__kazik-1899",
+      "urlPath": "/TR/kazik-1899",
+      "title": "Kazık",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "TR__led-downlight-ve-spot-armaturler-1880",
+      "urlPath": "/TR/led-downlight-ve-spot-armaturler-1880",
+      "title": "Led Downlight ve Spot Armatürler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 178
+    },
+    {
+      "slug": "TR__led-sokak-aydinlatma-armaturleri-1831",
+      "urlPath": "/TR/led-sokak-aydinlatma-armaturleri-1831",
+      "title": "Led Sokak Aydınlatma Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 12
+    },
+    {
+      "slug": "TR__lineer-ve-ledbar-armaturler-1881",
+      "urlPath": "/TR/lineer-ve-ledbar-armaturler-1881",
+      "title": "Lineer ve Ledbar Armatürler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 34
+    },
+    {
+      "slug": "TR__metal-zemine-montaj-kasasi-1895",
+      "urlPath": "/TR/metal-zemine-montaj-kasasi-1895",
+      "title": "Metal Zemine Montaj Kasası",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__mimari-projektorler-1848",
+      "urlPath": "/TR/mimari-projektorler-1848",
+      "title": "Mimari Projektörler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 9
+    },
+    {
+      "slug": "TR__park-bahce-armaturleri-186",
+      "urlPath": "/TR/park-bahce-armaturleri-186",
+      "title": "Park - Bahçe Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 149
+    },
+    {
+      "slug": "TR__projektorler-1818",
+      "urlPath": "/TR/projektorler-1818",
+      "title": "Projektörler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 15
+    },
+    {
+      "slug": "TR__ray-klemens-1883",
+      "urlPath": "/TR/ray-klemens-1883",
+      "title": "Ray Klemens",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__ray-spot-armatur-aksesuarlari-1897",
+      "urlPath": "/TR/ray-spot-armatur-aksesuarlari-1897",
+      "title": "Ray Spot Armatür Aksesuarları",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 38
+    },
+    {
+      "slug": "TR__rozans-1894",
+      "urlPath": "/TR/rozans-1894",
+      "title": "Rozans",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__sivaalti-led-panel-armaturleri-1877",
+      "urlPath": "/TR/sivaalti-led-panel-armaturleri-1877",
+      "title": "Sıvaaltı Led Panel Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 4
+    },
+    {
+      "slug": "TR__sivaustu-duvar-armaturleri-1812",
+      "urlPath": "/TR/sivaustu-duvar-armaturleri-1812",
+      "title": "Sıvaüstü Duvar Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 105
+    },
+    {
+      "slug": "TR__sivaustu-led-panel-armaturleri-1879",
+      "urlPath": "/TR/sivaustu-led-panel-armaturleri-1879",
+      "title": "Sıvaüstü Led Panel Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 7
+    },
+    {
+      "slug": "TR__su-gecirmez-konnektor-1889",
+      "urlPath": "/TR/su-gecirmez-konnektor-1889",
+      "title": "Su Geçirmez Konnektör",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 3
+    },
+    {
+      "slug": "TR__tavan-armaturleri-189",
+      "urlPath": "/TR/tavan-armaturleri-189",
+      "title": "Tavan Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 9
+    },
+    {
+      "slug": "TR__termoplastik-zemine-montaj-kasasi-1893",
+      "urlPath": "/TR/termoplastik-zemine-montaj-kasasi-1893",
+      "title": "Termoplastik Zemine Montaj Kasası",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__venus-lta2007-2-x-4w-1666",
+      "urlPath": "/TR/venus-lta2007-2-x-4w-1666",
+      "title": "VENUS - LTA2007 / 2 x 4W",
+      "h1": "VENUS - LTA2007 / 2 X 4W",
+      "paragraphCount": 11,
+      "imageCount": 25
+    },
+    {
+      "slug": "TR__wallwasher-ve-ledbar-armaturler-185",
+      "urlPath": "/TR/wallwasher-ve-ledbar-armaturler-185",
+      "title": "Wallwasher ve Ledbar Armatürler",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 12
+    },
+    {
+      "slug": "TR__xlr-konnektor-1884",
+      "urlPath": "/TR/xlr-konnektor-1884",
+      "title": "XLR Konnektör",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "TR__yeni-urunler-18102",
+      "urlPath": "/TR/yeni-urunler-18102",
+      "title": "YENİ ÜRÜNLER",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "TR__yeni-urunler-183",
+      "urlPath": "/TR/yeni-urunler-183",
+      "title": "YENİ ÜRÜNLER",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "TR__yere-gomme-armaturleri-1814",
+      "urlPath": "/TR/yere-gomme-armaturleri-1814",
+      "title": "Yere Gömme Armatürleri",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 25
+    }
+  ],
+  "news": [
+    {
+      "slug": "tr__iste-isimiz-roportaji-14108",
+      "urlPath": "/tr/iste-isimiz-roportaji-14108",
+      "title": "İŞTE İŞİMİZ RÖPORTAJI",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__izmir-tarihi-saat-kulesi-14107",
+      "urlPath": "/tr/izmir-tarihi-saat-kulesi-14107",
+      "title": "İZMİR TARİHİ SAAT KULESİNDE NARLIGHT İMZASI",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14123",
+      "urlPath": "/tr/kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14123",
+      "title": "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek",
+      "h1": "",
+      "paragraphCount": 3,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14126",
+      "urlPath": "/tr/kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14126",
+      "title": "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek",
+      "h1": "",
+      "paragraphCount": 2,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14127",
+      "urlPath": "/tr/kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14127",
+      "title": "NAR",
+      "h1": "",
+      "paragraphCount": 2,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14128",
+      "urlPath": "/tr/kapali-devre-anticor-kovid-19a-karsi-havayi-temizleyecek-14128",
+      "title": "İzmir'de bir firma, yeni tip koronavirüse (Kovid-19) karşı, ultraviyole (UV) ışınıyla kapalı devre çalışan taşınabilir hava sterilizasyon cihazı geliştirdi.",
+      "h1": "",
+      "paragraphCount": 2,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__la-mahzen-narlight-i-secti-106",
+      "urlPath": "/tr/la-mahzen-narlight-i-secti-106",
+      "title": "La Mahzen NARLIGHT’ı seçti",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__narlight-etuk-2019-14106",
+      "urlPath": "/tr/narlight-etuk-2019-14106",
+      "title": "NARLIGHT ETUK 2019",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 2
+    },
+    {
+      "slug": "tr__narlight-musiad-expo-2020-14131",
+      "urlPath": "/tr/narlight-musiad-expo-2020-14131",
+      "title": "Narlight - Müsiad EXPO 2020",
+      "h1": "",
+      "paragraphCount": 1,
+      "imageCount": 1
+    },
+    {
+      "slug": "tr__turk-firmasindan-yerli-ve-milli-urun-anticor-14124",
+      "urlPath": "/tr/turk-firmasindan-yerli-ve-milli-urun-anticor-14124",
+      "title": "Bütün dünyayı kasıp kavuran Covid 19 Virüsüne karşı gelişmiş ülkeler bile medikal ekipman krizine girerken Türk firmaları yeni yatırımları ve kısa sürede ortaya koydukları başarı ile dünya’nın dikkatini çekmeye devam ediyor.",
+      "h1": "",
+      "paragraphCount": 3,
+      "imageCount": 1
+    }
+  ],
+  "other": [
+    {
+      "slug": "index",
+      "urlPath": "/index",
+      "title": "NARLIGHT ışığın tasarımı ve üretimi konusunda uzmanlaşmış bir Türkiye şirketidir.",
+      "h1": "",
+      "paragraphCount": 75,
+      "imageCount": 121
+    },
+    {
+      "slug": "TR",
+      "urlPath": "/TR",
+      "title": "NARLIGHT ışığın tasarımı ve üretimi konusunda uzmanlaşmış bir Türkiye şirketidir.",
+      "h1": "",
+      "paragraphCount": 75,
+      "imageCount": 121
+    }
+  ]
+}

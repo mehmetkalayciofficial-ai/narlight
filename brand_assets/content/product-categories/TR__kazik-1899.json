@@ -1,0 +1,35 @@
+{
+  "title": "Kazık",
+  "h1": "",
+  "h2": [
+    "KAZIK"
+  ],
+  "h3": [
+    "E-BÜLTEN GRUBU"
+  ],
+  "breadcrumb": [
+    "KAZIK KZK001 - KAZIK KZK002 - KAZIK"
+  ],
+  "paragraphs": [
+    "Lütfen web sitesine göre varsayılan dili seçin"
+  ],
+  "lists": [],
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/narlight-search.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/Aydinlatma-Elemanlari/kazik-9903.png",
+      "alt": "KZK001 - Kazık"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/Aydinlatma-Elemanlari/kazik-kzk002-449.png",
+      "alt": "KZK002 - Kazık"
+    }
+  ],
+  "tables": [],
+  "slug": "TR__kazik-1899",
+  "urlPath": "/TR/kazik-1899",
+  "category": "product-categories"
+}

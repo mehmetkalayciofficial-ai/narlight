@@ -1,0 +1,39 @@
+{
+  "title": "ÜRÜN SEÇENEKLERİ",
+  "h1": "",
+  "h2": [
+    "ÜRÜN SEÇENEKLERİ"
+  ],
+  "h3": [
+    "E-BÜLTEN GRUBU"
+  ],
+  "breadcrumb": [
+    "ÜRÜN SEÇENEKLERİ PS - IP - 150 - 24 PS - IP - 100 - 24 PS - IP - 60 - 24"
+  ],
+  "paragraphs": [
+    "Lütfen web sitesine göre varsayılan dili seçin"
+  ],
+  "lists": [],
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/narlight-search.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/PS_IP_150_54_1_m.png",
+      "alt": "PS - IP - 150 - 24"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/PS_IP-100_24_1_m.png",
+      "alt": "PS - IP - 100 - 24"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/PS_IP_60_24_1_m.png",
+      "alt": "PS - IP - 60 - 24"
+    }
+  ],
+  "tables": [],
+  "slug": "TR__urun-secenekleri-18110",
+  "urlPath": "/TR/urun-secenekleri-18110",
+  "category": "products"
+}

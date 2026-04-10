@@ -1,0 +1,702 @@
+{
+  "title": "NARLIGHT ışığın tasarımı ve üretimi konusunda uzmanlaşmış bir Türkiye şirketidir.",
+  "h1": "",
+  "h2": [
+    "Projelerimiz",
+    "Bizden Haberler"
+  ],
+  "h3": [
+    "ILEX - LPD1007 / 2 X 50W",
+    "ARGEMON - LPD1043 / 50W",
+    "JASMINIUM - LPD1044 / 50W",
+    "MIMOSA - LPD1059 / 2 X 50W - 3 X 50W",
+    "ROSA - LPD1047 / 50W",
+    "URTICA - LPD1048 / 50W",
+    "FAGUS - LPD1049 / 50W",
+    "CEDRUS - LPD1050 / 50W",
+    "NERIUM - LPD1052 / 60W",
+    "VITALBE - LPD1053 / 2 X 125W",
+    "SOLIDA - LPD1054 / 2 X 110W",
+    "CUPRESUS - LPD1055 / 50W",
+    "CLEMATIS - LPD1056 / 2 X 110W",
+    "FARFARA - LPD1057 / 2 X 110W",
+    "ALPINUM - LPD1058 / 2 X 110W",
+    "ICE - LPD1059 / 2 X 110W",
+    "ALBUS - LPD1061 / 40W",
+    "PERENNIS - LPD1064 / 2 X 30W",
+    "ALBA - LEC7026 / 10W",
+    "SOFT - LGA1030 / 21W",
+    "ROSA - LDU1036 / 30W",
+    "GRANDIS - LDU1037 / 30W",
+    "VENUS - LTA2007 / 2 X 4W",
+    "LPB1047 - CAMELLIA / 20W",
+    "TOPO - LTU1001 / 5W - 10W",
+    "TOPO - LTU1002 / 15W - 20W",
+    "CARICA - LTU1003 / 10W",
+    "CARICA - LTU1004 / 15W - 20W",
+    "CARICA - LTU1005 / 30W",
+    "AGRESTIS / 50W - 100W - 150W",
+    "Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ",
+    "Torbalı Belediyesi Barış Yapı Cadde - İZMİR",
+    "Onkapı Beytepe Villaları - ANKARA",
+    "Pakistan Pavyonu Kültürpark - İZMİR",
+    "Ayrancılar Yeni Meydanı - İZMİR",
+    "Tarihi Saat Kulesi - Konak / İZMİR",
+    "Kefaluka Resort Hotel - Bodrum / MUĞLA",
+    "Yasemin Cafe - Bostanlı / İZMİR",
+    "7800 Otel - Çeşme / İZMİR",
+    "Up Life Konutları - KAHRAMANMARAŞ",
+    "Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR",
+    "T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA",
+    "Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ",
+    "İş Bankası Sosyal Tesisleri - Çeşme / İZMİR",
+    "Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR",
+    "Marmara Forum - Bakırköy / İSTANBUL",
+    "Nazua İnşaat Aalaçatı Villaları - İZMİR",
+    "Yaşar Üniversitesi - Bornova / İZMİR",
+    "10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR",
+    "Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR",
+    "Ekonomi Üniversitesi - Balçova / İZMİR",
+    "Forbes Caddesi - Buca / İZMİR",
+    "Teleferik - Balçova / İZMİR",
+    "Efes Celsus Kütüphanesi - Selçuk / İZMİR",
+    "Efes Antik Kenti - Selçuk / İZMİR",
+    "Havelsan Teknoloji Kampüsü - ANKARA",
+    "Fiat Plaza Marfi - KAHRAMANMARAŞ",
+    "Büyük Esenler Otogarı - İSTANBUL",
+    "Saygılı Rulman - İZMİR",
+    "Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ",
+    "Tarihi Alsancak Garı - İZMİR",
+    "VE Otel - Karşıyaka / İZMİR",
+    "Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ",
+    "Saruhan Otel - MANİSA",
+    "Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ",
+    "La Bonita Residence - Çiğli / İZMİR",
+    "Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ",
+    "Bilal Saygılı Camii ve Külliyesi - İZMİR",
+    "Koç İnşaat - Gaziemir / İZMİR",
+    "15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR",
+    "LA Mahzen Restaurant - Torbalı / İZMİR",
+    "Sıtkı Koçman Üniversitesi - MUĞLA",
+    "Venedik Cafe - Balçova / İZMİR",
+    "Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ",
+    "Sir Giyim - Sarnıç / İZMİR",
+    "Yüksek Teknoloji Enstitüsü - Urla / İZMİR",
+    "Çan Otel - ÇANAKKALE",
+    "MEV Koleji - İZMİR",
+    "Doğa Koleji - İZMİR",
+    "Turkuaz AVM - BURSA",
+    "Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR",
+    "Şehir Parkı - Karşıyaka / İZMİR",
+    "Şehir Parkı - BURSA",
+    "T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ",
+    "Glas Cam Fabrikası - İZMİR",
+    "Metaş Seracılık Fabrika Binası - Menderes / İZMİR",
+    "Şimal Tekstil Westpark AVM - İZMİR",
+    "Istanbul Market - Ohio Columbus / ABD",
+    "İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR",
+    "Ramsa Mobilya Home Garden - Menemen / İZMİR",
+    "Milli Gazete Genel Merkez Binası - İSTANBUL",
+    "Cadde 75 Otel - Alaçatı / İZMİR",
+    "Mia Residence - Gaziemir / İZMİR",
+    "Soyak Sosyal Tesisleri - Urla / İZMİR",
+    "Çanakkale Şehitliği - ÇANAKKALE",
+    "Çine Otogarı - AYDIN",
+    "Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR",
+    "Gürmar Marketler Zinciri - İZMİR",
+    "Birikim Koleji - İZMİR",
+    "Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR",
+    "Akçay Yasa AVM - BALIKESİR",
+    "Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ",
+    "VİLLA - Çeşme / İZMİR",
+    "Emmioğlu Mermer Fabrikası - İZMİR",
+    "İZMİR TARİHİ SAAT KULESİ",
+    "Narlight - Müsiad EXPO 2020",
+    "NARLIGHT ETUK 2019",
+    "İŞTE İŞİMİZ RÖPORTAJI",
+    "La Mahzen NARLIGHT’ı seçti",
+    "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek",
+    "Türk Firmasından Yerli Ve Milli Ürün ANTICOR",
+    "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek",
+    "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek",
+    "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek",
+    "E-BÜLTEN GRUBU"
+  ],
+  "breadcrumb": [
+    "İÇ AYDINLATMA DIŞ AYDINLATMA YENİ ÜRÜNLER ILEX - LPD1007 / 2 X 50W GÖRÜNTÜLE ARGEMON - LPD1043 / 50W GÖRÜNTÜLE JASMINIUM - LPD1044 / 50W GÖRÜNTÜLE MIMOSA - LPD1059 / 2 X 50W - 3 X 50W GÖRÜNTÜLE ROSA - LPD1047 / 50W GÖRÜNTÜLE URTICA - LPD1048 / 50W GÖRÜNTÜLE FAGUS - LPD1049 / 50W GÖRÜNTÜLE CEDRUS - LPD1050 / 50W GÖRÜNTÜLE NERIUM - LPD1052 / 60W GÖRÜNTÜLE VITALBE - LPD1053 / 2 X 125W GÖRÜNTÜLE SOLIDA - LPD1054 / 2 X 110W GÖRÜNTÜLE CUPRESUS - LPD1055 / 50W GÖRÜNTÜLE CLEMATIS - LPD1056 / 2 X 110W GÖRÜNTÜLE FARFARA - LPD1057 / 2 X 110W GÖRÜNTÜLE ALPINUM - LPD1058 / 2 X 110W GÖRÜNTÜLE ICE - LPD1059 / 2 X 110W GÖRÜNTÜLE ALBUS - LPD1061 / 40W GÖRÜNTÜLE PERENNIS - LPD1064 / 2 X 30W GÖRÜNTÜLE ALBA - LEC7026 / 10W GÖRÜNTÜLE SOFT - LGA1030 / 21W GÖRÜNTÜLE ROSA - LDU1036 / 30W GÖRÜNTÜLE GRANDIS - LDU1037 / 30W GÖRÜNTÜLE VENUS - LTA2007 / 2 X 4W GÖRÜNTÜLE LPB1047 - CAMELLIA / 20W GÖRÜNTÜLE TOPO - LTU1001 / 5W - 10W GÖRÜNTÜLE TOPO - LTU1002 / 15W - 20W GÖRÜNTÜLE CARICA - LTU1003 / 10W GÖRÜNTÜLE CARICA - LTU1004 / 15W - 20W GÖRÜNTÜLE CARICA - LTU1005 / 30W GÖRÜNTÜLE AGRESTIS / 50W - 100W - 150W GÖRÜNTÜLE Projelerimiz Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ Torbalı Belediyesi Barış Yapı Cadde - İZMİR Torbalı Belediyesi Barış Yapı Cadde - İZMİR Onkapı Beytepe Villaları - ANKARA Onkapı Beytepe Villaları - ANKARA Pakistan Pavyonu Kültürpark - İZMİR Pakistan Pavyonu Kültürpark - İZMİR Ayrancılar Yeni Meydanı - İZMİR Ayrancılar Yeni Meydanı - İZMİR Tarihi Saat Kulesi - Konak / İZMİR Tarihi Saat Kulesi - Konak / İZMİR Kefaluka Resort Hotel - Bodrum / MUĞLA Kefaluka Resort Hotel - Bodrum / MUĞLA Yasemin Cafe - Bostanlı / İZMİR Yasemin Cafe - Bostanlı / İZMİR 7800 Otel - Çeşme / İZMİR 7800 Otel - Çeşme / İZMİR Up Life Konutları - KAHRAMANMARAŞ Up Life Konutları - KAHRAMANMARAŞ Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ İş Bankası Sosyal Tesisleri - Çeşme / İZMİR İş Bankası Sosyal Tesisleri - Çeşme / İZMİR Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR Marmara Forum - Bakırköy / İSTANBUL Marmara Forum - Bakırköy / İSTANBUL Nazua İnşaat Aalaçatı Villaları - İZMİR Nazua İnşaat Aalaçatı Villaları - İZMİR Yaşar Üniversitesi - Bornova / İZMİR Yaşar Üniversitesi - Bornova / İZMİR 10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR 10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR Ekonomi Üniversitesi - Balçova / İZMİR Ekonomi Üniversitesi - Balçova / İZMİR Forbes Caddesi - Buca / İZMİR Forbes Caddesi - Buca / İZMİR Teleferik - Balçova / İZMİR Teleferik - Balçova / İZMİR Efes Celsus Kütüphanesi - Selçuk / İZMİR Efes Celsus Kütüphanesi - Selçuk / İZMİR Efes Antik Kenti - Selçuk / İZMİR Efes Antik Kenti - Selçuk / İZMİR Havelsan Teknoloji Kampüsü - ANKARA Havelsan Teknoloji Kampüsü - ANKARA Fiat Plaza Marfi - KAHRAMANMARAŞ Marfi Otomotiv-Kahramanmaraş Büyük Esenler Otogarı - İSTANBUL Büyük Esenler Otogarı - İSTANBUL Saygılı Rulman - İZMİR Saygılı Rulman - İZMİR Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ Tarihi Alsancak Garı - İZMİR Tarihi Alsancak Garı - İZMİR VE Otel - Karşıyaka / İZMİR VE Otel - Karşıyaka / İZMİR Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ Saruhan Otel - MANİSA Saruhan Otel - MANİSA Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ La Bonita Residence - Çiğli / İZMİR La Bonita Residence - Çiğli / İZMİR Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ Bilal Saygılı Camii ve Külliyesi - İZMİR Bilal Saygılı Camii ve Külliyesi - İZMİR Koç İnşaat - Gaziemir / İZMİR Koç İnşaat - Gaziemir / İZMİR 15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR 15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR LA Mahzen Restaurant - Torbalı / İZMİR LA Mahzen Restaurant - Torbalı / İZMİR Sıtkı Koçman Üniversitesi - MUĞLA Sıtkı Koçman Üniversitesi - MUĞLA Venedik Cafe - Balçova / İZMİR Venedik Cafe - Balçova / İZMİR Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ Sir Giyim - Sarnıç / İZMİR Sir Giyim - Sarnıç / İZMİR Yüksek Teknoloji Enstitüsü - Urla / İZMİR Yüksek Teknoloji Enstitüsü - Urla / İZMİR Çan Otel - ÇANAKKALE Çan Otel - ÇANAKKALE MEV Koleji - İZMİR MEV Koleji - İZMİR Doğa Koleji - İZMİR Doğa Koleji - İZMİR Turkuaz AVM - BURSA Turkuaz AVM - BURSA Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR Şehir Parkı - Karşıyaka / İZMİR Şehir Parkı - Karşıyaka / İZMİR Şehir Parkı - BURSA Şehir Parkı - BURSA T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ Glas Cam Fabrikası - İZMİR Glas Cam Fabrikası - İZMİR Metaş Seracılık Fabrika Binası - Menderes / İZMİR Metaş Seracılık Fabrika Binası - Menderes / İZMİR Şimal Tekstil Westpark AVM - İZMİR Şimal Tekstil Westpark AVM - İZMİR Istanbul Market - Ohio Columbus / ABD Istanbul Market - Ohio Columbus / ABD İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR Ramsa Mobilya Home Garden - Menemen / İZMİR Ramsa Mobilya Home Garden - Menemen / İZMİR Milli Gazete Genel Merkez Binası - İSTANBUL Milli Gazete Genel Merkez Binası - İSTANBUL Cadde 75 Otel - Alaçatı / İZMİR Cadde 75 Otel - Alaçatı / İZMİR Mia Residence - Gaziemir / İZMİR Mia Residence - Gaziemir / İZMİR Soyak Sosyal Tesisleri - Urla / İZMİR Soyak Sosyal Tesisleri - Urla / İZMİR Çanakkale Şehitliği - ÇANAKKALE Çanakkale Şehitliği - ÇANAKKALE Çine Otogarı - AYDIN Çine Otogarı - AYDIN Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR Gürmar Marketler Zinciri - İZMİR Gürmar Marketler Zinciri - İZMİR Birikim Koleji - İZMİR Birikim Koleji - İZMİR Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR Akçay Yasa AVM - BALIKESİR Akçay Yasa AVM - BALIKESİR Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ VİLLA - Çeşme / İZMİR VİLLA - Çeşme / İZMİR Emmioğlu Mermer Fabrikası - İZMİR Emmioğlu Mermer Fabrikası - İZMİR Bizden Haberler İZMİR TARİHİ SAAT KULESİ Narlight - Müsiad EXPO 2020 NARLIGHT ETUK 2019 NARLIGHT ETUK 2019 İŞTE İŞİMİZ RÖPORTAJI La Mahzen NARLIGHT’ı seçti La Mahzen NARLIGHT’ı seçti Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek İzmir'de, aydınlatma sistemleri üzerine çalışan firma tarafından geliştirilen UV ile çalışan taşınabilir hava sterilizasyon cihazı başta Avrupa olmak üzere bir çok ülkeden ilgi gördü - Firmanın yönetim kurulu başkanı Safa Narlı: - \"Herkesin gündeminde bu virüs var. Bizim elimizde de yapılan bilimsel çalışmalarla virüsü yüzde 99,9 öldürdüğü kanıtlanan bir sistem var. Özellikle yurt dışından çok ciddi talepler var\" Türk Firmasından Yerli Ve Milli Ürün ANTICOR Bütün dünyayı kasıp kavuran Covid 19 Virüsüne karşı gelişmiş ülkeler bile medikal ekipman krizine girerken Türk firmaları yeni yatırımları ve kısa sürede ortaya koydukları başarı ile dünya’nın dikkatini çekmeye devam ediyor. Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek İzmir'de bir firma, yeni tip koronavirüse (Kovid-19) karşı, ultraviyole (UV) ışınıyla kapalı devre çalışan taşınabilir hava sterilizasyon cihazı geliştirdi. Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek İzmir'de, aydınlatma sistemleri üzerine çalışan firma tarafından geliştirilen UV ile çalışan taşınabilir hava sterilizasyon cihazı başta Avrupa olmak üzere bir çok ülkeden ilgi gördü- Firmanın yönetim kurulu başkanı Safa Narlı: - \"Herkesin gündeminde bu virüs var. Bizim elimizde de yapılan bilimsel çalışmalarla virüsü yüzde 99,9 öldürdüğü kanıtlanan bir sistem var. Özellikle yurt dışından çok ciddi talepler var\" Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek İzmir'de bir firma, yeni tip koronavirüse (Kovid-19) karşı, ultraviyole (UV) ışınıyla kapalı devre çalışan taşınabilir hava sterilizasyon cihazı geliştirdi."
+  ],
+  "paragraphs": [
+    "Lütfen web sitesine göre varsayılan dili seçin",
+    "Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ",
+    "Torbalı Belediyesi Barış Yapı Cadde - İZMİR",
+    "Onkapı Beytepe Villaları - ANKARA",
+    "Pakistan Pavyonu Kültürpark - İZMİR",
+    "Ayrancılar Yeni Meydanı - İZMİR",
+    "Tarihi Saat Kulesi - Konak / İZMİR",
+    "Kefaluka Resort Hotel - Bodrum / MUĞLA",
+    "Yasemin Cafe - Bostanlı / İZMİR",
+    "7800 Otel - Çeşme / İZMİR",
+    "Up Life Konutları - KAHRAMANMARAŞ",
+    "Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR",
+    "T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA",
+    "Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ",
+    "İş Bankası Sosyal Tesisleri - Çeşme / İZMİR",
+    "Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR",
+    "Marmara Forum - Bakırköy / İSTANBUL",
+    "Nazua İnşaat Aalaçatı Villaları - İZMİR",
+    "Yaşar Üniversitesi - Bornova / İZMİR",
+    "10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR",
+    "Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR",
+    "Ekonomi Üniversitesi - Balçova / İZMİR",
+    "Forbes Caddesi - Buca / İZMİR",
+    "Teleferik - Balçova / İZMİR",
+    "Efes Celsus Kütüphanesi - Selçuk / İZMİR",
+    "Efes Antik Kenti - Selçuk / İZMİR",
+    "Havelsan Teknoloji Kampüsü - ANKARA",
+    "Marfi Otomotiv-Kahramanmaraş",
+    "Büyük Esenler Otogarı - İSTANBUL",
+    "Saygılı Rulman - İZMİR",
+    "Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ",
+    "Tarihi Alsancak Garı - İZMİR",
+    "VE Otel - Karşıyaka / İZMİR",
+    "Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ",
+    "Saruhan Otel - MANİSA",
+    "Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ",
+    "La Bonita Residence - Çiğli / İZMİR",
+    "Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ",
+    "Bilal Saygılı Camii ve Külliyesi - İZMİR",
+    "Koç İnşaat - Gaziemir / İZMİR",
+    "15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR",
+    "LA Mahzen Restaurant - Torbalı / İZMİR",
+    "Sıtkı Koçman Üniversitesi - MUĞLA",
+    "Venedik Cafe - Balçova / İZMİR",
+    "Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ",
+    "Sir Giyim - Sarnıç / İZMİR",
+    "Yüksek Teknoloji Enstitüsü - Urla / İZMİR",
+    "Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR",
+    "Şehir Parkı - Karşıyaka / İZMİR",
+    "T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ",
+    "Glas Cam Fabrikası - İZMİR",
+    "Metaş Seracılık Fabrika Binası - Menderes / İZMİR",
+    "Şimal Tekstil Westpark AVM - İZMİR",
+    "Istanbul Market - Ohio Columbus / ABD",
+    "İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR",
+    "Ramsa Mobilya Home Garden - Menemen / İZMİR",
+    "Milli Gazete Genel Merkez Binası - İSTANBUL",
+    "Cadde 75 Otel - Alaçatı / İZMİR",
+    "Mia Residence - Gaziemir / İZMİR",
+    "Soyak Sosyal Tesisleri - Urla / İZMİR",
+    "Çanakkale Şehitliği - ÇANAKKALE",
+    "Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR",
+    "Gürmar Marketler Zinciri - İZMİR",
+    "Birikim Koleji - İZMİR",
+    "Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR",
+    "Akçay Yasa AVM - BALIKESİR",
+    "Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ",
+    "VİLLA - Çeşme / İZMİR",
+    "Emmioğlu Mermer Fabrikası - İZMİR",
+    "La Mahzen NARLIGHT’ı seçti",
+    "İzmir'de, aydınlatma sistemleri üzerine çalışan firma tarafından geliştirilen UV ile çalışan taşınabilir hava sterilizasyon cihazı başta Avrupa olmak üzere bir çok ülkeden ilgi gördü - Firmanın yönetim kurulu başkanı Safa Narlı: - \"Herkesin gündeminde bu virüs var. Bizim elimizde de yapılan bilimsel çalışmalarla virüsü yüzde 99,9 öldürdüğü kanıtlanan bir sistem var. Özellikle yurt dışından çok ciddi talepler var\"",
+    "Bütün dünyayı kasıp kavuran Covid 19 Virüsüne karşı gelişmiş ülkeler bile medikal ekipman krizine girerken Türk firmaları yeni yatırımları ve kısa sürede ortaya koydukları başarı ile dünya’nın dikkatini çekmeye devam ediyor.",
+    "İzmir'de bir firma, yeni tip koronavirüse (Kovid-19) karşı, ultraviyole (UV) ışınıyla kapalı devre çalışan taşınabilir hava sterilizasyon cihazı geliştirdi.",
+    "İzmir'de, aydınlatma sistemleri üzerine çalışan firma tarafından geliştirilen UV ile çalışan taşınabilir hava sterilizasyon cihazı başta Avrupa olmak üzere bir çok ülkeden ilgi gördü- Firmanın yönetim kurulu başkanı Safa Narlı: - \"Herkesin gündeminde bu virüs var. Bizim elimizde de yapılan bilimsel çalışmalarla virüsü yüzde 99,9 öldürdüğü kanıtlanan bir sistem var. Özellikle yurt dışından çok ciddi talepler var\"",
+    "İzmir'de bir firma, yeni tip koronavirüse (Kovid-19) karşı, ultraviyole (UV) ışınıyla kapalı devre çalışan taşınabilir hava sterilizasyon cihazı geliştirdi."
+  ],
+  "lists": [
+    [
+      "İÇ AYDINLATMA",
+      "DIŞ AYDINLATMA",
+      "YENİ ÜRÜNLER"
+    ]
+  ],
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/narlight-search.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/slidert/NARLIGHT-2021-MOBIL-1-1.jpg",
+      "alt": "TARİHİ SAAT KULESİ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/slidert/narlight-esenler-otogari-mobil-1.jpg",
+      "alt": "BÜYÜK ESENLER OTOGARI"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/slider/narlight-mandalin-villari-mobil-1.jpg",
+      "alt": "MANDALİN VİLLALARI"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/slidert/aktepe-kultur-merkezi-mobil-1.jpg",
+      "alt": "AKTEPE KÜLTÜR MERKEZİ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/tarihi-alsancak-gari-mobil-1.jpg",
+      "alt": "TARİHİ ALSANCAK GARI"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/slider/is-bankasi-sosyal-tesisleri-mobil-1.jpg",
+      "alt": "İŞ BANKASI SOSYAL TESİSLERİ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LPD1007.png",
+      "alt": "ILEX - LPD1007 / 2 x 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD-1043-m.gif",
+      "alt": "ARGEMON - LPD1043 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD-1044-.png",
+      "alt": "JASMINIUM - LPD1044 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/LPD1059_1_1.png",
+      "alt": "MIMOSA - LPD1059 / 2 x 50W - 3 x 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD-1047-1.png",
+      "alt": "ROSA - LPD1047 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD-1048-.png",
+      "alt": "URTICA - LPD1048 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD-1049.png",
+      "alt": "FAGUS - LPD1049 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1050.png",
+      "alt": "CEDRUS - LPD1050 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1052.png",
+      "alt": "NERIUM - LPD1052 / 60W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1053-D-.png",
+      "alt": "VITALBE - LPD1053 / 2 x 125W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1054.png",
+      "alt": "SOLIDA - LPD1054 / 2 x 110W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/LPD1055_yeni_3.png",
+      "alt": "CUPRESUS - LPD1055 / 50W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1056.png",
+      "alt": "CLEMATIS - LPD1056 / 2 x 110W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1057.png",
+      "alt": "FARFARA - LPD1057 / 2 x 110W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1058.png",
+      "alt": "ALPINUM - LPD1058 / 2 x 110W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1059.png",
+      "alt": "ICE - LPD1059 / 2 x 110W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/LPD1061_1.png",
+      "alt": "ALBUS - LPD1061 / 40W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Resimler-Park-Bahce/LPD1062.png",
+      "alt": "PERENNIS - LPD1064 / 2 x 30W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LPB1045.png",
+      "alt": "ALBA - LEC7026 / 10W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Diktortgen_Yere_Gomme_Armaturleri/LGA1030_yeni_1.png",
+      "alt": "SOFT - LGA1030 / 21W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/371.png",
+      "alt": "ROSA - LDU1036 / 30W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LDU12.png",
+      "alt": "GRANDIS - LDU1037 / 30W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LTA2007.png",
+      "alt": "VENUS - LTA2007 / 2 x 4W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/LPB1047_yeni_1.png",
+      "alt": "LPB1047 - CAMELLIA / 20W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LTU1001_yeni_1.png",
+      "alt": "TOPO - LTU1001 / 5W - 10W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/LTU1002_yeni_1.png",
+      "alt": "TOPO - LTU1002 / 15W - 20W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LTU1003_yeni_1.png",
+      "alt": "CARICA - LTU1003 / 10W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LTU1004_yeni_2.png",
+      "alt": "CARICA - LTU1004 / 15W - 20W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Park_Bahce_ve_Kent_Armaturleri/Aydinlatma-Direkleri/LTU1005.png",
+      "alt": "CARICA - LTU1005 / 30W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Projektorler/AGRESTIS_yeni_2.png",
+      "alt": "AGRESTIS / 50W - 100W - 150W"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Karap%C4%B1nar-SuPark%C4%B1/buyukresimm.png",
+      "alt": "Karapınar Su Parkı Türkoğlu Beledisi - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Torbal%C4%B1-Belediyesi/buyukresimm.png",
+      "alt": "Torbalı Belediyesi Barış Yapı Cadde - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Onkap%C4%B1-Beytepe-Villalari/buyukres%C4%B1mm.png",
+      "alt": "Onkapı Beytepe Villaları - ANKARA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Pakistan-Pavyonu/buyukresim.png",
+      "alt": "Pakistan Pavyonu Kültürpark - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/ayranciler_yeni_meydan_1.jpg",
+      "alt": "Ayrancılar Yeni Meydanı - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/saat-kulesi-izmir-1-4794.jpg",
+      "alt": "Tarihi Saat Kulesi - Konak / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Kefaluka_Resort_Hotel_Bodrum_MUGLA/Kefaluka_Resort_Hotel_Bodrum.jpg",
+      "alt": "Kefaluka Resort Hotel - Bodrum / MUĞLA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Yasemin-Cafe/yasem%C4%B1n1.png",
+      "alt": "Yasemin Cafe - Bostanlı / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/7800_Otel_Cesme_Izmir/Otel-%C3%87e%C5%9Fme-Resim.jpg",
+      "alt": "7800 Otel - Çeşme / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Up_Life_Konutlari_K_MARAS_1.jpg",
+      "alt": "Up Life Konutları - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Izmir-Karabaglar-Selvili-Otoparki/otopark.jpg",
+      "alt": "Selvili Otoparkı ve Meydanı İzmir Büyükşehir Belediyesi Karabağlar / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Orman-Genel-Mudurlugu/buyuk.png",
+      "alt": "T.C. Tarım ve Orman Bakanlığı Orman Genel Müdürlüğü - ANKARA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/T3(1).jpg",
+      "alt": "Millet Meydanı Türkoğlu Belediyesi - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Is_Bankas%C4%B1_Sosyal_Tesisleri_cesme/Is_Bankasi_Sosyal_Tesisleri_cesme_Resim-1.jpg",
+      "alt": "İş Bankası Sosyal Tesisleri - Çeşme / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Integrity_insaat_Alacati_Villalari_1/Integrity_insaat_Alacati_Villalari_1.png",
+      "alt": "Integrity İnşaat Alaçatı Villaları - Alaçatı / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Alisveris-Merkezleri/Marmara-forum/Marmara-forum-Bakirkoy-resim1.jpg",
+      "alt": "Marmara Forum - Bakırköy / İSTANBUL"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Nazuat-Insaat/1.png",
+      "alt": "Nazua İnşaat Aalaçatı Villaları - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Egitim-ve-Arastirma/Yasar-Universitesi-izmir/Yasar-Universitesi-izmir-resim.jpg",
+      "alt": "Yaşar Üniversitesi - Bornova / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/10_Ekim_Aniti_Hayat_cemberi_Alsancak_izmir/10_Ekim_Aniti_Hayat_cemberi_Alsancak_izmir_1.jpg",
+      "alt": "10 Ekim Anıtı(Hayat Çemberi) - Alsancak / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Izmir_Buyuksehir_Belediyesi/560.jpg",
+      "alt": "Tramvay Durakları İzmir Büyükşehir Belediyesi - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Egitim-ve-Arastirma/izmir-Ekonomi-Universitesi/izmir-Ekonomi-Universitesi-Resim.jpg",
+      "alt": "Ekonomi Üniversitesi - Balçova / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Forbes_Caddesi_Buca_izmir/Forbes_Caddesi_Buca_izmir_.jpeg",
+      "alt": "Forbes Caddesi - Buca / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Teleferik_Balcova_izmir/Telkeferik_Resim(1).jpg",
+      "alt": "Teleferik - Balçova / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Efes_Celsus_kutuphanesi/Efes_Celsus_kutuphanesi.png",
+      "alt": "Efes Celsus Kütüphanesi - Selçuk / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Efes_Antik_Kenti/Efes_Antik_Kenti_1.png",
+      "alt": "Efes Antik Kenti - Selçuk / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/HAVELSAN_Teknoloji_Kampusu_ANKARA_/HAVELSAN_Teknoloji_Kampusu_ANKARA_1.png",
+      "alt": "Havelsan Teknoloji Kampüsü - ANKARA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/2_800x600.jpg",
+      "alt": "Fiat Plaza Marfi - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/buyuk-esenler-otogari-2-1.jpg",
+      "alt": "Büyük Esenler Otogarı - İSTANBUL"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Saygili_Rulman_izmir/Saygili_Rulman_Kemalpasa_izmir.png",
+      "alt": "Saygılı Rulman - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Kahramanmaras_Aynali_Kavsak/Maras-1.jpg",
+      "alt": "Kahramanmaraş Madalyalı Kavşak - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/tarihi-alsancak-gari-2-1.jpg",
+      "alt": "Tarihi Alsancak Garı - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/karsiyaka-1.jpg",
+      "alt": "VE Otel - Karşıyaka / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Aktepe_Kultur_Merkezi/Aktepe_Kultur_Merkezi_1.png",
+      "alt": "Aktepe Kültür Merkezi - Pamukkale Belediyesi / DENİZLİ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Hotel-Saruhan-Manisa/Saruhan-Otel.jpg",
+      "alt": "Saruhan Otel - MANİSA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Kyk-Cephe-Cevre-Aydinlatmasi-Kmaras/KYK-1-2.jpg",
+      "alt": "Yüksek Öğrenim Kredi ve Yurtlar Kurumu - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Photo-Sep-25%2C-19-39-00-(1).jpg",
+      "alt": "La Bonita Residence - Çiğli / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/On_iki_Subat_Belediyesi/Galeri/564.jpg",
+      "alt": "Onikişubat Bisiklet Yolu - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Izmir-Ege-Uni-Camii/cami1.jpg",
+      "alt": "Bilal Saygılı Camii ve Külliyesi - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Koc_%C4%B0nsaat_Gaziemir_izmir/Koc-Insaat-Resim.jpg",
+      "alt": "Koç İnşaat - Gaziemir / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/15-Temmuz-Demokrasi/Galeri.png",
+      "alt": "15 Temmuz Demokrasi Şehitleri Meydanı - Konak / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Kafe-ve-Restoranlar/La-Mahzen-Restaurant/La-Mahzen-Restaurant-Resim-1.jpg",
+      "alt": "LA Mahzen Restaurant - Torbalı / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Kocman-Uni/Kocman-Uni.png",
+      "alt": "Sıtkı Koçman Üniversitesi - MUĞLA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Kafe-ve-Restoranlar/Venedik-Cafe-izmir/Venedik-Cafe-izmir-Resim.jpg",
+      "alt": "Venedik Cafe - Balçova / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Dulkadiroglu-Belediye-Cadde/dulkadiroglu.png",
+      "alt": "Dulkadiroğlu Belediyesi Cadde Aydınlatması - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Sir_Giyim_Sarn%C4%B1c_izmir/Sir-Giyim-Sarnic-izmir-Resim-1.jpg",
+      "alt": "Sir Giyim - Sarnıç / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Egitim-ve-Arastirma/Yuksek-teknoloji-enstitusu/Yuksek-teknoloji-enstitusu-Resim.jpg",
+      "alt": "Yüksek Teknoloji Enstitüsü - Urla / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Can_Otel_CANAKKALE/LDU1010_ten_sonra_1.jpg",
+      "alt": "Çan Otel - ÇANAKKALE"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Mev-Koleji/mevkoleji.png",
+      "alt": "MEV Koleji - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Egitim-ve-Arastirma/Doga-Koleji/Doga-Koleji-Resim1.jpg",
+      "alt": "Doğa Koleji - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Alisveris-Merkezleri/Tutkuaz-AVM-Bursa/Tutkuaz-AVM-Bursa-Resim-1.jpg",
+      "alt": "Turkuaz AVM - BURSA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Eskisehir_osb_1.jpg",
+      "alt": "Eskişehir OSB İdari Bina Çevre Aydınlatmaları - ESKİŞEHİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Kent-ve-Acik-Alanlar/Sehir-parki-karsiyaka/Sehir-parki-karsiyaka-Resim.jpg",
+      "alt": "Şehir Parkı - Karşıyaka / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Kent-ve-Acik-Alanlar/Bursa-Sehir-Parki/Bursa-Sehir-parki-Resim.jpg",
+      "alt": "Şehir Parkı - BURSA"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Diyanet-%C4%B0sleri-Denizli/diyanet1.png",
+      "alt": "T.C. Diyanet İşleri Başkanlığı Denizli Dini Yüksek İhtisas Merkezi - DENİZLİ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/yeni%20referanslar/bilinmeyen%20park/%C3%A7e%C5%9Fme%20villa/emmio%C4%9Flu%20mermer/glass%20cam/IMG-20200529-161809-1.jpg",
+      "alt": "Glas Cam Fabrikası - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Metas-Seracilik/buyukk.png",
+      "alt": "Metaş Seracılık Fabrika Binası - Menderes / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Simal-Tekstil-Avm/buyukk.png",
+      "alt": "Şimal Tekstil Westpark AVM - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Istanbul-Market/buyukk.png",
+      "alt": "Istanbul Market - Ohio Columbus / ABD"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Ekran-Al%C4%B1nt%C4%B1s%C4%B1(6).jpg",
+      "alt": "İzmir Büyükşehir Belediyesi, 150. Yıl Sergi Salonu - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Ramsa-Home-Garden/buyukk.png",
+      "alt": "Ramsa Mobilya Home Garden - Menemen / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Milli-Gazete/buyukk.png",
+      "alt": "Milli Gazete Genel Merkez Binası - İSTANBUL"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Cadde_75_Otel_Alacati_IZMIR/LSU1002_ten_sonra.jpg",
+      "alt": "Cadde 75 Otel - Alaçatı / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Mai_Residence_Gaziemir_izmir/Mai_Residence_Gaziemir_Resim(1).jpg",
+      "alt": "Mia Residence - Gaziemir / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Soyak_Sosyal_Tesisleri_Urla_izmir/Soyak_Sosyal_Tesisleri_Urla_Resim.jpg",
+      "alt": "Soyak Sosyal Tesisleri - Urla / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/asdsad.jpg",
+      "alt": "Çanakkale Şehitliği - ÇANAKKALE"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/CINE-OTOGARI.jpg",
+      "alt": "Çine Otogarı - AYDIN"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Torbali_1.jpg",
+      "alt": "Torbalı Belediyesi Cadde Aydınlatmaları - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/gurmar.jpg",
+      "alt": "Gürmar Marketler Zinciri - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/birikim-koleji-1.jpg",
+      "alt": "Birikim Koleji - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bp1(1).jpg",
+      "alt": "Ekiciler BP Akaryakıt İstasyonu - Bornova / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Akcay-Yasa-AVM/4.jpg",
+      "alt": "Akçay Yasa AVM - BALIKESİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/Onikisubat-Belediyesi-Tekerek-Meydani/Meydan.jpg",
+      "alt": "Onikişubat Belediyesi Tekerek Meydanı - KAHRAMANMARAŞ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/yeni%20referanslar/bilinmeyen%20park/%C3%A7e%C5%9Fme%20villa/IMG-20201007-WA0000.jpg",
+      "alt": "VİLLA - Çeşme / İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/PROJELER/yeni%20referanslar/bilinmeyen%20park/%C3%A7e%C5%9Fme%20villa/emmio%C4%9Flu%20mermer/IMG-20200130-WA0015.jpg",
+      "alt": "Emmioğlu Mermer Fabrikası - İZMİR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/izmir.jpg",
+      "alt": "İZMİR TARİHİ SAAT KULESİ"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/fuar.jpg",
+      "alt": "Narlight - Müsiad EXPO 2020"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/fuar1.jpg",
+      "alt": "NARLIGHT ETUK 2019"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/fuar2.jpg",
+      "alt": "İŞTE İŞİMİZ RÖPORTAJI"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/narlight1.jpg",
+      "alt": "La Mahzen NARLIGHT’ı seçti"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/ak-it.jpg",
+      "alt": "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/11.jpg",
+      "alt": "Türk Firmasından Yerli Ve Milli Ürün ANTICOR"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/anticor.jpg",
+      "alt": "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/teknoloji.jpg",
+      "alt": "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek"
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/bilgi/haber/anticor1.jpg",
+      "alt": "Kapalı devre \"ANTICOR\", Kovid-19'a karşı havayı temizleyecek"
+    }
+  ],
+  "tables": [],
+  "slug": "index",
+  "urlPath": "/index",
+  "category": "other"
+}
