@@ -1813,9 +1813,32 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; 
    any desktop CSS animation that might otherwise race.
    ============================================================ */
 @media (max-width: 1024px) {
-  /* Light sweep is a 40px-blur skewed gradient — too expensive for
-     mobile GPUs. Drop it completely. */
+  /* Desktop light sweep uses a 40px blur — too heavy for mobile GPUs.
+     Replace it with the .mobile-hero-sweep element (injected by
+     site.js) which uses a plain translate on a warm gradient — very
+     cheap and still reads as a dramatic beam pass across the stage. */
   .hero-v2 .hero-sweep { display: none; }
+  .hero-v2 .mobile-hero-sweep {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 70%;
+    height: 120%;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255, 200, 130, 0.18) 42%,
+      rgba(255, 220, 170, 0.35) 50%,
+      rgba(255, 200, 130, 0.18) 58%,
+      transparent 80%
+    );
+    mix-blend-mode: screen;
+    transform: translateX(-110%) skewX(-14deg);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
 
   /* Kill every desktop CSS animation on mobile so it can't fight
      the WAAPI-driven JS animations. */

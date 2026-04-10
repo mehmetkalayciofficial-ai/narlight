@@ -87,65 +87,159 @@
     return MOBILE_ANIM_MQ ? MOBILE_ANIM_MQ.matches : window.innerWidth <= 1024;
   }
 
-  // Descriptors for each mobile hero animation. `from` is the initial
-  // state (mirrors what CSS has as opacity:0 etc.) and `to` is the
-  // final rendered state.
+  // Descriptors for each mobile hero animation. Each entry lists a
+  // selector plus an array of keyframes. Uses WAAPI (Element.animate)
+  // so every animatable property — opacity, transform, filter, color,
+  // text-shadow — interpolates smoothly on Samsung Internet, Android
+  // Chrome, iPhone Safari, every modern mobile browser.
+  //
+  // This is the "cinematic warm-up" choreography: the stage image
+  // fades and brightens from a dark sepia blur into clean light, the
+  // eyebrow ignites from brown to amber, the headline focuses from
+  // a soft blur into sharp white, and the accent word finishes
+  // igniting with a neon glow.
+  const EASE_OUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
   const MOBILE_HERO_ITEMS = [
-    { sel: '.hero-v2 .hero-bg-image.hero-warmup-img', delay: 0,    duration: 900,
-      from: { opacity: 0, transform: 'scale(1.04)' },
-      to:   { opacity: 1, transform: 'scale(1)' } },
-    { sel: '.hero-v2 .hero-warmup-eyebrow',            delay: 200,  duration: 500,
-      from: { opacity: 0, transform: 'translateY(6px)' },
-      to:   { opacity: 1, transform: 'translateY(0)' } },
-    { sel: '.hero-v2 .hero-warmup-title',              delay: 400,  duration: 700,
-      from: { opacity: 0, transform: 'translateY(12px)' },
-      to:   { opacity: 1, transform: 'translateY(0)' } },
-    { sel: '.hero-v2 .hero-warmup-accent',             delay: 700,  duration: 700,
-      from: { opacity: 0 },
-      to:   { opacity: 1 } },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="1"]',   delay: 900,  duration: 600,
-      from: { opacity: 0, transform: 'translateY(12px)' },
-      to:   { opacity: 1, transform: 'translateY(0)' } },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="2"]',   delay: 1000, duration: 600,
-      from: { opacity: 0, transform: 'translateY(12px)' },
-      to:   { opacity: 1, transform: 'translateY(0)' } },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="3"]',   delay: 1100, duration: 600,
-      from: { opacity: 0, transform: 'translateY(12px)' },
-      to:   { opacity: 1, transform: 'translateY(0)' } },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="4"]',   delay: 1200, duration: 600,
-      from: { opacity: 0, transform: 'translateY(12px)' },
-      to:   { opacity: 1, transform: 'translateY(0)' } },
+    // Stage image: cinematic "lights coming on" — fade in, scale
+    // down, brighten, and defocus at the same time.
+    {
+      sel: '.hero-v2 .hero-bg-image.hero-warmup-img',
+      delay: 0,
+      duration: 1800,
+      keyframes: [
+        { opacity: 0,   transform: 'scale(1.08)', filter: 'brightness(0.22) blur(10px) saturate(1.3)' },
+        { opacity: 0.6, offset: 0.35 },
+        { opacity: 1,   transform: 'scale(1)',    filter: 'brightness(1) blur(0) saturate(1)' },
+      ],
+    },
+    // Light sweep overlay: a warm beam that passes once across the
+    // hero, like a stage spotlight pass. Injected into the DOM by
+    // ensureMobileSweep() below so mobile has its own dedicated
+    // element (the CSS .hero-sweep is display:none on mobile).
+    {
+      sel: '.hero-v2 .mobile-hero-sweep',
+      delay: 500,
+      duration: 1800,
+      keyframes: [
+        { transform: 'translateX(-110%) skewX(-14deg)', opacity: 0 },
+        { opacity: 0.9, offset: 0.3 },
+        { opacity: 0.9, offset: 0.7 },
+        { transform: 'translateX(210%) skewX(-14deg)',  opacity: 0 },
+      ],
+    },
+    // Eyebrow: dim brown filament → bright amber glow
+    {
+      sel: '.hero-v2 .hero-warmup-eyebrow',
+      delay: 500,
+      duration: 1100,
+      keyframes: [
+        { opacity: 0, transform: 'translateY(8px)', color: 'rgba(120, 75, 30, 0)' },
+        { opacity: 0.7, color: 'rgba(190, 115, 45, 0.85)', offset: 0.5 },
+        { opacity: 1, transform: 'translateY(0)',   color: 'rgb(255, 179, 71)' },
+      ],
+    },
+    // H1 title (all three lines): filament warm-up — dark warm gray
+    // out of a soft blur into clean warm white
+    {
+      sel: '.hero-v2 .hero-warmup-title',
+      delay: 700,
+      duration: 1500,
+      keyframes: [
+        { opacity: 0,   transform: 'translateY(22px)', filter: 'blur(8px)', color: 'rgba(150, 90, 40, 0.2)' },
+        { opacity: 0.7, filter: 'blur(3px)',           color: 'rgba(180, 120, 60, 0.6)',   offset: 0.4 },
+        { opacity: 1,   filter: 'blur(0)',             color: 'rgba(230, 200, 160, 0.95)', offset: 0.75 },
+        { opacity: 1,   transform: 'translateY(0)',    filter: 'blur(0)', color: 'rgb(255, 255, 255)' },
+      ],
+    },
+    // Accent word "aydınlatan": dim amber → full neon glow ignite
+    {
+      sel: '.hero-v2 .hero-warmup-accent',
+      delay: 1400,
+      duration: 1200,
+      keyframes: [
+        { opacity: 0, color: 'rgba(180, 120, 60, 0.35)', textShadow: '0 0 0 rgba(255,179,71,0)' },
+        { opacity: 0.7, color: 'rgba(220, 150, 80, 0.85)',
+          textShadow: '0 0 8px rgba(255,179,71,0.35), 0 0 18px rgba(255,179,71,0.18)', offset: 0.5 },
+        { opacity: 1, color: 'rgb(255, 179, 71)',
+          textShadow: '0 0 16px rgba(255,179,71,0.6), 0 0 38px rgba(255,179,71,0.35), 0 0 78px rgba(255,179,71,0.18)' },
+      ],
+    },
+    // Lede, actions, carousel, stats — gentle stagger fade-up
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="1"]', delay: 1700, duration: 800,
+      keyframes: [
+        { opacity: 0, transform: 'translateY(16px)', filter: 'blur(3px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+      ] },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="2"]', delay: 1850, duration: 800,
+      keyframes: [
+        { opacity: 0, transform: 'translateY(16px)', filter: 'blur(3px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+      ] },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="3"]', delay: 2000, duration: 900,
+      keyframes: [
+        { opacity: 0, transform: 'translateY(20px)', filter: 'blur(3px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+      ] },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="4"]', delay: 2150, duration: 800,
+      keyframes: [
+        { opacity: 0, transform: 'translateY(16px)', filter: 'blur(3px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+      ] },
   ];
+
+  // Build the one-shot mobile light sweep element if it's missing.
+  // It sits at z-index above the bg image but below the text, and
+  // gets animated once by the WAAPI keyframes above, then removed.
+  function ensureMobileSweep() {
+    const hero = document.querySelector('.hero-v2');
+    if (!hero) return null;
+    let sweep = hero.querySelector('.mobile-hero-sweep');
+    if (sweep) return sweep;
+    sweep = document.createElement('div');
+    sweep.className = 'mobile-hero-sweep';
+    sweep.setAttribute('aria-hidden', 'true');
+    hero.appendChild(sweep);
+    return sweep;
+  }
 
   function runMobileHeroAnimations() {
     const canAnimate = typeof Element !== 'undefined' && Element.prototype && typeof Element.prototype.animate === 'function';
+    ensureMobileSweep();
     for (let i = 0; i < MOBILE_HERO_ITEMS.length; i++) {
       const item = MOBILE_HERO_ITEMS[i];
       const el = document.querySelector(item.sel);
       if (!el) continue;
       if (canAnimate) {
         try {
-          el.animate([item.from, item.to], {
+          el.animate(item.keyframes, {
             duration: item.duration,
             delay: item.delay,
-            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            easing: EASE_OUT,
             fill: 'forwards',
           });
         } catch (e) {
-          // WAAPI failed — fall back to inline style
+          // WAAPI failed — fall back to inline style at end state
+          const last = item.keyframes[item.keyframes.length - 1];
           setTimeout(function () {
-            Object.assign(el.style, item.to);
+            Object.assign(el.style, last);
             el.style.opacity = '1';
           }, item.delay + item.duration);
         }
       } else {
-        // Ancient browser: just show it after the delay
+        // Ancient browser: skip the tween, jump to final state
+        const last = item.keyframes[item.keyframes.length - 1];
         setTimeout(function () {
-          Object.assign(el.style, item.to);
+          Object.assign(el.style, last);
           el.style.opacity = '1';
         }, item.delay);
       }
     }
+    // Remove the sweep element after its animation so it doesn't
+    // sit in the DOM forever.
+    setTimeout(function () {
+      const sweep = document.querySelector('.hero-v2 .mobile-hero-sweep');
+      if (sweep && sweep.parentNode) sweep.parentNode.removeChild(sweep);
+    }, 2600);
   }
 
   // Force every hero animation target to its final visible state.
@@ -166,6 +260,7 @@
         const n = nodes[j];
         n.style.opacity = '1';
         n.style.transform = 'none';
+        n.style.filter = 'none';
       }
     }
   }
