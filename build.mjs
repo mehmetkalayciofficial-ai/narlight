@@ -207,30 +207,41 @@ writePage('404.html', renderLayout({
 
 // ---------- Copy runtime assets into dist/ ----------
 // Vercel (and any static host) serves from a single output directory, so we
-// need to materialise everything the generated HTML references inside dist/.
-// Locally, serve.mjs can still pass through from the project root.
-function copyDir(src, dest) {
+// materialise everything the generated HTML references inside dist/.
+// Images: only the optimised .webp variants (+ svg/gif) get copied; the
+// heavy .png/.jpg originals stay in source for reference.
+function copyDir(src, dest, filter) {
   if (!fs.existsSync(src)) return 0;
   fs.mkdirSync(dest, { recursive: true });
   let count = 0;
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
     const s = path.join(src, entry.name);
     const d = path.join(dest, entry.name);
-    if (entry.isDirectory()) count += copyDir(s, d);
-    else { fs.copyFileSync(s, d); count++; }
+    if (entry.isDirectory()) count += copyDir(s, d, filter);
+    else if (!filter || filter(entry.name)) { fs.copyFileSync(s, d); count++; }
   }
   return count;
 }
+
 const assetsCopied = copyDir('assets', path.join(DIST, 'assets'));
-// Only ship the brand_assets bits the site actually references.
+
+// Loose brand files.
 fs.mkdirSync(path.join(DIST, 'brand_assets'), { recursive: true });
 for (const f of ['logo.svg', 'logo-original.png', 'favicon.ico']) {
   if (fs.existsSync(path.join('brand_assets', f))) {
     fs.copyFileSync(path.join('brand_assets', f), path.join(DIST, 'brand_assets', f));
   }
 }
-const imagesCopied = copyDir(path.join('brand_assets', 'images'), path.join(DIST, 'brand_assets', 'images'));
-console.log(`  copied ${assetsCopied} assets + ${imagesCopied} images into dist/`);
+
+// Only ship optimised image formats — skip the ~156 MB of heavy PNG/JPG
+// originals now that every image has a .webp companion.
+const webpFilter = (name) => /\.(webp|svg|gif|ico)$/i.test(name);
+const imagesCopied = copyDir(
+  path.join('brand_assets', 'images'),
+  path.join(DIST, 'brand_assets', 'images'),
+  webpFilter,
+);
+console.log(`  copied ${assetsCopied} assets + ${imagesCopied} images (webp/svg only) into dist/`);
 
 // ---------- robots.txt ----------
 fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: /sitemap.xml\n');

@@ -15,15 +15,15 @@ const menus = {
       eyebrow: 'Marka Hikayesi',
       title: 'Çeyrek asırdır ışığın imzası.',
       href: '/kurumsal/',
-      bg: '/brand_assets/images/PROJELER/Izmir-Saat-Kulesi/izmir-kule-slide.jpg',
+      bg: '/brand_assets/images/PROJELER/Izmir-Saat-Kulesi/izmir-kule-slide.webp',
     },
     sections: [
       {
         title: 'Şirket',
         items: [
-          { href: '/kurumsal/', label: 'Hakkımızda', desc: 'Misyon, vizyon ve hikaye', thumb: '/brand_assets/images/PROJELER/HAVELSAN_Teknoloji_Kampusu_ANKARA_/HAVELSAN_Teknoloji_Kampusu_ANKARA_2.png' },
-          { href: '/kurumsal/cozumlerimiz/', label: 'Çözümlerimiz', desc: 'Saha incelemesinden teslime', thumb: '/brand_assets/images/PROJELER/Aktepe_Kultur_Merkezi/Aktepe_Kultur_Merkezi_1.png' },
-          { href: '/kurumsal/aydinlatma-tasarimi/', label: 'Aydınlatma Tasarımı', desc: 'Işık simülasyonu ve ar-ge', thumb: '/brand_assets/images/PROJELER/Efes_Antik_Kenti/Efes_Antik_Kenti_1.png' },
+          { href: '/kurumsal/', label: 'Hakkımızda', desc: 'Misyon, vizyon ve hikaye', thumb: '/brand_assets/images/PROJELER/HAVELSAN_Teknoloji_Kampusu_ANKARA_/HAVELSAN_Teknoloji_Kampusu_ANKARA_2.webp' },
+          { href: '/kurumsal/cozumlerimiz/', label: 'Çözümlerimiz', desc: 'Saha incelemesinden teslime', thumb: '/brand_assets/images/PROJELER/Aktepe_Kultur_Merkezi/Aktepe_Kultur_Merkezi_1.webp' },
+          { href: '/kurumsal/aydinlatma-tasarimi/', label: 'Aydınlatma Tasarımı', desc: 'Işık simülasyonu ve ar-ge', thumb: '/brand_assets/images/PROJELER/Efes_Antik_Kenti/Efes_Antik_Kenti_1.webp' },
         ],
       },
       {
@@ -54,15 +54,15 @@ const menus = {
       eyebrow: 'Yeni Ürünler 2025',
       title: 'AGRESTIS projektör serisi.',
       href: '/urunler/urun/agrestis/',
-      bg: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2.png',
+      bg: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2.webp',
     },
     sections: [
       {
         title: 'Dış Aydınlatma',
         items: [
-          { href: '/urunler/aydinlatma-direkleri/', label: 'Aydınlatma Direkleri', desc: '4–12m park, cadde ve meydan direkleri', thumb: '/brand_assets/images/PROJELER/Cine-Otogari/Cine-Otogari.jpg' },
-          { href: '/urunler/mimari-projektorler/', label: 'Mimari Projektörler', desc: 'AGRESTIS, GLAUCA, ELATA', thumb: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2.png' },
-          { href: '/urunler/park-bahce-armaturleri/', label: 'Park & Bahçe', desc: 'Bollard ve dekoratif seriler', thumb: '/brand_assets/images/PROJELER/Karapinar-SuParki/buyukresimm.png' },
+          { href: '/urunler/aydinlatma-direkleri/', label: 'Aydınlatma Direkleri', desc: '4–12m park, cadde ve meydan direkleri', thumb: '/brand_assets/images/PROJELER/Cine-Otogari/Cine-Otogari.webp' },
+          { href: '/urunler/mimari-projektorler/', label: 'Mimari Projektörler', desc: 'AGRESTIS, GLAUCA, ELATA', thumb: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2.webp' },
+          { href: '/urunler/park-bahce-armaturleri/', label: 'Park & Bahçe', desc: 'Bollard ve dekoratif seriler', thumb: '/brand_assets/images/PROJELER/Karapinar-SuParki/buyukresimm.webp' },
         ],
       },
       {
@@ -95,15 +95,15 @@ const menus = {
       eyebrow: 'Öne Çıkan Proje',
       title: '15 Temmuz Demokrasi Şehitleri Meydanı',
       href: '/projeler/15-temmuz-demokrasi-sehitleri-meydani/',
-      bg: '/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.png',
+      bg: '/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.webp',
     },
     sections: [
       {
         title: 'Kategoriler',
         items: [
-          { href: '/projeler/?tip=cami', label: 'Cami & Kulliye', desc: '15+ tarihi ve modern cami projesi', thumb: '/brand_assets/images/PROJELER/Izmir-Ege-Uni-Camii/1.jpg' },
-          { href: '/projeler/?tip=meydan', label: 'Kent Meydanları', desc: 'Türkiye genelinde 30+ meydan', thumb: '/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.png' },
-          { href: '/projeler/?tip=tarihi', label: 'Tarihi Yapılar', desc: 'Efes, Saat Kulesi, Anıtkabir', thumb: '/brand_assets/images/PROJELER/Efes_Celsus_kutuphanesi/Efes_Celsus_kutuphanesi.png' },
+          { href: '/projeler/?tip=cami', label: 'Cami & Kulliye', desc: '15+ tarihi ve modern cami projesi', thumb: '/brand_assets/images/PROJELER/Izmir-Ege-Uni-Camii/1.webp' },
+          { href: '/projeler/?tip=meydan', label: 'Kent Meydanları', desc: 'Türkiye genelinde 30+ meydan', thumb: '/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.webp' },
+          { href: '/projeler/?tip=tarihi', label: 'Tarihi Yapılar', desc: 'Efes, Saat Kulesi, Anıtkabir', thumb: '/brand_assets/images/PROJELER/Efes_Celsus_kutuphanesi/Efes_Celsus_kutuphanesi.webp' },
         ],
       },
       {
