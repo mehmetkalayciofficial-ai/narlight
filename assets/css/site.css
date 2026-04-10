@@ -1299,18 +1299,16 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 }
 
 /* ---------- Word emphasis: warm neon glow (eye-comfortable) ---------- */
-/* The accent word always glows in warm amber. On dark backgrounds the
-   bright #FFB347 reads naturally; on light backgrounds it gets a slightly
-   deeper amber + a stronger halo so the word still pops without straining
-   eyes. Halo is tuned to be "lit", not "blurry". */
+/* The accent word always glows in the brand amber #FFB347 — same colour
+   on every background. The halo strength is tuned per surface so the
+   word reads as "lit" without straining the eye. */
 .glow {
   font-style: normal !important;
-  color: #C26B0A; /* deeper warm amber — readable on white, AA-large compliant */
+  color: var(--color-glow); /* brand amber #FFB347 everywhere */
   text-shadow:
-    0 0 14px rgba(255, 179, 71, 0.7),
-    0 0 28px rgba(255, 179, 71, 0.5),
-    0 0 60px rgba(255, 179, 71, 0.28),
-    0 0 110px rgba(255, 179, 71, 0.14);
+    0 0 14px rgba(255, 179, 71, 0.6),
+    0 0 32px rgba(255, 179, 71, 0.32),
+    0 0 70px rgba(255, 179, 71, 0.18);
 }
 .bg-ink .glow,
 .hero-v2 .glow,
