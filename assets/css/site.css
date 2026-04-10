@@ -1425,7 +1425,10 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   margin: 32px 0 0;
   gap: 0;
   line-height: 0.86;
-  font-size: clamp(60px, 8vw, 124px);
+  font-size: clamp(60px, 7vw, 116px);
+  /* Safety: if the JS fit ever miscalculates, clip overflow rather
+     than let a line bleed into the carousel column. */
+  overflow: hidden;
 }
 .hero-v2 h1.hero-title-fit .hero-line {
   display: block;
@@ -1650,19 +1653,19 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 }
 
 /* Hero stage warm-up — entire image element transitions from
-   "cold dim sepia" to "warm clean light". Includes opacity tween
-   so the base-state opacity:0 is lifted when the animation runs. */
+   "cold dim sepia" to "warm clean light". The image is VISIBLE
+   (opacity 1) throughout, just very dark/blurred/sepia at the
+   start, so the "lights coming on" metaphor reads as an image
+   that's there-but-dim brightening into place — not a black
+   fade-in. */
 @keyframes hero-img-warmup {
   0% {
-    filter: brightness(0.18) blur(12px) sepia(0.7) saturate(1.4) contrast(1.1);
+    filter: brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15);
     transform: scale(1.08);
-    opacity: 0;
-  }
-  20% {
     opacity: 1;
   }
   60% {
-    filter: brightness(0.5) blur(4px) sepia(0.4) saturate(1.2) contrast(1.05);
+    filter: brightness(0.5) blur(5px) sepia(0.38) saturate(1.2) contrast(1.05);
     transform: scale(1.04);
     opacity: 1;
   }
@@ -1672,21 +1675,36 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
     opacity: 1;
   }
 }
-/* Initial hidden state for all hero warm-up targets.
+/* Initial hidden state for hero warm-up text targets.
    The animation/transition that unhides them lives inside
    html.is-ready rules below, so before JS adds the class they
    are simply invisible. This avoids the Samsung Internet bug
    where `animation-play-state: paused` combined with a long
    animation-delay could leave elements invisible forever.
-   NOTE: .hero-warmup-accent is NOT in this list — it's a child
+   NOTE 1: .hero-warmup-accent is NOT in this list — it's a child
    of .hero-warmup-title, so its parent's opacity:0 already hides
-   it via the stacking context. The accent's own animation only
-   tweens color/text-shadow, not opacity. */
+   it via the stacking context.
+   NOTE 2: .hero-bg-image.hero-warmup-img is also NOT in this list.
+   It's VISIBLE from the start but with a dark-sepia blur filter
+   (see below). The warm-up animation brightens and clears that
+   filter, producing the "lights coming on" reveal. Fading it in
+   from opacity 0 would look like a black flash — not the effect
+   we want. */
 .hero-v2 .hero-warmup-eyebrow,
 .hero-v2 .hero-warmup-title,
-.hero-v2 .hero-warmup-fade,
-.hero-bg-image.hero-warmup-img {
+.hero-v2 .hero-warmup-fade {
   opacity: 0;
+}
+
+/* Initial dark-sepia state for the hero background image. Matches
+   the 0% keyframe of hero-img-warmup (desktop) and the first
+   keyframe of the WAAPI bg animation (mobile). The image is fully
+   opaque but deeply dimmed/blurred so the animation can reveal
+   it by brightening rather than fading in. */
+.hero-v2 .hero-bg-image.hero-warmup-img {
+  opacity: 1;
+  filter: brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15);
+  transform: scale(1.08);
 }
 
 /* Desktop-only rich animations (>=1025px). Applied only when
@@ -1813,31 +1831,24 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; 
    any desktop CSS animation that might otherwise race.
    ============================================================ */
 @media (max-width: 1024px) {
-  /* Desktop light sweep uses a 40px blur — too heavy for mobile GPUs.
-     Replace it with the .mobile-hero-sweep element (injected by
-     site.js) which uses a plain translate on a warm gradient — very
-     cheap and still reads as a dramatic beam pass across the stage. */
+  /* Desktop uses .hero-sweep::before which has a 40px blur — heavy
+     for mobile GPUs. We replace it with .mobile-hero-sweep (injected
+     by site.js) which uses the SAME warm gradient and blur strength
+     so mobile visually matches desktop, but animated via WAAPI. */
   .hero-v2 .hero-sweep { display: none; }
   .hero-v2 .mobile-hero-sweep {
     position: absolute;
-    top: -10%;
-    left: 0;
-    width: 70%;
-    height: 120%;
+    top: -20%;
+    left: -50%;
+    width: 60%;
+    height: 140%;
     pointer-events: none;
     z-index: 2;
-    background: linear-gradient(
-      110deg,
-      transparent 20%,
-      rgba(255, 200, 130, 0.18) 42%,
-      rgba(255, 220, 170, 0.35) 50%,
-      rgba(255, 200, 130, 0.18) 58%,
-      transparent 80%
-    );
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 200, 130, 0.22) 50%, transparent 70%);
     mix-blend-mode: screen;
-    transform: translateX(-110%) skewX(-14deg);
-    opacity: 0;
-    will-change: transform, opacity;
+    filter: blur(30px);
+    transform: translateX(-100%) skewX(-12deg);
+    will-change: transform;
   }
 
   /* Kill every desktop CSS animation on mobile so it can't fight
@@ -1859,34 +1870,37 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; 
     transition: none !important;
   }
 
-  /* Initial "off" state so the hero isn't visible until the JS
-     WAAPI call kicks in. These property values mirror the `from`
-     keyframe in MOBILE_HERO_ITEMS in site.js. */
+  /* Initial "off" state on mobile — mirrors the first keyframe of
+     each WAAPI animation in MOBILE_HERO_ITEMS (site.js). Must match
+     EXACTLY or the user sees a flash between CSS and WAAPI state.
+
+     Background image is visible (opacity 1) but deeply dim/sepia/
+     blurred, matching the hero-img-warmup 0% keyframe. It brightens
+     into clean light via WAAPI. */
   .hero-bg-image.hero-warmup-img {
-    opacity: 0;
-    transform: scale(1.04);
+    opacity: 1;
+    filter: brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15);
+    transform: scale(1.08);
   }
   .hero-v2 .hero-warmup-eyebrow {
-    color: var(--color-glow);
+    color: rgba(110, 70, 30, 0);
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   .hero-v2 .hero-warmup-title {
-    color: var(--color-paper);
+    color: rgba(150, 90, 40, 0.15);
+    filter: blur(8px);
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(24px);
   }
   .hero-v2 .hero-warmup-accent {
-    color: var(--color-glow);
-    text-shadow:
-      0 0 16px rgba(255, 179, 71, 0.55),
-      0 0 38px rgba(255, 179, 71, 0.3),
-      0 0 78px rgba(255, 179, 71, 0.16);
-    opacity: 0;
+    color: rgba(180, 120, 60, 0.35);
+    text-shadow: none;
   }
   .hero-v2 .hero-warmup-fade {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(18px);
+    filter: blur(4px);
   }
 
   /* Reduce backdrop-blur cost on mobile */

@@ -50,21 +50,43 @@
     const availableWidth = h1.clientWidth;
     if (availableWidth <= 0) return;
 
-    // Target width: fit the longest line to the container (with a
-    // small safety margin) but cap the scale-up so we don't turn a
-    // 40px hero into a 200px monster on ultra-wide viewports.
-    const MAX_SCALE = 1.55;
-    const targetWidth = Math.min(availableWidth * 0.96, naturalMax * MAX_SCALE);
+    // Target width: fit the longest line to the container with a
+    // safety margin. Heavy-weight display fonts don't scale
+    // perfectly linearly, so the first pass below is followed by an
+    // iterative correction that re-measures and shrinks anything
+    // that exceeded the target. Cap the scale-up so we don't turn
+    // a 40px hero into a 200px monster on ultra-wide viewports.
+    const MAX_SCALE = 1.5;
+    const SAFETY = 0.92;
+    const targetWidth = Math.min(availableWidth * SAFETY, naturalMax * MAX_SCALE);
 
-    // Scale each line independently so its rendered width equals
-    // targetWidth. Shorter lines get larger font-sizes; the longest
-    // line gets the smallest scale factor.
+    // First pass — scale each line so its rendered width should
+    // match targetWidth (based on linear-scale assumption).
     for (let i = 0; i < lines.length; i++) {
       const w = widths[i];
       if (w <= 0) continue;
       const ratio = targetWidth / w;
       const newSize = baseFontSize * ratio;
       lines[i].style.fontSize = newSize.toFixed(2) + 'px';
+    }
+
+    // Iterative correction — re-measure and if any line exceeded
+    // targetWidth (font metrics don't scale linearly at extreme
+    // weights), apply a proportional shrink. Run up to 3 passes
+    // to converge on the true target.
+    for (let iter = 0; iter < 3; iter++) {
+      void h1.offsetWidth; // flush layout
+      let needsCorrection = false;
+      for (let i = 0; i < lines.length; i++) {
+        const currentWidth = lines[i].getBoundingClientRect().width;
+        if (currentWidth > targetWidth + 0.5) {
+          const correction = targetWidth / currentWidth;
+          const currentSize = parseFloat(lines[i].style.fontSize);
+          lines[i].style.fontSize = (currentSize * correction).toFixed(2) + 'px';
+          needsCorrection = true;
+        }
+      }
+      if (!needsCorrection) break;
     }
   }
 
@@ -87,103 +109,107 @@
     return MOBILE_ANIM_MQ ? MOBILE_ANIM_MQ.matches : window.innerWidth <= 1024;
   }
 
-  // Descriptors for each mobile hero animation. Each entry lists a
-  // selector plus an array of keyframes. Uses WAAPI (Element.animate)
-  // so every animatable property — opacity, transform, filter, color,
-  // text-shadow — interpolates smoothly on Samsung Internet, Android
-  // Chrome, iPhone Safari, every modern mobile browser.
-  //
-  // This is the "cinematic warm-up" choreography: the stage image
-  // fades and brightens from a dark sepia blur into clean light, the
-  // eyebrow ignites from brown to amber, the headline focuses from
-  // a soft blur into sharp white, and the accent word finishes
-  // igniting with a neon glow.
+  // Descriptors for each mobile hero animation. These mirror the
+  // desktop CSS @keyframes (hero-img-warmup, hero-sweep-pass,
+  // hero-eyebrow-warmup, hero-heading-warmup, hero-accent-ignite,
+  // hero-fade-up) EXACTLY — same keyframe values, same durations,
+  // same delays. The only reason they exist as WAAPI calls on
+  // mobile is that CSS @keyframes is not reliable on Samsung
+  // Internet / older Android Chrome, so we drive the same effect
+  // from JS instead.
   const EASE_OUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
   const MOBILE_HERO_ITEMS = [
-    // Stage image: cinematic "lights coming on" — fade in, scale
-    // down, brighten, and defocus at the same time.
+    // Stage image: matches desktop @keyframes hero-img-warmup
+    // (2200ms, no delay). Image is visible but deeply dimmed and
+    // blurred, then brightens and focuses into place.
     {
       sel: '.hero-v2 .hero-bg-image.hero-warmup-img',
       delay: 0,
-      duration: 1800,
+      duration: 2200,
       keyframes: [
-        { opacity: 0,   transform: 'scale(1.08)', filter: 'brightness(0.22) blur(10px) saturate(1.3)' },
-        { opacity: 0.6, offset: 0.35 },
-        { opacity: 1,   transform: 'scale(1)',    filter: 'brightness(1) blur(0) saturate(1)' },
+        { opacity: 1, transform: 'scale(1.08)', filter: 'brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15)', offset: 0 },
+        { opacity: 1, transform: 'scale(1.04)', filter: 'brightness(0.5) blur(5px) sepia(0.38) saturate(1.2) contrast(1.05)', offset: 0.6 },
+        { opacity: 1, transform: 'scale(1)',    filter: 'brightness(1) blur(0) sepia(0) saturate(1) contrast(1)', offset: 1 },
       ],
     },
-    // Light sweep overlay: a warm beam that passes once across the
-    // hero, like a stage spotlight pass. Injected into the DOM by
-    // ensureMobileSweep() below so mobile has its own dedicated
-    // element (the CSS .hero-sweep is display:none on mobile).
+    // Light sweep: matches desktop @keyframes hero-sweep-pass
+    // (2400ms duration, 400ms delay). The .mobile-hero-sweep
+    // element is injected into the DOM by ensureMobileSweep().
     {
       sel: '.hero-v2 .mobile-hero-sweep',
-      delay: 500,
-      duration: 1800,
+      delay: 400,
+      duration: 2400,
       keyframes: [
-        { transform: 'translateX(-110%) skewX(-14deg)', opacity: 0 },
-        { opacity: 0.9, offset: 0.3 },
-        { opacity: 0.9, offset: 0.7 },
-        { transform: 'translateX(210%) skewX(-14deg)',  opacity: 0 },
+        { transform: 'translateX(-100%) skewX(-12deg)' },
+        { transform: 'translateX(280%) skewX(-12deg)' },
       ],
     },
-    // Eyebrow: dim brown filament → bright amber glow
+    // Eyebrow: matches desktop @keyframes hero-eyebrow-warmup
+    // (1400ms, 500ms delay). Dim brown filament igniting to amber.
     {
       sel: '.hero-v2 .hero-warmup-eyebrow',
       delay: 500,
-      duration: 1100,
+      duration: 1400,
       keyframes: [
-        { opacity: 0, transform: 'translateY(8px)', color: 'rgba(120, 75, 30, 0)' },
-        { opacity: 0.7, color: 'rgba(190, 115, 45, 0.85)', offset: 0.5 },
-        { opacity: 1, transform: 'translateY(0)',   color: 'rgb(255, 179, 71)' },
+        { color: 'rgba(110, 70, 30, 0)',    opacity: 0,   transform: 'translateY(8px)', offset: 0 },
+        { color: 'rgba(170, 100, 40, 0.6)', opacity: 0.7, offset: 0.4 },
+        { color: 'rgb(255, 179, 71)',       opacity: 1,   transform: 'translateY(0)',   offset: 1 },
       ],
     },
-    // H1 title (all three lines): filament warm-up — dark warm gray
-    // out of a soft blur into clean warm white
+    // H1 title: matches desktop @keyframes hero-heading-warmup
+    // (1800ms, 700ms delay). Four-stage filament warm-up from
+    // dim blurry brown through warm gray to clean white.
     {
       sel: '.hero-v2 .hero-warmup-title',
       delay: 700,
-      duration: 1500,
+      duration: 1800,
       keyframes: [
-        { opacity: 0,   transform: 'translateY(22px)', filter: 'blur(8px)', color: 'rgba(150, 90, 40, 0.2)' },
-        { opacity: 0.7, filter: 'blur(3px)',           color: 'rgba(180, 120, 60, 0.6)',   offset: 0.4 },
-        { opacity: 1,   filter: 'blur(0)',             color: 'rgba(230, 200, 160, 0.95)', offset: 0.75 },
-        { opacity: 1,   transform: 'translateY(0)',    filter: 'blur(0)', color: 'rgb(255, 255, 255)' },
+        { color: 'rgba(150, 90, 40, 0.15)',  filter: 'blur(8px)', opacity: 0,   transform: 'translateY(24px)', offset: 0 },
+        { color: 'rgba(180, 120, 60, 0.45)', filter: 'blur(3px)', opacity: 0.7, offset: 0.35 },
+        { color: 'rgba(230, 200, 160, 0.92)', filter: 'blur(0px)', opacity: 1,  offset: 0.7 },
+        { color: 'rgb(255, 255, 255)',        filter: 'blur(0px)', opacity: 1,  transform: 'translateY(0)',    offset: 1 },
       ],
     },
-    // Accent word "aydınlatan": dim amber → full neon glow ignite
+    // Accent word: matches desktop @keyframes hero-accent-ignite
+    // (1200ms, 1500ms delay). Dim amber → full neon glow with
+    // multi-layer text-shadow halo.
     {
       sel: '.hero-v2 .hero-warmup-accent',
-      delay: 1400,
+      delay: 1500,
       duration: 1200,
       keyframes: [
-        { opacity: 0, color: 'rgba(180, 120, 60, 0.35)', textShadow: '0 0 0 rgba(255,179,71,0)' },
-        { opacity: 0.7, color: 'rgba(220, 150, 80, 0.85)',
-          textShadow: '0 0 8px rgba(255,179,71,0.35), 0 0 18px rgba(255,179,71,0.18)', offset: 0.5 },
-        { opacity: 1, color: 'rgb(255, 179, 71)',
-          textShadow: '0 0 16px rgba(255,179,71,0.6), 0 0 38px rgba(255,179,71,0.35), 0 0 78px rgba(255,179,71,0.18)' },
+        { color: 'rgba(180, 120, 60, 0.35)',
+          textShadow: 'rgba(255,179,71,0) 0px 0px 0px',
+          offset: 0 },
+        { color: 'rgba(220, 150, 80, 0.7)',
+          textShadow: 'rgba(255,179,71,0.25) 0px 0px 8px, rgba(255,179,71,0.12) 0px 0px 16px',
+          offset: 0.5 },
+        { color: 'rgb(255, 179, 71)',
+          textShadow: 'rgba(255,179,71,0.6) 0px 0px 16px, rgba(255,179,71,0.35) 0px 0px 38px, rgba(255,179,71,0.18) 0px 0px 78px',
+          offset: 1 },
       ],
     },
-    // Lede, actions, carousel, stats — gentle stagger fade-up
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="1"]', delay: 1700, duration: 800,
+    // hero-fade-up: matches desktop @keyframes hero-fade-up (900ms)
+    // Delays 1700/1850/2000/2150 for lede/actions/carousel/stats.
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="1"]', delay: 1700, duration: 900,
       keyframes: [
-        { opacity: 0, transform: 'translateY(16px)', filter: 'blur(3px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
       ] },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="2"]', delay: 1850, duration: 800,
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="2"]', delay: 1850, duration: 900,
       keyframes: [
-        { opacity: 0, transform: 'translateY(16px)', filter: 'blur(3px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
       ] },
     { sel: '.hero-v2 .hero-warmup-fade[data-d="3"]', delay: 2000, duration: 900,
       keyframes: [
-        { opacity: 0, transform: 'translateY(20px)', filter: 'blur(3px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
       ] },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="4"]', delay: 2150, duration: 800,
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="4"]', delay: 2150, duration: 900,
       keyframes: [
-        { opacity: 0, transform: 'translateY(16px)', filter: 'blur(3px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0)' },
+        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
+        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
       ] },
   ];
 
