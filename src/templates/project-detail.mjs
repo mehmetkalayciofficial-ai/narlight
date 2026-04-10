@@ -25,7 +25,7 @@ export function renderProjectDetail({ page, allProjects }) {
   <div style="position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.18) 35%, rgba(0,0,0,0.85) 100%)"></div>
   <div class="container" style="display:flex;flex-direction:column;justify-content:flex-end;min-height:100svh;padding-top:200px;padding-bottom:96px">
     <div class="hero-rev" data-d="1">
-      <a href="/projeler/" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:24px">
+      <a href="/projeler/" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;margin:0 -4px 24px -4px;font-family:var(--font-body);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Tüm Projeler
       </a>

@@ -9,7 +9,7 @@ export function renderProductCategory({ page, allProducts, allCategories }) {
 <section style="background:var(--color-ink);color:var(--color-paper);padding:160px 0 80px;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%, rgba(255,179,71,0.08), transparent 60%), radial-gradient(80% 60% at 0% 100%, rgba(26,37,90,0.5), transparent 60%);pointer-events:none"></div>
   <div class="container" style="position:relative">
-    <a href="/urunler/" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:24px">
+    <a href="/urunler/" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;margin:0 -4px 24px -4px;font-family:var(--font-body);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       Tüm Kategoriler
     </a>

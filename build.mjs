@@ -78,6 +78,7 @@ writePage('index.html', renderLayout({
   title: '',
   description: 'Narlight – Türkiye merkezli profesyonel aydınlatma armatürü tasarımı, üretimi ve proje uygulaması.',
   body: renderHome({ projects: projectsHydrated, productCats: productCatsHydrated, news: newsHydrated, corporate }),
+  preloadHeroImage: true,
 }));
 log('/ (homepage)');
 

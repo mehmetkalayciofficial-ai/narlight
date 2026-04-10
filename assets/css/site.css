@@ -106,6 +106,36 @@ a, button, input, select, textarea, [tabindex] { -webkit-tap-highlight-color: rg
 h1, h2, h3, h4 { scroll-margin-top: 120px; text-wrap: balance; }
 p, li { text-wrap: pretty; }
 
+/* Mobile touch-target safety net.
+   On small screens, every standalone link / button gets at least 44 px
+   of vertical hit area via min-height. Inline links inside body copy are
+   excluded so they don't break paragraph flow. */
+@media (max-width: 1024px) {
+  .form-row label,
+  .footer-list a,
+  .mega-list a,
+  .mega-col-simple a,
+  .m-mega-simple a,
+  .m-flat-links a,
+  .scrolly-step a,
+  aside a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  /* Inline links inside hero leads + body paragraphs get an enlarged hit
+     area via padding without breaking line-height. */
+  .hero-rev a,
+  .lede a,
+  .hero-v2 .lede a,
+  section p a,
+  .faq-answer a {
+    padding: 10px 4px;
+    margin: -10px -4px;
+    -webkit-tap-highlight-color: rgba(255, 179, 71, 0.18);
+  }
+}
+
 /* ---------- Minimal utility classes (replaces Tailwind CDN) ---------- */
 .block { display: block; }
 .inline-flex { display: inline-flex; }
@@ -305,6 +335,8 @@ p, li { text-wrap: pretty; }
 .nav-logo {
   display: inline-flex;
   align-items: center;
+  padding: 12px 8px;       /* ≥44px touch target on mobile */
+  margin: -12px -8px;      /* visually neutral — keeps layout the same */
 }
 .nav-logo svg { width: 116px; height: auto; }
 .nav-links {
@@ -1014,6 +1046,12 @@ p, li { text-wrap: pretty; }
 @media (min-width: 768px) {
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
 }
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 0;       /* ≥44px touch target */
+  margin: -12px 0;
+}
 .footer-brand-logo svg { width: 168px; color: #fff; }
 .footer-tagline {
   margin-top: 24px;
@@ -1047,6 +1085,17 @@ p, li { text-wrap: pretty; }
   color: rgba(255,255,255,0.55);
 }
 .footer-social { display: flex; gap: 16px; }
+.footer-social a {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transition: background-color 240ms var(--ease-out);
+}
+.footer-social a:hover { background: rgba(255, 255, 255, 0.08); }
+.footer-social svg { width: 22px; height: 22px; }
 
 /* ---------- Scroll reveal ---------- */
 [data-reveal] {
@@ -1274,6 +1323,9 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 }
 .hero-v2 .actions { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
 .hero-text-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 6px;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--t-meta);
@@ -1598,14 +1650,27 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   margin-top: 28px;
 }
 .carousel-dot {
-  width: 28px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+.carousel-dot::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   height: 3px;
   background: rgba(255, 255, 255, 0.18);
   border-radius: 2px;
-  cursor: pointer;
   transition: background-color 300ms var(--ease-out);
 }
-.carousel-dot.is-active { background: var(--color-glow); }
+.carousel-dot.is-active::after { background: var(--color-glow); }
 
 /* ---------- Marquee (logos / stats) ---------- */
 .marquee {

@@ -7,6 +7,7 @@ export function renderLayout({
   body,
   navVariant = 'transparent',
   bodyClass = '',
+  preloadHeroImage = false,
 }) {
   const fullTitle = title ? `${title} · Narlight` : 'Narlight – Aydınlatmanın Tasarımı';
   return `<!doctype html>
@@ -21,6 +22,9 @@ export function renderLayout({
   <link rel="apple-touch-icon" href="/brand_assets/favicon.ico">
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/CabinetGrotesk-Variable.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Satoshi-Variable.woff2" crossorigin>
+  ${preloadHeroImage ? `
+  <link rel="preload" as="image" href="/brand_assets/images/hero-background.webp" media="(min-width: 901px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/brand_assets/images/hero-background-mobile.webp" media="(max-width: 900px)" fetchpriority="high">` : ''}
   <link rel="stylesheet" href="/assets/css/site.css">
 
   <!-- Open Graph / Twitter -->

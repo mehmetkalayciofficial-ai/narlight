@@ -26,14 +26,14 @@ export function renderContact() {
         </div>
         <div style="margin-bottom:48px">
           <p class="eyebrow" style="margin-bottom:16px">— Telefon</p>
-          <a href="tel:+902323481010" style="font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--color-ink);transition:color 240ms var(--ease-out)" onmouseover="this.style.color='var(--color-navy)'" onmouseout="this.style.color='var(--color-ink)'">+90 232 348 10 10</a>
+          <a href="tel:+902323481010" style="display:inline-flex;align-items:center;min-height:44px;padding:8px 0;font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--color-ink);transition:color 240ms var(--ease-out)" onmouseover="this.style.color='var(--color-navy)'" onmouseout="this.style.color='var(--color-ink)'">+90 232 348 10 10</a>
         </div>
         <div style="margin-bottom:48px">
           <p class="eyebrow" style="margin-bottom:16px">— E-posta</p>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
-            <li><a href="mailto:info@narlight.com.tr" style="font-family:var(--font-body);font-size:16px;font-weight:500">info@narlight.com.tr <span style="font-size:11px;color:var(--color-mute);font-weight:400">— genel</span></a></li>
-            <li><a href="mailto:satis@narlight.com.tr" style="font-family:var(--font-body);font-size:16px;font-weight:500">satis@narlight.com.tr <span style="font-size:11px;color:var(--color-mute);font-weight:400">— satış</span></a></li>
-            <li><a href="mailto:ik@narlight.com.tr" style="font-family:var(--font-body);font-size:16px;font-weight:500">ik@narlight.com.tr <span style="font-size:11px;color:var(--color-mute);font-weight:400">— insan kaynakları</span></a></li>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+            <li><a href="mailto:info@narlight.com.tr" style="display:flex;align-items:center;min-height:44px;font-family:var(--font-body);font-size:16px;font-weight:500">info@narlight.com.tr&nbsp;<span style="font-size:11px;color:var(--color-mute);font-weight:400">— genel</span></a></li>
+            <li><a href="mailto:satis@narlight.com.tr" style="display:flex;align-items:center;min-height:44px;font-family:var(--font-body);font-size:16px;font-weight:500">satis@narlight.com.tr&nbsp;<span style="font-size:11px;color:var(--color-mute);font-weight:400">— satış</span></a></li>
+            <li><a href="mailto:ik@narlight.com.tr" style="display:flex;align-items:center;min-height:44px;font-family:var(--font-body);font-size:16px;font-weight:500">ik@narlight.com.tr&nbsp;<span style="font-size:11px;color:var(--color-mute);font-weight:400">— insan kaynakları</span></a></li>
           </ul>
         </div>
         <div>
