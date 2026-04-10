@@ -42,11 +42,18 @@ export function localImage(src) {
   if (!src) return '';
   let out = src;
   if (!out.startsWith('/')) {
-    const m = out.match(/narlight\.com\.tr\/Content\/images\/(.+)$/i);
+    // Match BOTH /Content/images/... and /Content/files/... folders
+    // since the original site stores assets in both trees.
+    const m = out.match(/narlight\.com\.tr\/Content\/(?:images|files)\/(.+)$/i);
     if (m) out = '/brand_assets/images/' + decodeURIComponent(m[1]);
   }
   // Upgrade to WebP when the companion file exists.
   out = out.replace(/\.(png|jpe?g)(\?.*)?$/i, '.webp$2');
+  // Re-encode any path segments containing characters that would be
+  // unsafe in a URL (Turkish letters etc.).
+  if (out.startsWith('/brand_assets/')) {
+    out = out.split('/').map((seg, i) => i < 2 ? seg : encodeURIComponent(seg)).join('/');
+  }
   return out;
 }
 

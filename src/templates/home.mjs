@@ -424,15 +424,23 @@ export function renderHome({ projects, productCats, news, corporate }) {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-reveal-stagger>
       ${latestNews.map(n => {
         const summary = (n.cleanParas || []).find(p => p.length > 50);
+        // Try to use a project hero image as a representative thumbnail
+        // for the news card; falls back to a brand gradient if missing.
+        const thumb = n.hero || projects.find(p => p.hero)?.hero || '';
         return `
-          <a href="${esc(n.href)}" style="display:block;border-top:1px solid var(--color-ink);padding-top:28px">
-            <span class="eyebrow" style="display:block;margin-bottom:20px">— Haber</span>
-            <h3 style="font-family:var(--font-display);font-weight:800;font-size:22px;line-height:1.15;letter-spacing:-0.02em;margin:0 0 18px">${esc(n.title.slice(0, 80))}${n.title.length > 80 ? '…' : ''}</h3>
-            ${summary ? `<p style="font-size:13px;line-height:1.65;color:var(--color-mute);margin:0 0 24px">${esc(summary.slice(0, 160))}${summary.length > 160 ? '…' : ''}</p>` : '<div style="margin-bottom:24px"></div>'}
-            <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px">
-              Devamı
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </span>
+          <a href="${esc(n.href)}" class="news-card">
+            <div class="news-card-thumb">
+              ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy">` : ''}
+            </div>
+            <div class="news-card-body">
+              <span class="eyebrow">— Haber</span>
+              <h3>${esc(n.title.slice(0, 80))}${n.title.length > 80 ? '…' : ''}</h3>
+              ${summary ? `<p>${esc(summary.slice(0, 140))}${summary.length > 140 ? '…' : ''}</p>` : ''}
+              <span class="news-card-more">
+                Devamı
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </div>
           </a>`;
       }).join('')}
     </div>

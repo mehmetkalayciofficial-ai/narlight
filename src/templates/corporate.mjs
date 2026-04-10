@@ -6,13 +6,26 @@ export function renderCorporate({ page, allCorporate }) {
   const rest = paras.slice(1);
   const images = (page.images || []).filter(i => !/(narlight-search|product-left|product-right|sertifika|icon|logo)/i.test(i.src));
 
-  // Sibling pages for the in-page nav
+  // Sibling pages for the in-page nav. The actual URL routes don't all
+  // follow /kurumsal/<slug>/ — Hakkımızda lives at /kurumsal/, İletişim
+  // lives at /iletisim/. Use an explicit map so links never 404.
+  const siblingRoutes = {
+    'hakkimizda':           '/kurumsal/',
+    'vizyonumuz':           '/kurumsal/vizyonumuz/',
+    'cozumlerimiz':         '/kurumsal/cozumlerimiz/',
+    'aydinlatma-tasarimi':  '/kurumsal/aydinlatma-tasarimi/',
+    'akilli-aydinlatma':    '/kurumsal/akilli-aydinlatma/',
+    'iletisim-bilgileri':   '/iletisim/',
+    // 'belgelerimiz' intentionally omitted — page was removed, nav
+    // entry would 404
+  };
   const siblings = allCorporate
     .filter(c => !/(form|download|katalog|basin)/i.test(c.slug))
     .map(c => {
       const trimmed = c.slug.replace(/^tr__/, '').replace(/-\d+$/, '');
-      return { href: `/kurumsal/${trimmed}/`, label: c.title, active: c.slug === page.slug };
-    });
+      return { href: siblingRoutes[trimmed], label: c.title, active: c.slug === page.slug };
+    })
+    .filter(s => !!s.href);
 
   return `
 <!-- HERO -->
@@ -20,7 +33,7 @@ export function renderCorporate({ page, allCorporate }) {
   <div style="position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%, rgba(255,179,71,0.08), transparent 60%), radial-gradient(80% 60% at 0% 100%, rgba(26,37,90,0.5), transparent 60%);pointer-events:none"></div>
   <div class="container" style="position:relative">
     <span class="section-tag dark"><span class="pulse"></span>Kurumsal</span>
-    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:18ch;margin:32px 0 0">${esc(page.title)}</h1>
+    <h1 class="display display-1 hero-rev corporate-h1" data-d="1" style="color:var(--color-paper);margin:32px 0 0">${esc(page.title)}</h1>
     ${lead ? `<p class="hero-rev" data-d="2" style="font-family:var(--font-body);font-weight:400;font-size:clamp(15px,1.1vw,20px);line-height:1.7;color:rgba(255,255,255,0.7);max-width:54ch;margin:36px 0 0">${esc(lead)}</p>` : ''}
   </div>
 </section>
@@ -43,18 +56,32 @@ export function renderCorporate({ page, allCorporate }) {
           `).join('')}
         </ul>
       </aside>
-      <!-- Body content -->
-      <article data-reveal>
-        ${rest.map(p => `<p style="font-family:var(--font-body);font-size:16px;line-height:1.75;color:var(--color-ink-soft);margin:0 0 28px;max-width:64ch">${esc(p)}</p>`).join('')}
-        ${images.length > 0 ? `
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" style="margin-top:64px">
-            ${images.slice(0, 6).map(i => `
-              <div style="border-radius:12px;overflow:hidden;background:var(--color-paper-3);aspect-ratio:4/3">
-                <img src="${esc(localImage(i.src))}" alt="${esc(i.alt || page.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
+      <!-- Body content — magazine-style: paragraphs interleaved with
+           feature images so it doesn't read like a wall of text. -->
+      <article data-reveal class="corp-article">
+        ${(() => {
+          // Take up to 6 usable images and interleave one after every
+          // 2nd paragraph. The first big image becomes a full-width
+          // hero plate at the top of the body.
+          const usable = images.slice(0, 6);
+          const heroImg = usable.shift();
+          const interImgs = usable;
+          const out = [];
+          if (heroImg) out.push(`<figure class="corp-figure corp-figure-wide"><img src="${esc(localImage(heroImg.src))}" alt="${esc(heroImg.alt || page.title)}" loading="lazy"></figure>`);
+          rest.forEach((p, i) => {
+            out.push(`<p>${esc(p)}</p>`);
+            // After every 2nd paragraph, drop in an image (if we have any)
+            if ((i + 1) % 2 === 0 && interImgs.length) {
+              const img = interImgs.shift();
+              out.push(`<figure class="corp-figure"><img src="${esc(localImage(img.src))}" alt="${esc(img.alt || page.title)}" loading="lazy"></figure>`);
+            }
+          });
+          // Any leftover images appear in a final 2-col grid
+          if (interImgs.length) {
+            out.push(`<div class="corp-grid">${interImgs.map(i => `<figure class="corp-figure"><img src="${esc(localImage(i.src))}" alt="${esc(i.alt || page.title)}" loading="lazy"></figure>`).join('')}</div>`);
+          }
+          return out.join('');
+        })()}
       </article>
     </div>
   </div>

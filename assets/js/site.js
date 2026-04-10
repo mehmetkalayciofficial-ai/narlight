@@ -8,6 +8,20 @@
   'use strict';
 
   // ============================================================
+  // Hero animation kickoff (JS-driven so Android Chrome / Samsung
+  // Internet always plays the warm-up choreography even if a CSS
+  // animation race or hard refresh would otherwise skip it).
+  // ============================================================
+  function startHero() {
+    document.documentElement.classList.add('is-ready');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(startHero));
+  } else {
+    requestAnimationFrame(startHero);
+  }
+
+  // ============================================================
   // Sticky / scrolled nav state
   // ============================================================
   const nav = document.querySelector('.nav');

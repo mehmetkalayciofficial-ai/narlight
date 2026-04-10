@@ -83,13 +83,15 @@ writePage('index.html', renderLayout({
 log('/ (homepage)');
 
 // ---------- Corporate pages ----------
+// 'belgelerimiz' was dropped — the source content was a single noise
+// paragraph with no real text and the user asked us to remove empty
+// sections rather than render placeholders.
 const corporateMap = {
   'hakkimizda': '/kurumsal/',
   'vizyonumuz': '/kurumsal/vizyonumuz/',
   'cozumlerimiz': '/kurumsal/cozumlerimiz/',
   'aydinlatma-tasarimi': '/kurumsal/aydinlatma-tasarimi/',
   'akilli-aydinlatma': '/kurumsal/akilli-aydinlatma/',
-  'belgelerimiz': '/kurumsal/belgelerimiz/',
 };
 for (const c of corporate) {
   const slug = c.slug.replace(/^tr__/, '').replace(/-\d+$/, '');

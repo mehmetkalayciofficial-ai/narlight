@@ -31,19 +31,9 @@ const menus = {
         type: 'simple',
         items: [
           { href: '/kurumsal/akilli-aydinlatma/', label: 'Akıllı Aydınlatma' },
-          { href: '/kurumsal/belgelerimiz/', label: 'Belgelerimiz' },
           { href: '/kurumsal/sss/', label: 'Sıkça Sorulan' },
           { href: '/basin-odasi/', label: 'Basın Odası' },
           { href: '/iletisim/', label: 'İletişim Bilgileri' },
-        ],
-      },
-      {
-        title: 'Sertifikalar',
-        type: 'simple',
-        items: [
-          { href: '/kurumsal/belgelerimiz/', label: 'TSE, CE, RoHS' },
-          { href: '/kurumsal/belgelerimiz/', label: 'IP65 / IP67 raporları' },
-          { href: '/kurumsal/belgelerimiz/', label: 'Test sonuçları' },
         ],
       },
     ],
