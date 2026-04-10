@@ -69,25 +69,120 @@
   }
 
   // ============================================================
-  // Hero animation kickoff (JS-driven so Android Chrome / Samsung
-  // Internet always play the warm-up choreography even if a CSS
-  // animation race or hard refresh would otherwise skip it).
-  // Also fits the hero title BEFORE the animations begin so the
-  // scaled spans fade in at their correct final sizes.
+  // Hero animation kickoff.
   //
-  // We use a DOUBLE requestAnimationFrame. The reason: CSS transitions
-  // only fire when the "from" state has been painted in a previous
-  // frame. If we add .is-ready in the same frame that the initial
-  // styles are first applied, the browser may skip straight to the
-  // final state without tweening. Two rAFs guarantee that the initial
-  // opacity:0 / transform:translateY has rendered to the screen at
-  // least once before we toggle the class that kicks off the fade-in.
+  // On DESKTOP we rely on CSS @keyframes gated by html.is-ready —
+  // desktop browsers handle that reliably.
+  //
+  // On MOBILE we use the Web Animations API (Element.animate()) to
+  // drive the fade-in directly in JS. This is 100% reliable across
+  // Samsung Internet, Android Chrome, Firefox Mobile — any browser
+  // that ships the WAAPI (~99.5% global support). It bypasses every
+  // quirk of CSS transition-triggering, animation-play-state,
+  // @keyframes parsing, and class-toggle race conditions that have
+  // been breaking the mobile entry on real devices.
   // ============================================================
+  const MOBILE_ANIM_MQ = window.matchMedia ? window.matchMedia('(max-width: 1024px)') : null;
+  function isHeroMobile() {
+    return MOBILE_ANIM_MQ ? MOBILE_ANIM_MQ.matches : window.innerWidth <= 1024;
+  }
+
+  // Descriptors for each mobile hero animation. `from` is the initial
+  // state (mirrors what CSS has as opacity:0 etc.) and `to` is the
+  // final rendered state.
+  const MOBILE_HERO_ITEMS = [
+    { sel: '.hero-v2 .hero-bg-image.hero-warmup-img', delay: 0,    duration: 900,
+      from: { opacity: 0, transform: 'scale(1.04)' },
+      to:   { opacity: 1, transform: 'scale(1)' } },
+    { sel: '.hero-v2 .hero-warmup-eyebrow',            delay: 200,  duration: 500,
+      from: { opacity: 0, transform: 'translateY(6px)' },
+      to:   { opacity: 1, transform: 'translateY(0)' } },
+    { sel: '.hero-v2 .hero-warmup-title',              delay: 400,  duration: 700,
+      from: { opacity: 0, transform: 'translateY(12px)' },
+      to:   { opacity: 1, transform: 'translateY(0)' } },
+    { sel: '.hero-v2 .hero-warmup-accent',             delay: 700,  duration: 700,
+      from: { opacity: 0 },
+      to:   { opacity: 1 } },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="1"]',   delay: 900,  duration: 600,
+      from: { opacity: 0, transform: 'translateY(12px)' },
+      to:   { opacity: 1, transform: 'translateY(0)' } },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="2"]',   delay: 1000, duration: 600,
+      from: { opacity: 0, transform: 'translateY(12px)' },
+      to:   { opacity: 1, transform: 'translateY(0)' } },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="3"]',   delay: 1100, duration: 600,
+      from: { opacity: 0, transform: 'translateY(12px)' },
+      to:   { opacity: 1, transform: 'translateY(0)' } },
+    { sel: '.hero-v2 .hero-warmup-fade[data-d="4"]',   delay: 1200, duration: 600,
+      from: { opacity: 0, transform: 'translateY(12px)' },
+      to:   { opacity: 1, transform: 'translateY(0)' } },
+  ];
+
+  function runMobileHeroAnimations() {
+    const canAnimate = typeof Element !== 'undefined' && Element.prototype && typeof Element.prototype.animate === 'function';
+    for (let i = 0; i < MOBILE_HERO_ITEMS.length; i++) {
+      const item = MOBILE_HERO_ITEMS[i];
+      const el = document.querySelector(item.sel);
+      if (!el) continue;
+      if (canAnimate) {
+        try {
+          el.animate([item.from, item.to], {
+            duration: item.duration,
+            delay: item.delay,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            fill: 'forwards',
+          });
+        } catch (e) {
+          // WAAPI failed — fall back to inline style
+          setTimeout(function () {
+            Object.assign(el.style, item.to);
+            el.style.opacity = '1';
+          }, item.delay + item.duration);
+        }
+      } else {
+        // Ancient browser: just show it after the delay
+        setTimeout(function () {
+          Object.assign(el.style, item.to);
+          el.style.opacity = '1';
+        }, item.delay);
+      }
+    }
+  }
+
+  // Force every hero animation target to its final visible state.
+  // Used as a safety net if JS crashes mid-way, and to hold the
+  // final state after WAAPI fill:'forwards' (which some Android
+  // browsers lose if the element is repainted).
+  function forceHeroVisible() {
+    const sels = [
+      '.hero-v2 .hero-bg-image.hero-warmup-img',
+      '.hero-v2 .hero-warmup-eyebrow',
+      '.hero-v2 .hero-warmup-title',
+      '.hero-v2 .hero-warmup-accent',
+      '.hero-v2 .hero-warmup-fade',
+    ];
+    for (let i = 0; i < sels.length; i++) {
+      const nodes = document.querySelectorAll(sels[i]);
+      for (let j = 0; j < nodes.length; j++) {
+        const n = nodes[j];
+        n.style.opacity = '1';
+        n.style.transform = 'none';
+      }
+    }
+  }
+
   function startHero() {
     try { fitHeroTitle(); } catch (e) { /* ignore */ }
+    // Add the class for desktop CSS keyframes.
     document.documentElement.classList.add('is-ready');
+    // On mobile, ALSO run WAAPI animations — much more reliable than
+    // CSS transitions on Samsung Internet / older Android Chrome.
+    if (isHeroMobile()) {
+      try { runMobileHeroAnimations(); } catch (e) { /* ignore */ }
+    }
   }
   function kickOffHero() {
+    // Double rAF: guarantees at least one paint of the "from" state
+    // before WAAPI / CSS transitions kick off.
     requestAnimationFrame(function () {
       requestAnimationFrame(startHero);
     });
@@ -113,13 +208,26 @@
     }, 120);
   }, { passive: true });
 
-  // Safety net: if some CSS load race keeps the hero invisible past
-  // 2s, force .is-ready so users never see a blank hero.
+  // Safety net #1 — 2 seconds after script loads, force .is-ready
+  // AND inline-style every hero element to its visible state. This
+  // guarantees the hero can never stay blank, even if WAAPI, CSS
+  // keyframes, and class toggling all somehow fail.
   setTimeout(function () {
     if (!document.documentElement.classList.contains('is-ready')) {
       document.documentElement.classList.add('is-ready');
     }
-  }, 2000);
+    try { forceHeroVisible(); } catch (e) { /* ignore */ }
+  }, 2500);
+
+  // Safety net #2 — on window.load, reassert final visible state.
+  // WAAPI fill:'forwards' sometimes loses its held state on repaint
+  // on Samsung Internet / older Android Chrome. This pass sets the
+  // visible state as a plain inline style that nothing can undo.
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      try { forceHeroVisible(); } catch (e) { /* ignore */ }
+    }, 2400); // after the longest animation (1200 delay + 900 duration) finishes
+  });
 
   // ============================================================
   // Sticky / scrolled nav state

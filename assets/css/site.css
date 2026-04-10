@@ -1766,64 +1766,56 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 2000ms; 
 html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; }
 
 /* ============================================================
-   Mobile (<=1024px): use CSS TRANSITIONS instead of @keyframes
-   animations. Transitions are simpler, better supported on
-   Samsung Internet and older Android Chrome, and have zero
-   race conditions with JS class-toggle. Each element has an
-   initial "off" state in base CSS and a target state under
-   html.is-ready. The transition tween handles the rest.
+   Mobile (<=1024px): the hero animations are NOT done in CSS.
+   They are driven entirely by the Web Animations API in site.js
+   (runMobileHeroAnimations). CSS transitions and @keyframes have
+   proven unreliable on Samsung Internet and older Android Chrome
+   — the animations simply wouldn't play. WAAPI (Element.animate)
+   works identically on every modern browser.
+   This rule only sets the INITIAL invisible state plus turns off
+   any desktop CSS animation that might otherwise race.
    ============================================================ */
 @media (max-width: 1024px) {
   /* Light sweep is a 40px-blur skewed gradient — too expensive for
      mobile GPUs. Drop it completely. */
   .hero-v2 .hero-sweep { display: none; }
 
-  /* Background image: fade + gentle zoom out. Override desktop
-     @keyframes animation that might have been applied. */
+  /* Kill every desktop CSS animation on mobile so it can't fight
+     the WAAPI-driven JS animations. */
+  .hero-v2 .hero-warmup-eyebrow,
+  .hero-v2 .hero-warmup-title,
+  .hero-v2 .hero-warmup-accent,
+  .hero-v2 .hero-warmup-fade,
+  .hero-bg-image.hero-warmup-img {
+    animation: none !important;
+    transition: none !important;
+  }
+  html.is-ready .hero-v2 .hero-warmup-eyebrow,
+  html.is-ready .hero-v2 .hero-warmup-title,
+  html.is-ready .hero-v2 .hero-warmup-accent,
+  html.is-ready .hero-v2 .hero-warmup-fade,
+  html.is-ready .hero-bg-image.hero-warmup-img {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Initial "off" state so the hero isn't visible until the JS
+     WAAPI call kicks in. These property values mirror the `from`
+     keyframe in MOBILE_HERO_ITEMS in site.js. */
   .hero-bg-image.hero-warmup-img {
     opacity: 0;
     transform: scale(1.04);
-    transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 1600ms cubic-bezier(0.22, 1, 0.36, 1);
-    animation: none !important;
   }
-  html.is-ready .hero-bg-image.hero-warmup-img {
-    opacity: 1;
-    transform: scale(1);
-    animation: none !important;
-  }
-
-  /* Eyebrow: simple fade-up */
   .hero-v2 .hero-warmup-eyebrow {
     color: var(--color-glow);
     opacity: 0;
     transform: translateY(6px);
-    transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1) 200ms,
-                transform 500ms cubic-bezier(0.22, 1, 0.36, 1) 200ms;
-    animation: none !important;
   }
-  html.is-ready .hero-v2 .hero-warmup-eyebrow {
-    opacity: 1;
-    transform: none;
-    animation: none !important;
-  }
-
-  /* H1 title: fade-up, already white (no color tween — simpler) */
   .hero-v2 .hero-warmup-title {
     color: var(--color-paper);
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1) 400ms,
-                transform 700ms cubic-bezier(0.22, 1, 0.36, 1) 400ms;
-    animation: none !important;
   }
-  html.is-ready .hero-v2 .hero-warmup-title {
-    opacity: 1;
-    transform: none;
-    animation: none !important;
-  }
-
-  /* Accent middle line: fades in already lit (no dim→bright tween) */
   .hero-v2 .hero-warmup-accent {
     color: var(--color-glow);
     text-shadow:
@@ -1831,31 +1823,11 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; 
       0 0 38px rgba(255, 179, 71, 0.3),
       0 0 78px rgba(255, 179, 71, 0.16);
     opacity: 0;
-    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1) 700ms;
-    animation: none !important;
   }
-  html.is-ready .hero-v2 .hero-warmup-accent {
-    opacity: 1;
-    animation: none !important;
-  }
-
-  /* Generic fade-up for subtitle / actions / carousel / stats */
   .hero-v2 .hero-warmup-fade {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
-    animation: none !important;
   }
-  html.is-ready .hero-v2 .hero-warmup-fade {
-    opacity: 1;
-    transform: none;
-    animation: none !important;
-  }
-  .hero-v2 .hero-warmup-fade[data-d="1"] { transition-delay: 900ms; }
-  .hero-v2 .hero-warmup-fade[data-d="2"] { transition-delay: 1000ms; }
-  .hero-v2 .hero-warmup-fade[data-d="3"] { transition-delay: 1100ms; }
-  .hero-v2 .hero-warmup-fade[data-d="4"] { transition-delay: 1200ms; }
 
   /* Reduce backdrop-blur cost on mobile */
   .nav-shell { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
