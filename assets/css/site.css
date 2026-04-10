@@ -1476,16 +1476,39 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
     padding: 0;
     box-sizing: border-box;
   }
+  /* Hero CTA row on mobile — force the two buttons side-by-side on
+     one line. We shrink padding and font-size so they fit on a 360px
+     viewport (smallest common Android width). nowrap prevents the
+     "veya teklif isteyin" link from wrapping under the primary CTA. */
   .hero-v2 .actions {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
+    flex-wrap: nowrap;
+    gap: 10px;
     width: 100%;
     max-width: 100%;
     margin: 0;
     box-sizing: border-box;
+  }
+  .hero-v2 .actions .btn {
+    padding: 14px 18px;
+    font-size: 13px;
+    gap: 8px;
+    flex: 0 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  .hero-v2 .actions .btn .arrow {
+    width: 14px;
+    height: 14px;
+  }
+  .hero-v2 .actions .hero-text-link {
+    padding: 14px 16px;
+    font-size: 12px;
+    flex: 0 1 auto;
+    min-width: 0;
+    white-space: nowrap;
   }
 }
 @media (max-width: 480px) {
@@ -1497,6 +1520,20 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
     letter-spacing: 0.12em;
   }
   .hero-v2 .eyebrow.hero-warmup-eyebrow::before { width: 20px; }
+  .hero-v2 .actions { gap: 8px; }
+  .hero-v2 .actions .btn {
+    padding: 13px 15px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .hero-v2 .actions .hero-text-link {
+    padding: 13px 13px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 360px) {
+  .hero-v2 .actions .btn { padding: 12px 13px; font-size: 11px; }
+  .hero-v2 .actions .hero-text-link { padding: 12px 11px; font-size: 10.5px; }
 }
 
 /* (legacy .accent removed — replaced by .glow which works on both
