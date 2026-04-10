@@ -1715,6 +1715,22 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   justify-content: center;
   margin-top: 28px;
 }
+.carousel-progress {
+  display: none; /* shown only on mobile */
+  margin: 16px 24px 0;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.carousel-progress-bar {
+  height: 100%;
+  width: 20%;
+  background: var(--color-glow);
+  border-radius: 2px;
+  transform-origin: left center;
+  transition: transform 240ms var(--ease-out), width 240ms var(--ease-out);
+}
 .carousel-dot {
   width: 44px;
   height: 44px;
@@ -1742,14 +1758,15 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 /* On phones the 3D rotating stack is hard to swipe naturally, so on
    small screens we switch the same DOM into a native scroll-snap slider:
    cards lay side-by-side, the user swipes with their finger, the
-   browser snaps to the next card. JS auto-rotate is disabled on mobile
-   so the user is in full control. */
+   browser snaps to the nearest card (proximity, not mandatory, so back-
+   swipes always feel responsive). All projects with a hero image are
+   present so the user can keep swiping through the catalogue. */
 @media (max-width: 1023px) {
   .carousel {
     aspect-ratio: auto;
     perspective: none;
     cursor: auto;
-    touch-action: pan-x;
+    touch-action: pan-x pan-y;
     height: auto;
     overflow: visible;
   }
@@ -1760,31 +1777,36 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
     gap: 14px;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding: 6px 24px 18px;
     margin: 0 -24px;
-    scroll-padding-left: 24px;
+    scroll-padding: 0 24px;
+    overscroll-behavior-x: contain;
   }
   .carousel-stage::-webkit-scrollbar { display: none; }
   .carousel-card {
     position: relative;
-    flex: 0 0 86%;
-    width: 86%;
+    flex: 0 0 84%;
+    width: 84%;
     height: auto;
     aspect-ratio: 4 / 5;
     transform: none !important;
     opacity: 1 !important;
     pointer-events: auto !important;
     z-index: auto !important;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     transition: none;
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.06) inset,
       0 18px 36px -16px rgba(0, 0, 0, 0.6);
   }
   .carousel-card .meta { left: 22px; right: 22px; bottom: 22px; }
+  /* Hide dot row on mobile (we'd have 30 dots), show progress bar instead */
+  .carousel-dots { display: none; }
+  .carousel-progress { display: block; }
 }
 
 /* ---------- Marquee (logos / stats) ---------- */

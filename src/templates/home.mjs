@@ -2,16 +2,30 @@ import { esc } from '../utils.mjs';
 
 export function renderHome({ projects, productCats, news, corporate }) {
   // ---------- Hero carousel projects ----------
-  const carouselSlugs = [
+  // Hand-curated 'top 5' lead the carousel for the cinematic intro,
+  // then every other project with a hero image follows. On mobile this
+  // becomes a long horizontal slider; on desktop the 3D stack still
+  // shows the first 5 prominently and the rest as background depth.
+  const leadSlugs = [
     '15-temmuz-demokrasi',
     'tarihi-saat-kulesi',
     'havelsan-teknoloji-kampusu',
     'bilal-saygili-camii',
     'aktepe-kultur-merkezi',
+    'efes-antik-kenti',
+    'cine-otogari',
+    'efes-celsus-kutuphanesi',
+    'aktepe',
+    'bilal-saygili',
   ];
-  const carouselProjects = carouselSlugs
+  const lead = leadSlugs
     .map(s => projects.find(p => p.slug.toLowerCase().includes(s) && p.hero))
     .filter(Boolean);
+  const rest = projects
+    .filter(p => p.hero && !lead.includes(p))
+    // Skip duplicates by short name
+    .filter((p, i, arr) => arr.findIndex(q => q.shortName === p.shortName) === i);
+  const carouselProjects = [...lead, ...rest].slice(0, 30);
 
   // ---------- Featured editorial gallery ----------
   const gallerySlugs = [
@@ -146,9 +160,9 @@ export function renderHome({ projects, productCats, news, corporate }) {
     <div class="hero-warmup-fade" data-d="3">
       <div class="carousel" data-carousel>
         <div class="carousel-stage">
-          ${carouselProjects.map(p => `
-            <a href="${esc(p.href)}" class="carousel-card" data-carousel-card>
-              <img src="${esc(p.hero)}" alt="${esc(p.title)}">
+          ${carouselProjects.map((p, i) => `
+            <a href="${esc(p.href)}" class="carousel-card" data-carousel-card data-carousel-index="${i}">
+              <img src="${esc(p.hero)}" alt="${esc(p.title)}" loading="${i < 3 ? 'eager' : 'lazy'}">
               <div class="meta">
                 ${p.city ? `<span class="ey">${esc(p.city)}</span>` : ''}
                 <span class="card-title-text">${esc(p.shortName)}</span>
@@ -156,9 +170,10 @@ export function renderHome({ projects, productCats, news, corporate }) {
             </a>
           `).join('')}
         </div>
-      </div>
-      <div class="carousel-dots">
-        ${carouselProjects.map((_, i) => `<button type="button" class="carousel-dot${i === 0 ? ' is-active' : ''}" data-carousel-dot aria-label="Slayt ${i + 1}"></button>`).join('')}
+        <div class="carousel-dots">
+          ${carouselProjects.slice(0, 5).map((_, i) => `<button type="button" class="carousel-dot${i === 0 ? ' is-active' : ''}" data-carousel-dot data-carousel-target="${i}" aria-label="Slayt ${i + 1}"></button>`).join('')}
+        </div>
+        <div class="carousel-progress" aria-hidden="true"><div class="carousel-progress-bar" data-carousel-progress></div></div>
       </div>
     </div>
   </div>
