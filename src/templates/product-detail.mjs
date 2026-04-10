@@ -34,7 +34,7 @@ export function renderProductDetail({ page, allProducts }) {
     <div style="display:grid;grid-template-columns:1fr;gap:48px;align-items:center" class="lg:grid-cols-2">
       <div class="hero-rev" data-d="1">
         <span class="section-tag dark"><span class="pulse"></span>Ürün Detayı</span>
-        <h1 class="display display-1" style="color:var(--color-paper);max-width:14ch;margin:32px 0 0;font-size:clamp(40px,6vw,88px)">${esc(page.modelName || page.title)}</h1>
+        <h1 class="display display-1" style="color:var(--color-paper);max-width:18ch;margin:32px 0 0;font-size:clamp(40px,6vw,88px)">${esc(page.modelName || page.title)}</h1>
         <p style="font-family:var(--font-body);font-size:clamp(15px,1.05vw,18px);line-height:1.7;color:rgba(255,255,255,0.7);max-width:46ch;margin:32px 0 40px">
           Mimari aydınlatma için tasarlanmış yüksek verimli LED projektör. TSE/CE sertifikalı, IP67 koruma sınıfı, 1~10V/DALI dimming seçeneği.
         </p>

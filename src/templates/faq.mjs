@@ -38,8 +38,8 @@ const groups = [
         a: '<strong>CRI</strong> (Color Rendering Index): renklerin doğal görünme oranı (0-100). Yüksek = renkler güneş ışığındaki gibi. <strong>IP65/IP67</strong>: armatürün toz ve suya karşı koruma sınıfı; dış mekan için ≥ IP65. <strong>CCT</strong> (Correlated Color Temperature, Renk Sıcaklığı): Kelvin cinsinden ışığın rengi. 3000K sıcak, 4000K nötr, 6500K soğuk beyaz.',
       },
       {
-        q: 'Kataloğunuzu nereden alabilirim?',
-        a: 'PDF kataloğumuzu iletişim formundan talep edebilirsiniz; 24 saat içinde e-posta ile iletiyoruz. Ayrıca ofis ziyaretinizde basılı katalog da hediye ediyoruz.',
+        q: 'Ürünleriniz hakkında detaylı bilgi alabilir miyim?',
+        a: 'İletişim formumuzdan veya doğrudan <a href="mailto:satis@narlight.com.tr">satis@narlight.com.tr</a> üzerinden bizimle iletişime geçin. Satış ekibimiz sizi 24 saat içinde arayarak ihtiyacınız olan tüm teknik bilgileri ve uygulama örneklerini paylaşır.',
       },
       {
         q: 'Özel tasarım armatür yapıyor musunuz?',
@@ -89,7 +89,7 @@ export function renderFaq() {
   <div style="position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%, rgba(255,179,71,0.08), transparent 60%), radial-gradient(80% 60% at 0% 100%, rgba(26,37,90,0.5), transparent 60%);pointer-events:none"></div>
   <div class="container" style="position:relative;max-width:880px">
     <span class="section-tag dark"><span class="pulse"></span>Sıkça Sorulan Sorular</span>
-    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:14ch;margin:32px 0 0">Aklınızdaki <em style="font-style:italic;color:var(--color-glow)">soruları</em> burada toplandık.</h1>
+    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:18ch;margin:32px 0 0">Aklınızdaki <span class="glow">soruları</span> burada toplandık.</h1>
     <p class="hero-rev" data-d="2" style="font-family:var(--font-body);font-size:var(--t-lead);line-height:1.7;color:rgba(255,255,255,0.7);max-width:54ch;margin:36px 0 0">
       Bir aydınlatma projesine başlamadan önce en sık sorulan soruların net cevaplarını bulun. Cevabını bulamadığınız bir konu varsa <a href="/iletisim/" style="color:var(--color-glow);text-decoration:underline">bize yazın</a>.
     </p>

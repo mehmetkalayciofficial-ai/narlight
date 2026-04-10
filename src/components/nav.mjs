@@ -182,7 +182,6 @@ export function renderNav() {
         ${flatLinks.map(l => `<a href="${l.href}" class="nav-link">${l.label}</a>`).join('')}
       </nav>
       <div class="nav-right">
-        <a href="/iletisim/" class="nav-login">Bayi Girişi</a>
         <a href="/iletisim/" class="nav-cta">Teklif Al ${arrow}</a>
         <button type="button" class="nav-burger" aria-label="Menüyü aç" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -197,14 +196,44 @@ export function renderNav() {
     <button type="button" class="mobile-drawer-close" data-mobile-drawer-close aria-label="Menüyü kapat">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
-    <div style="max-width:560px;margin:0 auto">
+    <div class="mobile-drawer-inner">
       <p class="small">Menü</p>
-      <ul>
-        ${Object.entries(menus).map(([k, m]) => `
-          <li><a href="${m.href}">${m.label}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-        `).join('')}
-        ${flatLinks.map(l => `<li><a href="${l.href}">${l.label}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>`).join('')}
+
+      ${Object.entries(menus).map(([k, m]) => `
+        <details class="m-mega" data-mobile-section>
+          <summary>
+            <span>${m.label}</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="m-mega-body">
+            <a class="m-mega-feature" href="${m.feature.href}" style="--bg: url('${m.feature.bg}')">
+              <span class="ey">${m.feature.eyebrow}</span>
+              <span class="title">${m.feature.title}</span>
+            </a>
+            ${m.sections.map(s => `
+              <div class="m-mega-section">
+                <p class="m-mega-section-title">${s.title}</p>
+                ${s.type === 'simple'
+                  ? `<ul class="m-mega-simple">${s.items.map(i => `<li><a href="${i.href}">${i.label}</a></li>`).join('')}</ul>`
+                  : `<ul class="m-mega-cards">${s.items.map(i => `
+                      <li><a href="${i.href}">
+                        <span class="thumb" style="background-image:url('${i.thumb}')"></span>
+                        <span class="text">
+                          <span class="lbl">${i.label}</span>
+                          ${i.desc ? `<span class="dsc">${i.desc}</span>` : ''}
+                        </span>
+                      </a></li>
+                    `).join('')}</ul>`}
+              </div>
+            `).join('')}
+          </div>
+        </details>
+      `).join('')}
+
+      <ul class="m-flat-links">
+        ${flatLinks.map(l => `<li><a href="${l.href}">${l.label}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>`).join('')}
       </ul>
+
       <div class="info">
         <strong>Bornova / İZMİR</strong>
         Doğanlar Mah. 1406 Sk. No:11<br>

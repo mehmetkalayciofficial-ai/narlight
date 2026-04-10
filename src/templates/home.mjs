@@ -201,7 +201,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
     <div class="section-head" data-reveal>
       <div>
         <span class="section-tag"><span class="pulse"></span>Hakkımızda</span>
-        <h2 class="display display-2 section-title" style="margin-top:32px">Çeyrek asırdır<br><em style="font-style:italic;color:var(--color-mute)">ışığın</em> imzası.</h2>
+        <h2 class="display display-2 section-title" style="margin-top:32px">Çeyrek asırdır<br><span class="glow">ışığın</span> imzası.</h2>
       </div>
       <p class="section-intro">
         1995'te kurulan Narlight, Bornova/İzmir'deki üretim tesisinden Türkiye'nin 81 ilinde 200'den fazla projeye imza attı. Camiler, meydanlar, üniversiteler, otoyollar, müzeler, oteller, AVM'ler — her ölçekte ve her bağlamda kalıcı çözümler.
@@ -221,7 +221,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
     <div class="scrolly">
       <div class="scrolly-sticky" data-reveal>
         <span class="section-tag"><span class="pulse"></span>Süreç</span>
-        <h2 class="display display-2" style="margin:32px 0 24px;max-width:14ch">Tasarımdan teslime, tek bir ekipten.</h2>
+        <h2 class="display display-2" style="margin:32px 0 24px;max-width:18ch">Tasarımdan teslime, tek bir ekipten.</h2>
         <p style="font-size:16px;line-height:1.7;color:var(--color-mute);max-width:36ch;margin:0 0 32px">
           Saha keşfinden uzun yıllar süren satış sonrası servise — bir aydınlatma projesinin tüm aşamalarını biz yürütüyoruz. Mimar, mühendis, kurulum ekibi ve servis ağı tek çatı altında.
         </p>
@@ -317,8 +317,8 @@ export function renderHome({ projects, productCats, news, corporate }) {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" style="align-items:center">
       <div data-reveal>
         <span class="section-tag dark"><span class="pulse"></span>Teknik Şeffaflık</span>
-        <h2 class="display display-2" style="color:var(--color-paper);margin:32px 0 28px;max-width:16ch">
-          Her ürün, son <em style="font-style:italic;color:var(--color-glow)">spesifikasyonuna kadar</em> ölçülür.
+        <h2 class="display display-2" style="color:var(--color-paper);margin:32px 0 28px;max-width:22ch">
+          Her ürün, son <span class="glow">spesifikasyonuna kadar</span> ölçülür.
         </h2>
         <p style="color:rgba(255,255,255,0.65);font-size:16px;line-height:1.7;max-width:42ch;margin:0 0 36px">
           40'tan fazla ürün serimizin her biri ölçülmüş, sertifikalanmış ve dökümante edilmiştir. Tasarımcıdan saha mühendisine, ihtiyaç duyduğunuz tüm teknik veri her ürün sayfasında sizi bekliyor.
@@ -421,7 +421,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
     <div style="display:grid;grid-template-columns:1fr;gap:48px;align-items:end" class="md:grid-cols-2">
       <div data-reveal>
         <span class="section-tag dark"><span class="pulse"></span>Sıradaki proje sizin</span>
-        <h2 class="display display-2" style="color:var(--color-paper);max-width:14ch;margin:32px 0 0">Mekanınız için ışığı tasarlayalım.</h2>
+        <h2 class="display display-2" style="color:var(--color-paper);max-width:18ch;margin:32px 0 0">Mekanınız için ışığı tasarlayalım.</h2>
       </div>
       <div data-reveal style="display:flex;flex-direction:column;gap:24px">
         <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.7);max-width:48ch;margin:0">

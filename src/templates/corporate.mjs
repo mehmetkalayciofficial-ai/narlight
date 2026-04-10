@@ -20,7 +20,7 @@ export function renderCorporate({ page, allCorporate }) {
   <div style="position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%, rgba(255,179,71,0.08), transparent 60%), radial-gradient(80% 60% at 0% 100%, rgba(26,37,90,0.5), transparent 60%);pointer-events:none"></div>
   <div class="container" style="position:relative">
     <span class="section-tag dark"><span class="pulse"></span>Kurumsal</span>
-    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:14ch;margin:32px 0 0">${esc(page.title)}</h1>
+    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:18ch;margin:32px 0 0">${esc(page.title)}</h1>
     ${lead ? `<p class="hero-rev" data-d="2" style="font-family:var(--font-body);font-weight:400;font-size:clamp(15px,1.1vw,20px);line-height:1.7;color:rgba(255,255,255,0.7);max-width:54ch;margin:36px 0 0">${esc(lead)}</p>` : ''}
   </div>
 </section>
