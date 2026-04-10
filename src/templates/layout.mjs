@@ -18,6 +18,7 @@ export function renderLayout({
   <meta name="description" content="${escapeHtml(description)}">
 
   <link rel="icon" href="/brand_assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/brand_assets/favicon.ico">
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/CabinetGrotesk-Variable.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Satoshi-Variable.woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/site.css">

@@ -11,6 +11,7 @@ const cols = [
       { href: '/kurumsal/aydinlatma-tasarimi/', label: 'Aydınlatma Tasarımı' },
       { href: '/kurumsal/akilli-aydinlatma/', label: 'Akıllı Aydınlatma' },
       { href: '/kurumsal/belgelerimiz/', label: 'Belgelerimiz' },
+      { href: '/kurumsal/sss/', label: 'Sıkça Sorulan' },
     ],
   },
   {

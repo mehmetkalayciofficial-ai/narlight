@@ -94,7 +94,7 @@ ${features.length > 0 ? `
       ${features.map((f, i) => `
         <div style="border:1px solid var(--color-line);border-radius:18px;padding:32px 28px;background:var(--color-paper)">
           <div style="font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--color-line-strong);margin-bottom:24px">0${i+1}</div>
-          <p style="font-family:var(--font-body);font-size:14px;line-height:1.65;color:var(--color-ink-soft);margin:0">${esc(f)}</p>
+          <p style="font-family:var(--font-body);font-size:13px;line-height:1.65;color:var(--color-ink-soft);margin:0">${esc(f)}</p>
         </div>
       `).join('')}
     </div>

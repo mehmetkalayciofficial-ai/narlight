@@ -121,16 +121,14 @@ export function renderHome({ projects, productCats, news, corporate }) {
       <span class="eyebrow hero-rev" data-d="1">NARLIGHT — AYDINLATMANIN TASARIMI</span>
       <h1 class="hero-rev" data-d="2">Karanlığa<br><span class="accent">imza atan</span><br>Türk markası.</h1>
       <p class="lede hero-rev" data-d="3">
-        29 yıldır Türkiye'nin dört bir yanında camileri, meydanları, müzeleri, otobanları ve kent merkezlerini ışıkla yeniden yazıyoruz. Tek bir ekipten konsept, üretim, kurulum ve sertifikasyon.
+        1995'ten bu yana camileri, meydanları, müzeleri, otobanları ve kent merkezlerini ışıkla yeniden yazıyoruz. Tek bir ekipten konsept, üretim, kurulum ve sertifikasyon.
       </p>
       <div class="actions hero-rev" data-d="4">
         <a href="/projeler/" class="btn" data-magnetic="14">
-          200+ Projeyi İncele
+          Projeleri Keşfet
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="/iletisim/" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">
-          Teklif İste
-        </a>
+        <a href="/iletisim/" class="hero-text-link">veya teklif isteyin →</a>
       </div>
     </div>
 
@@ -212,22 +210,8 @@ export function renderHome({ projects, productCats, news, corporate }) {
   </div>
 </section>
 
-<!-- ======================================================
-     STATS MARQUEE  —  Big editorial scrolling numbers
-====================================================== -->
-<section style="background:var(--color-paper-2);padding:48px 0 56px;overflow:hidden">
-  <div class="marquee" style="--marquee-dur:55s;--marquee-gap:80px">
-    <div class="marquee-content">
-      ${Array.from({length: 2}).map(() => `
-        <span class="stat-marquee-item solid"><span class="num">200+</span><span class="label">Tamamlanan Proje</span></span>
-        <span class="stat-marquee-item"><span class="num">81</span><span class="label">Şehirde İmza</span></span>
-        <span class="stat-marquee-item solid"><span class="num">29</span><span class="label">Yıllık Tecrübe</span></span>
-        <span class="stat-marquee-item"><span class="num">40+</span><span class="label">Ürün Serisi</span></span>
-        <span class="stat-marquee-item solid"><span class="num">1.300+</span><span class="label">Proje Görseli</span></span>
-      `).join('')}
-    </div>
-  </div>
-</section>
+<!-- (Stats marquee removed — numbers already shown in hero strip;
+     repeating them was boastful per critique.) -->
 
 <!-- ======================================================
      SCROLLYTELLING — How we work (4 step process)
@@ -238,7 +222,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
       <div class="scrolly-sticky" data-reveal>
         <span class="section-tag"><span class="pulse"></span>Süreç</span>
         <h2 class="display display-2" style="margin:32px 0 24px;max-width:14ch">Tasarımdan teslime, tek bir ekipten.</h2>
-        <p style="font-size:15px;line-height:1.7;color:var(--color-mute);max-width:36ch;margin:0 0 32px">
+        <p style="font-size:16px;line-height:1.7;color:var(--color-mute);max-width:36ch;margin:0 0 32px">
           Saha keşfinden uzun yıllar süren satış sonrası servise — bir aydınlatma projesinin tüm aşamalarını biz yürütüyoruz. Mimar, mühendis, kurulum ekibi ve servis ağı tek çatı altında.
         </p>
         <a href="/kurumsal/cozumlerimiz/" class="btn btn-ghost">
@@ -336,7 +320,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
         <h2 class="display display-2" style="color:var(--color-paper);margin:32px 0 28px;max-width:16ch">
           Her ürün, son <em style="font-style:italic;color:var(--color-glow)">spesifikasyonuna kadar</em> ölçülür.
         </h2>
-        <p style="color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;max-width:42ch;margin:0 0 36px">
+        <p style="color:rgba(255,255,255,0.65);font-size:16px;line-height:1.7;max-width:42ch;margin:0 0 36px">
           40'tan fazla ürün serimizin her biri ölçülmüş, sertifikalanmış ve dökümante edilmiştir. Tasarımcıdan saha mühendisine, ihtiyaç duyduğunuz tüm teknik veri her ürün sayfasında sizi bekliyor.
         </p>
         <a href="/urunler/urun/agrestis/" class="btn">
@@ -350,7 +334,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
             <span class="eyebrow" style="color:var(--color-glow);display:block;margin-bottom:8px">Örnek — Mimari Projektör</span>
             <h3 style="font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-0.02em;margin:0;color:var(--color-paper)">AGRESTIS Serisi</h3>
           </div>
-          <span class="spec-card-badge">IP67</span>
+          <span class="spec-card-badge term" data-tip="IP67 — toza tam dayanıklı ve 1 metre suya 30 dakika dayanıklı koruma sınıfı. Dış mekan için uygundur.">IP67</span>
         </div>
         <div class="spec-table-wrap">
           <table class="spec-table">
@@ -358,8 +342,8 @@ export function renderHome({ projects, productCats, news, corporate }) {
               <tr>
                 <th>Model</th>
                 <th>Güç</th>
-                <th>Işık Akısı</th>
-                <th>CRI</th>
+                <th><span class="term" data-tip="Işık akısı — armatürün ürettiği toplam ışık miktarı (lümen). Yüksek = daha aydınlık.">Işık Akısı</span></th>
+                <th><span class="term" data-tip="Renk Gerçekliği İndeksi (0-100). Yüksek = renkler güneş ışığındaki gibi doğal görünür. Müzeler için ≥ 90 önerilir.">CRI</span></th>
               </tr>
             </thead>
             <tbody>
@@ -386,10 +370,10 @@ export function renderHome({ projects, productCats, news, corporate }) {
         </div>
         <dl class="spec-meta">
           <div><dt>Giriş Gerilimi</dt><dd>230&nbsp;V AC</dd></div>
-          <div><dt>Renk Sıcaklığı</dt><dd>3000K – 6500K</dd></div>
+          <div><dt><span class="term" data-tip="CCT — Kelvin cinsinden ışığın rengi. 3000K sıcak (otel, ev), 4000K nötr (ofis), 6500K soğuk (atölye, hastane).">Renk Sıcaklığı</span></dt><dd>3000K – 6500K</dd></div>
           <div><dt>Gövde</dt><dd>Alüminyum Ekstrüzyon</dd></div>
           <div><dt>Sürücü</dt><dd>Sabit Akımlı</dd></div>
-          <div><dt>Dimming</dt><dd>1~10V / DALI (ops.)</dd></div>
+          <div><dt><span class="term" data-tip="Dimming — armatürün ışık şiddetini kademeli azaltıp arttırma yeteneği. 1~10V ve DALI standartları.">Dimming</span></dt><dd>1~10V / DALI (ops.)</dd></div>
           <div><dt>Sertifikalar</dt><dd>TSE · CE · RoHS</dd></div>
         </dl>
       </div>
@@ -413,15 +397,15 @@ export function renderHome({ projects, productCats, news, corporate }) {
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-reveal-stagger>
       ${latestNews.map(n => {
-        const summary = (n.cleanParas || []).find(p => p.length > 50)?.slice(0, 160) || 'Detaylar için habere göz atın.';
+        const summary = (n.cleanParas || []).find(p => p.length > 50);
         return `
           <a href="${esc(n.href)}" style="display:block;border-top:1px solid var(--color-ink);padding-top:28px">
             <span class="eyebrow" style="display:block;margin-bottom:20px">— Haber</span>
             <h3 style="font-family:var(--font-display);font-weight:800;font-size:22px;line-height:1.15;letter-spacing:-0.02em;margin:0 0 18px">${esc(n.title.slice(0, 80))}${n.title.length > 80 ? '…' : ''}</h3>
-            <p style="font-size:13px;line-height:1.65;color:var(--color-mute);margin:0 0 24px">${esc(summary)}${summary.length === 160 ? '…' : ''}</p>
+            ${summary ? `<p style="font-size:13px;line-height:1.65;color:var(--color-mute);margin:0 0 24px">${esc(summary.slice(0, 160))}${summary.length > 160 ? '…' : ''}</p>` : '<div style="margin-bottom:24px"></div>'}
             <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px">
               Devamı
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </span>
           </a>`;
       }).join('')}

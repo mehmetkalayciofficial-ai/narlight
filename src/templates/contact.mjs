@@ -53,7 +53,7 @@ export function renderContact() {
       </div>
 
       <!-- Right: form -->
-      <form data-reveal style="background:var(--color-paper-3);border-radius:24px;padding:48px;display:flex;flex-direction:column;gap:24px" onsubmit="event.preventDefault(); this.querySelector('[data-success]').style.display='block'; this.querySelectorAll('input,textarea').forEach(i=>i.value='');">
+      <form data-reveal data-contact-form style="background:var(--color-paper-3);border-radius:24px;padding:48px;display:flex;flex-direction:column;gap:24px">
         <div>
           <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">Ad Soyad</label>
           <input type="text" name="name" autocomplete="name" required spellcheck="false" placeholder="Adınız ve soyadınız…" style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;transition:border-color 240ms var(--ease-out)" onfocus="this.style.borderColor='var(--color-ink)'" onblur="this.style.borderColor='var(--color-line)'">
@@ -82,7 +82,7 @@ export function renderContact() {
           <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">Mesajınız</label>
           <textarea rows="5" name="message" required placeholder="Projeniz hakkında biraz bilgi verin…" style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;resize:vertical;transition:border-color 240ms var(--ease-out)" onfocus="this.style.borderColor='var(--color-ink)'" onblur="this.style.borderColor='var(--color-line)'"></textarea>
         </div>
-        <div data-success style="display:none;padding:16px 20px;background:rgba(255,179,71,0.15);border:1px solid rgba(255,179,71,0.4);border-radius:12px;color:var(--color-ink);font-size:14px">
+        <div data-success style="display:none;padding:16px 20px;background:rgba(255,179,71,0.15);border:1px solid rgba(255,179,71,0.4);border-radius:12px;color:var(--color-ink);font-size:13px">
           Mesajınız alındı. 24 saat içinde size dönüş yapacağız.
         </div>
         <button type="submit" class="btn" style="align-self:flex-start;margin-top:8px">

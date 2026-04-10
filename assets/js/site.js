@@ -156,7 +156,7 @@
     }
     function next() { go(idx + 1); }
 
-    function startAuto() { stopAuto(); auto = setInterval(next, 3800); }
+    function startAuto() { stopAuto(); auto = setInterval(next, 5500); }
     function stopAuto() { if (auto) clearInterval(auto); auto = null; }
 
     dots.forEach((d, i) => {
@@ -249,20 +249,65 @@
   // ============================================================
   const burger = document.querySelector('.nav-burger');
   const drawer = document.querySelector('[data-mobile-drawer]');
+  const drawerClose = document.querySelector('[data-mobile-drawer-close]');
   if (burger && drawer) {
-    burger.addEventListener('click', () => {
-      const open = drawer.classList.toggle('is-open');
+    const setDrawer = (open) => {
+      drawer.classList.toggle('is-open', open);
       burger.classList.toggle('is-open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.documentElement.classList.toggle('no-scroll', open);
+    };
+    burger.addEventListener('click', () => setDrawer(!drawer.classList.contains('is-open')));
+    drawerClose?.addEventListener('click', () => setDrawer(false));
+    // Close on link click.
+    drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setDrawer(false)));
+    // Close on Escape.
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false); });
+  }
+
+  // ============================================================
+  // Contact form: inline validation + fake submit (no backend)
+  // ============================================================
+  const contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm) {
+    function setError(field, msg) {
+      const wrap = field.parentElement;
+      let err = wrap.querySelector('.field-error');
+      if (msg) {
+        if (!err) {
+          err = document.createElement('div');
+          err.className = 'field-error';
+          wrap.appendChild(err);
+        }
+        err.textContent = msg;
+        field.setAttribute('aria-invalid', 'true');
+      } else if (err) {
+        err.remove();
+        field.removeAttribute('aria-invalid');
+      }
+    }
+    function validate(field) {
+      const v = (field.value || '').trim();
+      if (field.required && !v) { setError(field, 'Bu alan zorunlu.'); return false; }
+      if (field.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { setError(field, 'Geçerli bir e-posta girin.'); return false; }
+      if (field.type === 'tel' && v && !/^[+\d\s()-]{7,}$/.test(v)) { setError(field, 'Geçerli bir telefon girin.'); return false; }
+      setError(field, null);
+      return true;
+    }
+    contactForm.querySelectorAll('input, textarea, select').forEach((field) => {
+      field.addEventListener('blur', () => validate(field));
+      field.addEventListener('input', () => { if (field.getAttribute('aria-invalid')) validate(field); });
     });
-    // Close drawer on link click.
-    drawer.querySelectorAll('a').forEach((a) => {
-      a.addEventListener('click', () => {
-        drawer.classList.remove('is-open');
-        burger.classList.remove('is-open');
-        document.documentElement.classList.remove('no-scroll');
-      });
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fields = Array.from(contactForm.querySelectorAll('input, textarea, select'));
+      let firstBad = null;
+      fields.forEach((f) => { if (!validate(f) && !firstBad) firstBad = f; });
+      if (firstBad) { firstBad.focus(); return; }
+      const success = contactForm.querySelector('[data-success]');
+      if (success) success.style.display = 'block';
+      fields.forEach((f) => { if (f.type !== 'submit') f.value = ''; });
+      contactForm.querySelectorAll('.field-error').forEach((e) => e.remove());
     });
   }
 

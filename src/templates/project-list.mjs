@@ -49,12 +49,12 @@ export function renderProjectList({ projects }) {
 </section>
 
 <script>
-  // Simple client-side city filter
-  document.querySelectorAll('[data-city-filter]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.cityFilter;
+  // City filter with URL state — bookmarkable & shareable.
+  (function () {
+    function applyFilter(target, opts) {
+      opts = opts || {};
       document.querySelectorAll('[data-city-filter]').forEach(b => {
-        const active = b === btn;
+        const active = b.dataset.cityFilter === target;
         b.classList.toggle('is-active', active);
         if (active) {
           b.style.background = 'var(--color-glow)';
@@ -70,8 +70,21 @@ export function renderProjectList({ projects }) {
         const matches = target === 'all' || item.dataset.city === target;
         item.style.display = matches ? '' : 'none';
       });
+      // Sync URL.
+      if (opts.updateUrl !== false) {
+        const u = new URL(window.location.href);
+        if (target === 'all') u.searchParams.delete('sehir');
+        else u.searchParams.set('sehir', target);
+        history.replaceState(null, '', u.toString());
+      }
+    }
+    document.querySelectorAll('[data-city-filter]').forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.cityFilter));
     });
-  });
+    // Read initial state from ?sehir=
+    const initial = new URL(window.location.href).searchParams.get('sehir');
+    if (initial) applyFilter(initial, { updateUrl: false });
+  })();
 </script>
 `;
 }

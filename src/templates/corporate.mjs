@@ -35,7 +35,7 @@ export function renderCorporate({ page, allCorporate }) {
         <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
           ${siblings.map(s => `
             <li>
-              <a href="${esc(s.href)}" style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:${s.active ? '600' : '500'};color:${s.active ? 'var(--color-ink)' : 'var(--color-mute)'};background:${s.active ? 'var(--color-paper-3)' : 'transparent'};transition:background-color 240ms var(--ease-out),color 240ms var(--ease-out)">
+              <a href="${esc(s.href)}" style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;font-size:13px;font-weight:${s.active ? '600' : '500'};color:${s.active ? 'var(--color-ink)' : 'var(--color-mute)'};background:${s.active ? 'var(--color-paper-3)' : 'transparent'};transition:background-color 240ms var(--ease-out),color 240ms var(--ease-out)">
                 <span style="width:4px;height:4px;border-radius:50%;background:${s.active ? 'var(--color-glow)' : 'var(--color-line-strong)'}"></span>
                 ${esc(s.label)}
               </a>
@@ -45,7 +45,7 @@ export function renderCorporate({ page, allCorporate }) {
       </aside>
       <!-- Body content -->
       <article data-reveal>
-        ${rest.map(p => `<p style="font-family:var(--font-body);font-size:17px;line-height:1.75;color:var(--color-ink-soft);margin:0 0 28px;max-width:64ch">${esc(p)}</p>`).join('')}
+        ${rest.map(p => `<p style="font-family:var(--font-body);font-size:16px;line-height:1.75;color:var(--color-ink-soft);margin:0 0 28px;max-width:64ch">${esc(p)}</p>`).join('')}
         ${images.length > 0 ? `
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4" style="margin-top:64px">
             ${images.slice(0, 6).map(i => `

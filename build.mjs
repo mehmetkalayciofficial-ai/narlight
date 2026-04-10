@@ -6,6 +6,7 @@ import { renderLayout } from './src/templates/layout.mjs';
 import { renderHome } from './src/templates/home.mjs';
 import { renderCorporate } from './src/templates/corporate.mjs';
 import { renderContact } from './src/templates/contact.mjs';
+import { renderFaq } from './src/templates/faq.mjs';
 import { renderProjectList } from './src/templates/project-list.mjs';
 import { renderProjectDetail } from './src/templates/project-detail.mjs';
 import { renderProductList } from './src/templates/product-list.mjs';
@@ -101,6 +102,14 @@ for (const c of corporate) {
   }));
   log(url);
 }
+
+// ---------- FAQ page ----------
+writePage('kurumsal/sss/index.html', renderLayout({
+  title: 'Sıkça Sorulan Sorular',
+  description: 'Narlight\'ın aydınlatma projeleri, ürünleri, sertifikaları ve süreci hakkında en sık sorulan sorular ve cevapları.',
+  body: renderFaq(),
+}));
+log('/kurumsal/sss/');
 
 // ---------- Contact page ----------
 writePage('iletisim/index.html', renderLayout({

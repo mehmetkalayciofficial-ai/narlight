@@ -32,6 +32,7 @@ const menus = {
         items: [
           { href: '/kurumsal/akilli-aydinlatma/', label: 'Akıllı Aydınlatma' },
           { href: '/kurumsal/belgelerimiz/', label: 'Belgelerimiz' },
+          { href: '/kurumsal/sss/', label: 'Sıkça Sorulan' },
           { href: '/basin-odasi/', label: 'Basın Odası' },
           { href: '/iletisim/', label: 'İletişim Bilgileri' },
         ],
@@ -60,9 +61,9 @@ const menus = {
       {
         title: 'Dış Aydınlatma',
         items: [
-          { href: '/urunler/aydinlatma-direkleri/', label: 'Aydınlatma Direkleri', desc: '4–12m park, cadde ve meydan direkleri', thumb: '/brand_assets/images/PROJELER/Cine-Otogari/Cine-Otogari.webp' },
+          { href: '/urunler/aydinlatma-direkleri/', label: 'Aydınlatma Direkleri', desc: '4–12m park, cadde ve meydan direkleri', thumb: '/brand_assets/images/PROJELER/Cine-Otogari1.webp' },
           { href: '/urunler/mimari-projektorler/', label: 'Mimari Projektörler', desc: 'AGRESTIS, GLAUCA, ELATA', thumb: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2.webp' },
-          { href: '/urunler/park-bahce-armaturleri/', label: 'Park & Bahçe', desc: 'Bollard ve dekoratif seriler', thumb: '/brand_assets/images/PROJELER/Karapinar-SuParki/buyukresimm.webp' },
+          { href: '/urunler/park-bahce-armaturleri/', label: 'Park & Bahçe', desc: 'Bollard ve dekoratif seriler', thumb: '/brand_assets/images/PROJELER/Karap%C4%B1nar-SuPark%C4%B1/buyukresimm.webp' },
         ],
       },
       {
@@ -181,7 +182,7 @@ export function renderNav() {
         ${flatLinks.map(l => `<a href="${l.href}" class="nav-link">${l.label}</a>`).join('')}
       </nav>
       <div class="nav-right">
-        <a href="/iletisim/" class="nav-login">Giriş</a>
+        <a href="/iletisim/" class="nav-login">Bayi Girişi</a>
         <a href="/iletisim/" class="nav-cta">Teklif Al ${arrow}</a>
         <button type="button" class="nav-burger" aria-label="Menüyü aç" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -193,6 +194,9 @@ export function renderNav() {
 
   <!-- Mobile drawer (shown on screens < 1024px) -->
   <div class="mobile-drawer" data-mobile-drawer>
+    <button type="button" class="mobile-drawer-close" data-mobile-drawer-close aria-label="Menüyü kapat">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
     <div style="max-width:560px;margin:0 auto">
       <p class="small">Menü</p>
       <ul>
