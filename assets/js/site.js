@@ -91,187 +91,27 @@
   }
 
   // ============================================================
-  // Hero animation kickoff.
-  //
-  // On DESKTOP we rely on CSS @keyframes gated by html.is-ready —
-  // desktop browsers handle that reliably.
-  //
-  // On MOBILE we use the Web Animations API (Element.animate()) to
-  // drive the fade-in directly in JS. This is 100% reliable across
-  // Samsung Internet, Android Chrome, Firefox Mobile — any browser
-  // that ships the WAAPI (~99.5% global support). It bypasses every
-  // quirk of CSS transition-triggering, animation-play-state,
-  // @keyframes parsing, and class-toggle race conditions that have
-  // been breaking the mobile entry on real devices.
+  // Hero kickoff — JUST fitHeroTitle now. The warm-up animations
+  // are CSS @keyframes on base selectors so they auto-play on
+  // first render, no JS gating, no WAAPI. This is the most
+  // reliable approach and works on every mobile browser.
   // ============================================================
-  const MOBILE_ANIM_MQ = window.matchMedia ? window.matchMedia('(max-width: 1024px)') : null;
-  function isHeroMobile() {
-    return MOBILE_ANIM_MQ ? MOBILE_ANIM_MQ.matches : window.innerWidth <= 1024;
+  function startHero() {
+    try { fitHeroTitle(); } catch (e) { /* ignore */ }
+    // Keep the class for any legacy code still reading it.
+    document.documentElement.classList.add('is-ready');
   }
-
-  // Descriptors for each mobile hero animation. These mirror the
-  // desktop CSS @keyframes (hero-img-warmup, hero-sweep-pass,
-  // hero-eyebrow-warmup, hero-heading-warmup, hero-accent-ignite,
-  // hero-fade-up) EXACTLY — same keyframe values, same durations,
-  // same delays. The only reason they exist as WAAPI calls on
-  // mobile is that CSS @keyframes is not reliable on Samsung
-  // Internet / older Android Chrome, so we drive the same effect
-  // from JS instead.
-  const EASE_OUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
-  const MOBILE_HERO_ITEMS = [
-    // Stage image: matches desktop @keyframes hero-img-warmup
-    // (2200ms, no delay). Image is visible but deeply dimmed and
-    // blurred, then brightens and focuses into place.
-    {
-      sel: '.hero-v2 .hero-bg-image.hero-warmup-img',
-      delay: 0,
-      duration: 2200,
-      keyframes: [
-        { opacity: 1, transform: 'scale(1.08)', filter: 'brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15)', offset: 0 },
-        { opacity: 1, transform: 'scale(1.04)', filter: 'brightness(0.5) blur(5px) sepia(0.38) saturate(1.2) contrast(1.05)', offset: 0.6 },
-        { opacity: 1, transform: 'scale(1)',    filter: 'brightness(1) blur(0) sepia(0) saturate(1) contrast(1)', offset: 1 },
-      ],
-    },
-    // Light sweep: matches desktop @keyframes hero-sweep-pass
-    // (2400ms duration, 400ms delay). The .mobile-hero-sweep
-    // element is injected into the DOM by ensureMobileSweep().
-    {
-      sel: '.hero-v2 .mobile-hero-sweep',
-      delay: 400,
-      duration: 2400,
-      keyframes: [
-        { transform: 'translateX(-100%) skewX(-12deg)' },
-        { transform: 'translateX(280%) skewX(-12deg)' },
-      ],
-    },
-    // Eyebrow: matches desktop @keyframes hero-eyebrow-warmup
-    // (1400ms, 500ms delay). Dim brown filament igniting to amber.
-    {
-      sel: '.hero-v2 .hero-warmup-eyebrow',
-      delay: 500,
-      duration: 1400,
-      keyframes: [
-        { color: 'rgba(110, 70, 30, 0)',    opacity: 0,   transform: 'translateY(8px)', offset: 0 },
-        { color: 'rgba(170, 100, 40, 0.6)', opacity: 0.7, offset: 0.4 },
-        { color: 'rgb(255, 179, 71)',       opacity: 1,   transform: 'translateY(0)',   offset: 1 },
-      ],
-    },
-    // H1 title: matches desktop @keyframes hero-heading-warmup
-    // (1800ms, 700ms delay). Four-stage filament warm-up from
-    // dim blurry brown through warm gray to clean white.
-    {
-      sel: '.hero-v2 .hero-warmup-title',
-      delay: 700,
-      duration: 1800,
-      keyframes: [
-        { color: 'rgba(150, 90, 40, 0.15)',  filter: 'blur(8px)', opacity: 0,   transform: 'translateY(24px)', offset: 0 },
-        { color: 'rgba(180, 120, 60, 0.45)', filter: 'blur(3px)', opacity: 0.7, offset: 0.35 },
-        { color: 'rgba(230, 200, 160, 0.92)', filter: 'blur(0px)', opacity: 1,  offset: 0.7 },
-        { color: 'rgb(255, 255, 255)',        filter: 'blur(0px)', opacity: 1,  transform: 'translateY(0)',    offset: 1 },
-      ],
-    },
-    // Accent word: matches desktop @keyframes hero-accent-ignite
-    // (1200ms, 1500ms delay). Dim amber → full neon glow with
-    // multi-layer text-shadow halo.
-    {
-      sel: '.hero-v2 .hero-warmup-accent',
-      delay: 1500,
-      duration: 1200,
-      keyframes: [
-        { color: 'rgba(180, 120, 60, 0.35)',
-          textShadow: 'rgba(255,179,71,0) 0px 0px 0px',
-          offset: 0 },
-        { color: 'rgba(220, 150, 80, 0.7)',
-          textShadow: 'rgba(255,179,71,0.25) 0px 0px 8px, rgba(255,179,71,0.12) 0px 0px 16px',
-          offset: 0.5 },
-        { color: 'rgb(255, 179, 71)',
-          textShadow: 'rgba(255,179,71,0.6) 0px 0px 16px, rgba(255,179,71,0.35) 0px 0px 38px, rgba(255,179,71,0.18) 0px 0px 78px',
-          offset: 1 },
-      ],
-    },
-    // hero-fade-up: matches desktop @keyframes hero-fade-up (900ms)
-    // Delays 1700/1850/2000/2150 for lede/actions/carousel/stats.
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="1"]', delay: 1700, duration: 900,
-      keyframes: [
-        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
-      ] },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="2"]', delay: 1850, duration: 900,
-      keyframes: [
-        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
-      ] },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="3"]', delay: 2000, duration: 900,
-      keyframes: [
-        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
-      ] },
-    { sel: '.hero-v2 .hero-warmup-fade[data-d="4"]', delay: 2150, duration: 900,
-      keyframes: [
-        { opacity: 0, transform: 'translateY(18px)', filter: 'blur(4px)' },
-        { opacity: 1, transform: 'translateY(0)',    filter: 'blur(0px)' },
-      ] },
-  ];
-
-  // Build the one-shot mobile light sweep element if it's missing.
-  // It sits at z-index above the bg image but below the text, and
-  // gets animated once by the WAAPI keyframes above, then removed.
-  function ensureMobileSweep() {
-    const hero = document.querySelector('.hero-v2');
-    if (!hero) return null;
-    let sweep = hero.querySelector('.mobile-hero-sweep');
-    if (sweep) return sweep;
-    sweep = document.createElement('div');
-    sweep.className = 'mobile-hero-sweep';
-    sweep.setAttribute('aria-hidden', 'true');
-    hero.appendChild(sweep);
-    return sweep;
-  }
-
-  function runMobileHeroAnimations() {
-    const canAnimate = typeof Element !== 'undefined' && Element.prototype && typeof Element.prototype.animate === 'function';
-    ensureMobileSweep();
-    for (let i = 0; i < MOBILE_HERO_ITEMS.length; i++) {
-      const item = MOBILE_HERO_ITEMS[i];
-      const el = document.querySelector(item.sel);
-      if (!el) continue;
-      if (canAnimate) {
-        try {
-          el.animate(item.keyframes, {
-            duration: item.duration,
-            delay: item.delay,
-            easing: EASE_OUT,
-            fill: 'forwards',
-          });
-        } catch (e) {
-          // WAAPI failed — fall back to inline style at end state
-          const last = item.keyframes[item.keyframes.length - 1];
-          setTimeout(function () {
-            Object.assign(el.style, last);
-            el.style.opacity = '1';
-          }, item.delay + item.duration);
-        }
-      } else {
-        // Ancient browser: skip the tween, jump to final state
-        const last = item.keyframes[item.keyframes.length - 1];
-        setTimeout(function () {
-          Object.assign(el.style, last);
-          el.style.opacity = '1';
-        }, item.delay);
-      }
-    }
-    // Remove the sweep element after its animation so it doesn't
-    // sit in the DOM forever.
-    setTimeout(function () {
-      const sweep = document.querySelector('.hero-v2 .mobile-hero-sweep');
-      if (sweep && sweep.parentNode) sweep.parentNode.removeChild(sweep);
-    }, 2600);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      requestAnimationFrame(startHero);
+    });
+  } else {
+    requestAnimationFrame(startHero);
   }
 
   // Force every hero animation target to its final visible state.
-  // Used as a safety net if JS crashes mid-way, and to hold the
-  // final state after WAAPI fill:'forwards' (which some Android
-  // browsers lose if the element is repainted).
+  // Safety net — if something weird happens and the CSS animation
+  // leaves an element stuck, inline-style it visible after 3s.
   function forceHeroVisible() {
     const sels = [
       '.hero-v2 .hero-bg-image.hero-warmup-img',
@@ -285,33 +125,8 @@
       for (let j = 0; j < nodes.length; j++) {
         const n = nodes[j];
         n.style.opacity = '1';
-        n.style.transform = 'none';
-        n.style.filter = 'none';
       }
     }
-  }
-
-  function startHero() {
-    try { fitHeroTitle(); } catch (e) { /* ignore */ }
-    // Add the class for desktop CSS keyframes.
-    document.documentElement.classList.add('is-ready');
-    // On mobile, ALSO run WAAPI animations — much more reliable than
-    // CSS transitions on Samsung Internet / older Android Chrome.
-    if (isHeroMobile()) {
-      try { runMobileHeroAnimations(); } catch (e) { /* ignore */ }
-    }
-  }
-  function kickOffHero() {
-    // Double rAF: guarantees at least one paint of the "from" state
-    // before WAAPI / CSS transitions kick off.
-    requestAnimationFrame(function () {
-      requestAnimationFrame(startHero);
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', kickOffHero);
-  } else {
-    kickOffHero();
   }
 
   // Re-fit when fonts finish loading (widths change once the real

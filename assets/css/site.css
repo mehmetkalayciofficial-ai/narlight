@@ -1463,13 +1463,21 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
     text-wrap: balance;
     box-sizing: border-box;
   }
-  /* Per-line fit h1 on mobile: center the block, larger base size */
+  /* Per-line fit h1 on mobile: center the block, larger base size.
+     gap: 8px adds small breathing room between the three lines so
+     the glowing accent line ("aydınlatan") text-shadow doesn't
+     collide with the "ü" of "Türk markası" underneath. Slightly
+     relaxed line-height (0.92) also gives each glyph more room. */
   .hero-v2 h1.hero-title-fit {
     font-size: clamp(48px, 13vw, 96px);
     align-items: center;
     text-align: center;
     margin: 24px auto 0;
-    line-height: 0.86;
+    line-height: 0.92;
+    gap: 8px;
+  }
+  .hero-v2 h1.hero-title-fit .hero-line {
+    line-height: 0.92;
   }
   .hero-v2 p.lede {
     width: 100%;
@@ -1675,41 +1683,22 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
     opacity: 1;
   }
 }
-/* Initial hidden state for hero warm-up text targets.
-   The animation/transition that unhides them lives inside
-   html.is-ready rules below, so before JS adds the class they
-   are simply invisible. This avoids the Samsung Internet bug
-   where `animation-play-state: paused` combined with a long
-   animation-delay could leave elements invisible forever.
-   NOTE 1: .hero-warmup-accent is NOT in this list — it's a child
-   of .hero-warmup-title, so its parent's opacity:0 already hides
-   it via the stacking context.
-   NOTE 2: .hero-bg-image.hero-warmup-img is also NOT in this list.
-   It's VISIBLE from the start but with a dark-sepia blur filter
-   (see below). The warm-up animation brightens and clears that
-   filter, producing the "lights coming on" reveal. Fading it in
-   from opacity 0 would look like a black flash — not the effect
-   we want. */
-.hero-v2 .hero-warmup-eyebrow,
-.hero-v2 .hero-warmup-title,
-.hero-v2 .hero-warmup-fade {
-  opacity: 0;
-}
+/* ============================================================
+   AUTO-PLAYING CSS ANIMATIONS — NO JS GATE
+   Animations are applied directly on base selectors so they
+   play on first render, no JavaScript, no class-toggle, no
+   html.is-ready dependency. This is the most reliable approach
+   for Samsung Internet, older Android Chrome, iOS Safari, and
+   every other mobile browser. The `fill-mode: both` keeps the
+   final state after the animation ends. If the page load takes
+   longer than the animation duration the user misses the tween
+   but still sees the correct final hero — no blank screen
+   possible.
+   ============================================================ */
 
-/* Initial dark-sepia state for the hero background image. Matches
-   the 0% keyframe of hero-img-warmup (desktop) and the first
-   keyframe of the WAAPI bg animation (mobile). The image is fully
-   opaque but deeply dimmed/blurred so the animation can reveal
-   it by brightening rather than fading in. */
+/* Background image: animation starts from the 0% keyframe
+   (deeply dim sepia blurred) and tweens to clean light. */
 .hero-v2 .hero-bg-image.hero-warmup-img {
-  opacity: 1;
-  filter: brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15);
-  transform: scale(1.08);
-}
-
-/* Desktop-only rich animations (>=1025px). Applied only when
-   <html> has .is-ready, so they always start from frame 0. */
-html.is-ready .hero-bg-image.hero-warmup-img {
   animation: hero-img-warmup 2200ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -1736,8 +1725,6 @@ html.is-ready .hero-bg-image.hero-warmup-img {
   mix-blend-mode: screen;
   filter: blur(40px);
   transform: translateX(-100%) skewX(-12deg);
-}
-html.is-ready .hero-v2 .hero-sweep::before {
   animation: hero-sweep-pass 2400ms cubic-bezier(0.4, 0, 0.2, 1) 400ms both;
 }
 @keyframes hero-sweep-pass {
@@ -1750,7 +1737,7 @@ html.is-ready .hero-v2 .hero-sweep::before {
   40% { color: rgba(170, 100, 40, 0.6); opacity: 0.7; }
   100% { color: var(--color-glow); opacity: 1; transform: none; }
 }
-html.is-ready .hero-v2 .hero-warmup-eyebrow {
+.hero-v2 .hero-warmup-eyebrow {
   animation: hero-eyebrow-warmup 1400ms cubic-bezier(0.22, 1, 0.36, 1) 500ms both;
 }
 
@@ -1779,7 +1766,7 @@ html.is-ready .hero-v2 .hero-warmup-eyebrow {
     transform: none;
   }
 }
-html.is-ready .hero-v2 .hero-warmup-title {
+.hero-v2 .hero-warmup-title {
   animation: hero-heading-warmup 1800ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both;
 }
 
@@ -1803,8 +1790,38 @@ html.is-ready .hero-v2 .hero-warmup-title {
       0 0 78px rgba(255, 179, 71, 0.18);
   }
 }
-html.is-ready .hero-v2 .hero-warmup-accent {
+/* Mobile variant: same colour tween but tighter halo (max 26px
+   blur instead of 78px) so the glow doesn't bleed into the next
+   line of the square-block title. */
+@keyframes hero-accent-ignite-mobile {
+  0% {
+    color: rgba(180, 120, 60, 0.35);
+    text-shadow: none;
+  }
+  50% {
+    color: rgba(220, 150, 80, 0.7);
+    text-shadow:
+      0 0 6px rgba(255, 179, 71, 0.3),
+      0 0 12px rgba(255, 179, 71, 0.15);
+  }
+  100% {
+    color: var(--color-glow);
+    text-shadow:
+      0 0 10px rgba(255, 179, 71, 0.65),
+      0 0 22px rgba(255, 179, 71, 0.32);
+  }
+}
+.hero-v2 .hero-warmup-accent {
   animation: hero-accent-ignite 1200ms cubic-bezier(0.22, 1, 0.36, 1) 1500ms both;
+}
+/* Mobile accent override — placed AFTER the base rule so it wins
+   the cascade. Uses hero-accent-ignite-mobile (tighter glow, max
+   22px blur) so the halo doesn't bleed into the "Türk markası."
+   line underneath in the square-block title layout. */
+@media (max-width: 1023px) {
+  .hero-v2 .hero-warmup-accent {
+    animation-name: hero-accent-ignite-mobile;
+  }
 }
 
 /* Generic fade-up for subtitle / actions / carousel / stats */
@@ -1812,98 +1829,24 @@ html.is-ready .hero-v2 .hero-warmup-accent {
   from { opacity: 0; transform: translateY(18px); filter: blur(4px); }
   to   { opacity: 1; transform: none; filter: blur(0); }
 }
-html.is-ready .hero-v2 .hero-warmup-fade {
+.hero-v2 .hero-warmup-fade {
   animation: hero-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-html.is-ready .hero-v2 .hero-warmup-fade[data-d="1"] { animation-delay: 1700ms; }
-html.is-ready .hero-v2 .hero-warmup-fade[data-d="2"] { animation-delay: 1850ms; }
-html.is-ready .hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 2000ms; }
-html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; }
+.hero-v2 .hero-warmup-fade[data-d="1"] { animation-delay: 1700ms; }
+.hero-v2 .hero-warmup-fade[data-d="2"] { animation-delay: 1850ms; }
+.hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 2000ms; }
+.hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; }
 
 /* ============================================================
-   Mobile (<=1024px): the hero animations are NOT done in CSS.
-   They are driven entirely by the Web Animations API in site.js
-   (runMobileHeroAnimations). CSS transitions and @keyframes have
-   proven unreliable on Samsung Internet and older Android Chrome
-   — the animations simply wouldn't play. WAAPI (Element.animate)
-   works identically on every modern browser.
-   This rule only sets the INITIAL invisible state plus turns off
-   any desktop CSS animation that might otherwise race.
+   Mobile (<=1024px): the SAME CSS @keyframes animations used on
+   desktop play here. They're defined on base selectors above so
+   they auto-play on first render — no JS gating, no WAAPI, no
+   class-toggle. This is the most reliable approach for Samsung
+   Internet and older Android Chrome. The mobile override here
+   only reduces backdrop-blur cost on the nav and drawer.
    ============================================================ */
 @media (max-width: 1024px) {
-  /* Desktop uses .hero-sweep::before which has a 40px blur — heavy
-     for mobile GPUs. We replace it with .mobile-hero-sweep (injected
-     by site.js) which uses the SAME warm gradient and blur strength
-     so mobile visually matches desktop, but animated via WAAPI. */
-  .hero-v2 .hero-sweep { display: none; }
-  .hero-v2 .mobile-hero-sweep {
-    position: absolute;
-    top: -20%;
-    left: -50%;
-    width: 60%;
-    height: 140%;
-    pointer-events: none;
-    z-index: 2;
-    background: linear-gradient(110deg, transparent 30%, rgba(255, 200, 130, 0.22) 50%, transparent 70%);
-    mix-blend-mode: screen;
-    filter: blur(30px);
-    transform: translateX(-100%) skewX(-12deg);
-    will-change: transform;
-  }
-
-  /* Kill every desktop CSS animation on mobile so it can't fight
-     the WAAPI-driven JS animations. */
-  .hero-v2 .hero-warmup-eyebrow,
-  .hero-v2 .hero-warmup-title,
-  .hero-v2 .hero-warmup-accent,
-  .hero-v2 .hero-warmup-fade,
-  .hero-bg-image.hero-warmup-img {
-    animation: none !important;
-    transition: none !important;
-  }
-  html.is-ready .hero-v2 .hero-warmup-eyebrow,
-  html.is-ready .hero-v2 .hero-warmup-title,
-  html.is-ready .hero-v2 .hero-warmup-accent,
-  html.is-ready .hero-v2 .hero-warmup-fade,
-  html.is-ready .hero-bg-image.hero-warmup-img {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  /* Initial "off" state on mobile — mirrors the first keyframe of
-     each WAAPI animation in MOBILE_HERO_ITEMS (site.js). Must match
-     EXACTLY or the user sees a flash between CSS and WAAPI state.
-
-     Background image is visible (opacity 1) but deeply dim/sepia/
-     blurred, matching the hero-img-warmup 0% keyframe. It brightens
-     into clean light via WAAPI. */
-  .hero-bg-image.hero-warmup-img {
-    opacity: 1;
-    filter: brightness(0.15) blur(14px) sepia(0.72) saturate(1.5) contrast(1.15);
-    transform: scale(1.08);
-  }
-  .hero-v2 .hero-warmup-eyebrow {
-    color: rgba(110, 70, 30, 0);
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  .hero-v2 .hero-warmup-title {
-    color: rgba(150, 90, 40, 0.15);
-    filter: blur(8px);
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  .hero-v2 .hero-warmup-accent {
-    color: rgba(180, 120, 60, 0.35);
-    text-shadow: none;
-  }
-  .hero-v2 .hero-warmup-fade {
-    opacity: 0;
-    transform: translateY(18px);
-    filter: blur(4px);
-  }
-
-  /* Reduce backdrop-blur cost on mobile */
+  /* Lighter backdrop-blur for mobile performance */
   .nav-shell { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
   .mobile-drawer { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 }
