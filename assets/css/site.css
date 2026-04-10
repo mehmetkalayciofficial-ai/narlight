@@ -538,20 +538,24 @@ p, li { text-wrap: pretty; }
   background: rgba(10, 10, 10, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  z-index: 45;
+  z-index: 60; /* above .nav (50) so it sits over the rounded pill */
   padding: 120px 24px 48px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
+  pointer-events: none; /* fully inert when closed */
   transition: opacity 480ms var(--ease-out), transform 480ms var(--ease-out), visibility 0s linear 480ms;
 }
 .mobile-drawer.is-open {
   opacity: 1;
   visibility: visible;
   transform: none;
+  pointer-events: auto; /* override the .nav { pointer-events: none } inheritance */
   transition-delay: 0s;
 }
+.mobile-drawer.is-open > * { pointer-events: auto; }
 .mobile-drawer-close {
   position: absolute;
   top: 24px;

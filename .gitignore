@@ -31,3 +31,13 @@ npm-debug.log*
 
 # Claude Code local state
 .claude/settings.local.json
+
+# Ad-hoc audit / test scripts created during development sessions
+audit.mjs
+check-errors.mjs
+final_test.cjs
+lcp-check.mjs
+perf-*.mjs
+test-*.mjs
+test_*.mjs
+impeccable-report.json
