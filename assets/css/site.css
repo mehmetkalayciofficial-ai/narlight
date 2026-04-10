@@ -544,6 +544,15 @@ p, li { text-wrap: pretty; }
   border-radius: 4px;
 }
 
+/* On mobile / tablet, hide the desktop dropdown mega entirely so it does
+   not contribute to layout width. Without this, the absolute-positioned
+   .mega panels still feed scrollWidth on Samsung Internet and push the
+   document past the viewport. */
+@media (max-width: 1023px) {
+  .mega { display: none !important; }
+  .nav-links { display: none !important; }
+}
+
 /* Mobile menu trigger */
 .nav-burger {
   display: inline-flex;
@@ -946,12 +955,12 @@ p, li { text-wrap: pretty; }
 }
 
 /* ---------- Section ---------- */
-.section { padding: clamp(80px, 10vw, 160px) 0; }
+.section { padding: clamp(56px, 7vw, 120px) 0; }
 .section-head {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
-  margin-bottom: clamp(48px, 6vw, 96px);
+  gap: 24px;
+  margin-bottom: clamp(36px, 5vw, 72px);
   align-items: end;
 }
 @media (min-width: 1024px) {
@@ -1034,7 +1043,7 @@ p, li { text-wrap: pretty; }
 .site-footer {
   background: var(--color-navy-deep);
   color: rgba(255,255,255,0.78);
-  padding: clamp(64px, 8vw, 128px) 0 48px;
+  padding: clamp(48px, 6vw, 96px) 0 36px;
   font-family: var(--font-body);
 }
 .site-footer a:hover { color: var(--color-glow); }
@@ -1072,8 +1081,8 @@ p, li { text-wrap: pretty; }
 .footer-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
 .footer-list a { transition: color 220ms var(--ease-out); }
 .footer-bottom {
-  margin-top: 80px;
-  padding-top: 32px;
+  margin-top: 56px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.12);
   display: flex;
   flex-wrap: wrap;
@@ -1207,8 +1216,8 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   color: var(--color-paper);
   overflow: hidden;
   isolation: isolate;
-  padding-top: 168px;
-  padding-bottom: 120px;
+  padding-top: 140px;
+  padding-bottom: 72px;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -1216,8 +1225,8 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 }
 @media (max-width: 768px) {
   .hero-v2 {
-    padding-top: 140px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 56px;
     min-height: auto;
   }
 }
@@ -1244,13 +1253,13 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 64px;
+  gap: 32px;
 }
 @media (min-width: 1024px) {
   .hero-v2-grid {
     grid-template-columns: 1.1fr 1fr;
-    align-items: end;
-    gap: 80px;
+    align-items: center;
+    gap: 56px;
   }
 }
 .hero-v2 .eyebrow {
@@ -1268,10 +1277,10 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .hero-v2 h1 {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(56px, 9vw, 132px);
-  line-height: 0.9;
+  font-size: clamp(52px, 8.5vw, 124px);
+  line-height: 0.92;
   letter-spacing: -0.045em;
-  margin: 32px 0 0;
+  margin: 20px 0 0;
   color: var(--color-paper);
   max-width: 14ch;
 }
@@ -1316,12 +1325,12 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
   max-width: 46ch;
-  margin: 36px 0 40px;
+  margin: 24px 0 28px;
 }
-.hero-v2 .actions { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+.hero-v2 .actions { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
 .hero-text-link {
   display: inline-flex;
   align-items: center;
@@ -1542,12 +1551,12 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .hero-strip {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px 40px;
+  gap: 20px 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 32px;
-  margin-top: 64px;
+  padding-top: 24px;
+  margin-top: 40px;
 }
-@media (min-width: 768px) { .hero-strip { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px) { .hero-strip { grid-template-columns: repeat(4, 1fr); margin-top: 48px; } }
 .hero-strip-num {
   font-family: var(--font-display);
   font-weight: 800;
