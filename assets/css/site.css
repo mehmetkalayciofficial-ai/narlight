@@ -2061,6 +2061,14 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; 
     position: static;
     display: flex;
     flex-wrap: nowrap;
+    /* CRITICAL: override desktop's justify-content:center which, on
+       mobile's overflowing flex row, centers the content and pushes
+       the first card to a huge NEGATIVE offsetLeft (the user sees the
+       carousel "starting from the middle" because scrollLeft=0 can
+       never reach content at offsetLeft = -4215). flex-start anchors
+       the first card at x=0 inside the stage. */
+    justify-content: flex-start;
+    align-items: stretch;
     gap: 14px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -2069,7 +2077,8 @@ html.is-ready .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; 
     scrollbar-width: none;
     padding: 6px 24px 18px;
     margin: 0 -24px;
-    scroll-padding: 0 24px;
+    scroll-padding-left: 24px;
+    scroll-padding-right: 24px;
     overscroll-behavior-x: contain;
   }
   .carousel-stage::-webkit-scrollbar { display: none; }

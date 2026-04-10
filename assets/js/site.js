@@ -74,15 +74,28 @@
   // animation race or hard refresh would otherwise skip it).
   // Also fits the hero title BEFORE the animations begin so the
   // scaled spans fade in at their correct final sizes.
+  //
+  // We use a DOUBLE requestAnimationFrame. The reason: CSS transitions
+  // only fire when the "from" state has been painted in a previous
+  // frame. If we add .is-ready in the same frame that the initial
+  // styles are first applied, the browser may skip straight to the
+  // final state without tweening. Two rAFs guarantee that the initial
+  // opacity:0 / transform:translateY has rendered to the screen at
+  // least once before we toggle the class that kicks off the fade-in.
   // ============================================================
   function startHero() {
     try { fitHeroTitle(); } catch (e) { /* ignore */ }
     document.documentElement.classList.add('is-ready');
   }
+  function kickOffHero() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(startHero);
+    });
+  }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(startHero));
+    document.addEventListener('DOMContentLoaded', kickOffHero);
   } else {
-    requestAnimationFrame(startHero);
+    kickOffHero();
   }
 
   // Re-fit when fonts finish loading (widths change once the real
@@ -244,6 +257,23 @@
       // bar with the user's scroll position.
       const stage = root.querySelector('.carousel-stage');
       if (!stage || !cards.length) return;
+      // Force the initial scroll position to the very first card.
+      // Some browsers restore a previous scrollLeft, and CSS issues
+      // (like an overflowing flex row with justify-content:center)
+      // have caused the carousel to open mid-way. This guarantees
+      // the user always sees the first project on page load.
+      const snapToStart = () => {
+        if (typeof stage.scrollTo === 'function') {
+          stage.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+        } else {
+          stage.scrollLeft = 0;
+        }
+      };
+      snapToStart();
+      // Snap again after layout settles (images load, fonts arrive)
+      // in case anything nudged scrollLeft.
+      requestAnimationFrame(snapToStart);
+      setTimeout(snapToStart, 500);
       function syncProgress() {
         const max = stage.scrollWidth - stage.clientWidth;
         const ratio = max > 0 ? Math.max(0, Math.min(1, stage.scrollLeft / max)) : 0;
