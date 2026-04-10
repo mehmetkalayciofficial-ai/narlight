@@ -1,5 +1,12 @@
 import { renderNav } from '../components/nav.mjs';
 import { renderFooter } from '../components/footer.mjs';
+import { fileHash } from '../utils.mjs';
+
+// Compute cache-busting hashes for CSS / JS at module load (build) time.
+// Each build generates new query params if the content changed, so caches
+// invalidate immediately on deploy without waiting for the 7-day TTL.
+const CSS_VER = fileHash('assets/css/site.css');
+const JS_VER  = fileHash('assets/js/site.js');
 
 export function renderLayout({
   title,
@@ -25,7 +32,7 @@ export function renderLayout({
   ${preloadHeroImage ? `
   <link rel="preload" as="image" href="/brand_assets/images/hero-background.webp" media="(min-width: 901px)" fetchpriority="high">
   <link rel="preload" as="image" href="/brand_assets/images/hero-background-mobile.webp" media="(max-width: 900px)" fetchpriority="high">` : ''}
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css?v=${CSS_VER}">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
@@ -70,7 +77,7 @@ export function renderLayout({
     <div class="lightbox-cap" data-lightbox-cap></div>
   </div>
 
-  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/site.js?v=${JS_VER}" defer></script>
 </body>
 </html>`;
 }

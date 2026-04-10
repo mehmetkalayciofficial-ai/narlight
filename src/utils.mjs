@@ -1,7 +1,15 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 export const CONTENT_DIR = 'brand_assets/content';
+
+// Build a short content hash from a file (used for cache-busting query params).
+export function fileHash(p) {
+  if (!fs.existsSync(p)) return '0';
+  const buf = fs.readFileSync(p);
+  return crypto.createHash('sha1').update(buf).digest('hex').slice(0, 8);
+}
 
 // Convert Turkish text to URL-safe slug.
 const trMap = { 'ç':'c','Ç':'c','ğ':'g','Ğ':'g','ı':'i','I':'i','İ':'i','ö':'o','Ö':'o','ş':'s','Ş':'s','ü':'u','Ü':'u' };
