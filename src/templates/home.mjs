@@ -112,18 +112,26 @@ export function renderHome({ projects, productCats, news, corporate }) {
 
   return `
 <!-- ======================================================
-     HERO v2  —  Evervault dark + Superpower blur reveal
+     HERO v2  —  Cinematic "Filament Warm-Up + Light Sweep"
+     The lights come on as the page loads.
 ====================================================== -->
 <section class="hero-v2">
+  <!-- Full-bleed background image (warms up from dark sepia blur) -->
+  <div class="hero-bg-image hero-warmup-img" aria-hidden="true">
+    <img src="/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.webp" alt="" fetchpriority="high">
+  </div>
   <div class="grain" aria-hidden="true"></div>
+  <!-- Master light sweep overlay (single warm beam pass) -->
+  <div class="hero-sweep" aria-hidden="true"></div>
+
   <div class="container hero-v2-grid">
     <div>
-      <span class="eyebrow hero-rev" data-d="1">NARLIGHT — AYDINLATMANIN TASARIMI</span>
-      <h1 class="hero-rev" data-d="2">Karanlığa<br><span class="accent">imza atan</span><br>Türk markası.</h1>
-      <p class="lede hero-rev" data-d="3">
+      <span class="eyebrow hero-warmup-eyebrow">NARLIGHT — AYDINLATMANIN TASARIMI</span>
+      <h1 class="hero-warmup-title">Karanlığa<br><span class="accent hero-warmup-accent">imza atan</span><br>Türk markası.</h1>
+      <p class="lede hero-warmup-fade" data-d="1">
         1995'ten bu yana camileri, meydanları, müzeleri, otobanları ve kent merkezlerini ışıkla yeniden yazıyoruz. Tek bir ekipten konsept, üretim, kurulum ve sertifikasyon.
       </p>
-      <div class="actions hero-rev" data-d="4">
+      <div class="actions hero-warmup-fade" data-d="2">
         <a href="/projeler/" class="btn" data-magnetic="14">
           Projeleri Keşfet
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -132,7 +140,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
       </div>
     </div>
 
-    <div class="hero-rev" data-d="5">
+    <div class="hero-warmup-fade" data-d="3">
       <div class="carousel" data-carousel>
         <div class="carousel-stage">
           ${carouselProjects.map(p => `
@@ -153,7 +161,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
   </div>
 
   <div class="container">
-    <div class="hero-strip hero-rev" data-d="5">
+    <div class="hero-strip hero-warmup-fade" data-d="4">
       <div>
         <div class="hero-strip-num"><span data-count="29">29</span><span class="plus">+</span></div>
         <div class="hero-strip-label">Yıllık Tecrübe</div>

@@ -1227,24 +1227,27 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 }
 
 /* ---------- Word emphasis: warm neon glow (eye-comfortable) ---------- */
-/* On light backgrounds the word stays its inherited heading colour and
-   gets a warm halo. On dark backgrounds it adopts the warm amber and
-   the halo becomes more pronounced. Subtle enough not to strain eyes. */
+/* The accent word always glows in warm amber. On dark backgrounds the
+   bright #FFB347 reads naturally; on light backgrounds it gets a slightly
+   deeper amber + a stronger halo so the word still pops without straining
+   eyes. Halo is tuned to be "lit", not "blurry". */
 .glow {
   font-style: normal !important;
+  color: #C26B0A; /* deeper warm amber — readable on white, AA-large compliant */
   text-shadow:
-    0 0 14px rgba(255, 179, 71, 0.42),
-    0 0 32px rgba(255, 179, 71, 0.24),
-    0 0 64px rgba(255, 179, 71, 0.12);
+    0 0 14px rgba(255, 179, 71, 0.7),
+    0 0 28px rgba(255, 179, 71, 0.5),
+    0 0 60px rgba(255, 179, 71, 0.28),
+    0 0 110px rgba(255, 179, 71, 0.14);
 }
 .bg-ink .glow,
 .hero-v2 .glow,
 [style*="color:var(--color-paper)"] .glow {
-  color: var(--color-glow);
+  color: var(--color-glow); /* bright #FFB347 on dark surfaces */
   text-shadow:
-    0 0 16px rgba(255, 179, 71, 0.55),
-    0 0 38px rgba(255, 179, 71, 0.3),
-    0 0 78px rgba(255, 179, 71, 0.16);
+    0 0 16px rgba(255, 179, 71, 0.6),
+    0 0 38px rgba(255, 179, 71, 0.35),
+    0 0 78px rgba(255, 179, 71, 0.18);
 }
 @media (prefers-reduced-motion: no-preference) {
   .glow { transition: text-shadow 600ms var(--ease-out); }
@@ -1269,7 +1272,7 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 }
 .hero-text-link:hover { color: var(--color-glow); }
 
-/* Hero blur fade-in (Superpower-style) */
+/* Hero blur fade-in (Superpower-style — used by other page heroes) */
 .hero-rev {
   filter: blur(16px);
   opacity: 0;
@@ -1284,6 +1287,193 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .hero-rev[data-d="3"] { animation-delay: 460ms; }
 .hero-rev[data-d="4"] { animation-delay: 640ms; }
 .hero-rev[data-d="5"] { animation-delay: 820ms; }
+
+/* ============================================================
+   Hero v2 — Cinematic "Filament Warm-Up + Light Sweep"
+   Lights coming on metaphor for the homepage hero only.
+   GPU-friendly: only filter / opacity / transform / text-shadow.
+   ============================================================ */
+
+/* Full-bleed background image (warms up from dark sepia blur to clean) */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+.hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+.hero-bg-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,11,13,0.7) 0%, rgba(11,11,13,0.55) 30%, rgba(11,11,13,0.85) 100%),
+    linear-gradient(90deg, rgba(11,11,13,0.7) 0%, rgba(11,11,13,0) 50%);
+  pointer-events: none;
+}
+
+/* Hero stage warm-up — entire image element transitions from
+   "cold dim sepia" to "warm clean light" */
+@keyframes hero-img-warmup {
+  0% {
+    filter: brightness(0.18) blur(12px) sepia(0.7) saturate(1.4) contrast(1.1);
+    transform: scale(1.08);
+  }
+  60% {
+    filter: brightness(0.5) blur(4px) sepia(0.4) saturate(1.2) contrast(1.05);
+    transform: scale(1.04);
+  }
+  100% {
+    filter: brightness(1) blur(0) sepia(0) saturate(1) contrast(1);
+    transform: scale(1);
+  }
+}
+.hero-bg-image.hero-warmup-img {
+  animation: hero-img-warmup 2200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Master light sweep — a single warm beam crosses the hero once,
+   like a stage spotlight pass across the scene */
+.hero-v2 .hero-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-v2 .hero-sweep::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -50%;
+  width: 60%;
+  height: 140%;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 200, 130, 0.22) 50%, transparent 70%);
+  mix-blend-mode: screen;
+  filter: blur(40px);
+  transform: translateX(-100%) skewX(-12deg);
+  animation: hero-sweep-pass 2400ms cubic-bezier(0.4, 0, 0.2, 1) 400ms both;
+}
+@keyframes hero-sweep-pass {
+  to { transform: translateX(280%) skewX(-12deg); }
+}
+
+/* Eyebrow — dim warm filament glow → bright amber */
+@keyframes hero-eyebrow-warmup {
+  0% { color: rgba(110, 70, 30, 0); opacity: 0; transform: translateY(8px); }
+  40% { color: rgba(170, 100, 40, 0.6); opacity: 0.7; }
+  100% { color: var(--color-glow); opacity: 1; transform: none; }
+}
+.hero-v2 .hero-warmup-eyebrow {
+  animation: hero-eyebrow-warmup 1400ms cubic-bezier(0.22, 1, 0.36, 1) 500ms both;
+}
+
+/* Heading — filament warm-up: dark warm gray → warm white */
+@keyframes hero-heading-warmup {
+  0% {
+    color: rgba(150, 90, 40, 0.15);
+    filter: blur(8px);
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  35% {
+    color: rgba(180, 120, 60, 0.45);
+    filter: blur(3px);
+    opacity: 0.7;
+  }
+  70% {
+    color: rgba(230, 200, 160, 0.92);
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    color: var(--color-paper);
+    filter: blur(0);
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-v2 .hero-warmup-title {
+  animation: hero-heading-warmup 1800ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both;
+}
+
+/* Accent word — last to ignite, with full neon glow */
+@keyframes hero-accent-ignite {
+  0% {
+    color: rgba(180, 120, 60, 0.35);
+    text-shadow: none;
+  }
+  50% {
+    color: rgba(220, 150, 80, 0.7);
+    text-shadow:
+      0 0 8px rgba(255, 179, 71, 0.25),
+      0 0 16px rgba(255, 179, 71, 0.12);
+  }
+  100% {
+    color: var(--color-glow);
+    text-shadow:
+      0 0 16px rgba(255, 179, 71, 0.6),
+      0 0 38px rgba(255, 179, 71, 0.35),
+      0 0 78px rgba(255, 179, 71, 0.18);
+  }
+}
+.hero-v2 .hero-warmup-accent {
+  animation: hero-accent-ignite 1200ms cubic-bezier(0.22, 1, 0.36, 1) 1500ms both;
+}
+
+/* Generic fade-up for subtitle / actions / carousel / stats */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(18px); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+.hero-v2 .hero-warmup-fade {
+  animation: hero-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-v2 .hero-warmup-fade[data-d="1"] { animation-delay: 1700ms; }
+.hero-v2 .hero-warmup-fade[data-d="2"] { animation-delay: 1850ms; }
+.hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 2000ms; }
+.hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; }
+
+/* Mobile: tighten the timing 20% (faster sequence on smaller screens) */
+@media (max-width: 1024px) {
+  .hero-bg-image.hero-warmup-img { animation-duration: 1800ms; }
+  .hero-v2 .hero-sweep::before { animation-duration: 2000ms; animation-delay: 300ms; }
+  .hero-v2 .hero-warmup-eyebrow { animation-duration: 1100ms; animation-delay: 400ms; }
+  .hero-v2 .hero-warmup-title { animation-duration: 1500ms; animation-delay: 600ms; }
+  .hero-v2 .hero-warmup-accent { animation-delay: 1300ms; animation-duration: 1000ms; }
+  .hero-v2 .hero-warmup-fade[data-d="1"] { animation-delay: 1500ms; }
+  .hero-v2 .hero-warmup-fade[data-d="2"] { animation-delay: 1620ms; }
+  .hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 1740ms; }
+  .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 1860ms; }
+}
+
+/* Reduced motion — skip the entire warm-up choreography */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-image.hero-warmup-img,
+  .hero-v2 .hero-warmup-eyebrow,
+  .hero-v2 .hero-warmup-title,
+  .hero-v2 .hero-warmup-accent,
+  .hero-v2 .hero-warmup-fade {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .hero-v2 .hero-warmup-eyebrow { color: var(--color-glow) !important; }
+  .hero-v2 .hero-warmup-title { color: var(--color-paper) !important; }
+  .hero-v2 .hero-warmup-accent { color: var(--color-glow) !important; }
+  .hero-v2 .hero-sweep { display: none; }
+}
 
 /* Hero stats inline strip */
 .hero-strip {
