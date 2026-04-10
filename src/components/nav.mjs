@@ -144,12 +144,12 @@ function renderMega(key, m) {
       <a class="mega-feature" href="${m.feature.href}" style="--bg: url('${m.feature.bg}')">
         <div>
           <span class="eyebrow">${m.feature.eyebrow}</span>
-          <h4>${m.feature.title}</h4>
+          <span class="mega-feature-title">${m.feature.title}</span>
         </div>
       </a>
       ${m.sections.map(s => `
         <div class="mega-col ${s.type === 'simple' ? 'mega-col-simple' : ''}">
-          <h5>${s.title}</h5>
+          <p class="mega-col-title">${s.title}</p>
           ${s.type === 'simple'
             ? `<div>${s.items.map(i => `<a href="${i.href}">${i.label}${i.tag ? `<span class="mega-tag">${i.tag}</span>` : ''}</a>`).join('')}</div>`
             : `<ul class="mega-list">${s.items.map(i => `

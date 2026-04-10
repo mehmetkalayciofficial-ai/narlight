@@ -27,7 +27,7 @@ export function renderLayout({
   <meta property="og:type" content="website">
   <meta property="og:title" content="${escapeHtml(fullTitle)}">
   <meta property="og:description" content="${escapeHtml(description)}">
-  <meta property="og:image" content="/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.png">
+  <meta property="og:image" content="/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.webp">
   <meta property="og:locale" content="tr_TR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(fullTitle)}">
@@ -54,13 +54,13 @@ export function renderLayout({
   <!-- Lightbox modal -->
   <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="Görsel önizleme">
     <button type="button" class="lightbox-close" data-lightbox-close aria-label="Kapat">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <button type="button" class="lightbox-prev" data-lightbox-prev aria-label="Önceki">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <button type="button" class="lightbox-next" data-lightbox-next aria-label="Sonraki">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
     </button>
     <img data-lightbox-img src="" alt="">
     <div class="lightbox-cap" data-lightbox-cap></div>

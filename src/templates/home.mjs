@@ -140,7 +140,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
               <img src="${esc(p.hero)}" alt="${esc(p.title)}">
               <div class="meta">
                 ${p.city ? `<span class="ey">${esc(p.city)}</span>` : ''}
-                <h3>${esc(p.shortName)}</h3>
+                <span class="card-title-text">${esc(p.shortName)}</span>
               </div>
             </a>
           `).join('')}
@@ -235,7 +235,7 @@ export function renderHome({ projects, productCats, news, corporate }) {
           <div class="scrolly-step" data-reveal>
             <span class="num">${s.num}</span>
             <div>
-              <h4>${esc(s.title)}</h4>
+              <h3>${esc(s.title)}</h3>
               <p>${esc(s.body)}</p>
             </div>
           </div>

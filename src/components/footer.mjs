@@ -55,7 +55,7 @@ export function renderFooter() {
       </div>
       ${cols.map(c => `
         <div>
-          <h4 class="footer-h">${c.title}</h4>
+          <p class="footer-h">${c.title}</p>
           <ul class="footer-list">
             ${c.items.map(i => `<li><a href="${i.href}">${i.label}</a></li>`).join('')}
           </ul>

@@ -428,7 +428,8 @@ p, li { text-wrap: pretty; }
 }
 .mega-feature:hover::before { transform: scale(1.05); }
 .mega-feature .eyebrow { color: rgba(255,255,255,0.78); margin-bottom: 12px; display: block; }
-.mega-feature h4 {
+.mega-feature .mega-feature-title {
+  display: block;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 26px;
@@ -438,7 +439,8 @@ p, li { text-wrap: pretty; }
   max-width: 14ch;
 }
 
-.mega-col h5 {
+.mega-col .mega-col-title {
+  display: block;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 11px;
@@ -924,6 +926,48 @@ html.no-scroll, html.no-scroll body { overflow: hidden; }
 
 /* (Custom cursor removed — site uses default OS cursor) */
 
+/* ---------- Form (contact) ---------- */
+.form-row { display: flex; flex-direction: column; }
+.form-row label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+  margin-bottom: 10px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  padding: 14px 0;
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  background: transparent;
+  outline: none;
+  transition: border-color 240ms var(--ease-out);
+  color: var(--color-ink);
+}
+.form-row textarea { resize: vertical; }
+.form-row select { cursor: pointer; }
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus { border-bottom-color: var(--color-ink); }
+
+.form-success {
+  display: none;
+  padding: 16px 20px;
+  background: rgba(255, 179, 71, 0.15);
+  border: 1px solid rgba(255, 179, 71, 0.4);
+  border-radius: 12px;
+  color: var(--color-ink);
+  font-size: var(--t-meta);
+}
+
 /* Field-level validation error message */
 .field-error {
   margin-top: 8px;
@@ -1132,7 +1176,8 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   margin-bottom: 8px;
   display: block;
 }
-.carousel-card .meta h3 {
+.carousel-card .meta .card-title-text {
+  display: block;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(20px, 1.6vw, 26px);
@@ -1327,7 +1372,7 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   align-items: center;
   justify-content: center;
 }
-.scrolly-step h4 {
+.scrolly-step h3 {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 22px;

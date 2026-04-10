@@ -54,21 +54,21 @@ export function renderContact() {
 
       <!-- Right: form -->
       <form data-reveal data-contact-form style="background:var(--color-paper-3);border-radius:24px;padding:48px;display:flex;flex-direction:column;gap:24px">
-        <div>
-          <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">Ad Soyad</label>
-          <input type="text" name="name" autocomplete="name" required spellcheck="false" placeholder="Adınız ve soyadınız…" style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;transition:border-color 240ms var(--ease-out)" onfocus="this.style.borderColor='var(--color-ink)'" onblur="this.style.borderColor='var(--color-line)'">
+        <div class="form-row">
+          <label for="cf-name">Ad Soyad</label>
+          <input id="cf-name" type="text" name="name" autocomplete="name" required spellcheck="false" placeholder="Adınız ve soyadınız…">
         </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">E-posta</label>
-          <input type="email" name="email" autocomplete="email" inputmode="email" spellcheck="false" required placeholder="ornek@firma.com" style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;transition:border-color 240ms var(--ease-out)" onfocus="this.style.borderColor='var(--color-ink)'" onblur="this.style.borderColor='var(--color-line)'">
+        <div class="form-row">
+          <label for="cf-email">E-posta</label>
+          <input id="cf-email" type="email" name="email" autocomplete="email" inputmode="email" spellcheck="false" required placeholder="ornek@firma.com">
         </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">Telefon</label>
-          <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+90 5__ ___ __ __" style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;transition:border-color 240ms var(--ease-out)" onfocus="this.style.borderColor='var(--color-ink)'" onblur="this.style.borderColor='var(--color-line)'">
+        <div class="form-row">
+          <label for="cf-phone">Telefon</label>
+          <input id="cf-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+90 5__ ___ __ __">
         </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">Konu</label>
-          <select required style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;cursor:pointer">
+        <div class="form-row">
+          <label for="cf-konu">Konu</label>
+          <select id="cf-konu" name="konu" required>
             <option value="">Seçiniz</option>
             <option>Yeni proje teklifi</option>
             <option>Ürün bilgisi</option>
@@ -78,11 +78,11 @@ export function renderContact() {
             <option>Diğer</option>
           </select>
         </div>
-        <div>
-          <label style="display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-mute);margin-bottom:10px">Mesajınız</label>
-          <textarea rows="5" name="message" required placeholder="Projeniz hakkında biraz bilgi verin…" style="width:100%;border:0;border-bottom:1px solid var(--color-line);padding:14px 0;font-family:var(--font-body);font-size:16px;background:transparent;outline:none;resize:vertical;transition:border-color 240ms var(--ease-out)" onfocus="this.style.borderColor='var(--color-ink)'" onblur="this.style.borderColor='var(--color-line)'"></textarea>
+        <div class="form-row">
+          <label for="cf-message">Mesajınız</label>
+          <textarea id="cf-message" rows="5" name="message" required placeholder="Projeniz hakkında biraz bilgi verin…"></textarea>
         </div>
-        <div data-success style="display:none;padding:16px 20px;background:rgba(255,179,71,0.15);border:1px solid rgba(255,179,71,0.4);border-radius:12px;color:var(--color-ink);font-size:13px">
+        <div data-success class="form-success" role="status" aria-live="polite" aria-atomic="true">
           Mesajınız alındı. 24 saat içinde size dönüş yapacağız.
         </div>
         <button type="submit" class="btn" style="align-self:flex-start;margin-top:8px">
