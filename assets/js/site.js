@@ -122,6 +122,9 @@
 
   // ============================================================
   // Project carousel (Evervault-style 3D rotating card stack)
+  // - auto-rotates every 5.5s
+  // - dot navigation
+  // - drag (mouse) + swipe (touch) support
   // ============================================================
   const carousels = document.querySelectorAll('[data-carousel]');
   carousels.forEach((root) => {
@@ -129,18 +132,24 @@
     const dots = Array.from(root.querySelectorAll('[data-carousel-dot]'));
     let idx = 0;
     let auto = null;
+    // Live drag offset (in pixels). Layout adds it onto the active card position
+    // so the user feels real-time tracking of their finger / mouse.
+    let dragOffsetPx = 0;
+    const SWIPE_THRESHOLD = 60; // px to commit a slide change
 
     function layout() {
       const total = cards.length;
+      const rootW = root.offsetWidth || 400;
+      const dragPct = (dragOffsetPx / rootW) * 100;
       cards.forEach((c, i) => {
         const offset = (i - idx + total) % total;
         const slot = offset > total / 2 ? offset - total : offset;
         const abs = Math.abs(slot);
         const visible = abs <= 2;
         const z = 50 - abs;
-        const x = slot * 24;
+        const x = slot * 24 + dragPct;       // shift everything by drag amount
         const y = abs * 14;
-        const rot = slot * -3;
+        const rot = slot * -3 + dragPct * 0.05;
         const scale = 1 - abs * 0.06;
         const opacity = visible ? 1 - abs * 0.15 : 0;
         c.style.transform = `translate3d(${x}%, ${y}px, 0) rotate(${rot}deg) scale(${scale})`;
@@ -155,6 +164,7 @@
       layout();
     }
     function next() { go(idx + 1); }
+    function prev() { go(idx - 1); }
 
     function startAuto() { stopAuto(); auto = setInterval(next, 5500); }
     function stopAuto() { if (auto) clearInterval(auto); auto = null; }
@@ -163,7 +173,79 @@
       d.addEventListener('click', () => { go(i); stopAuto(); startAuto(); });
     });
     root.addEventListener('mouseenter', stopAuto);
-    root.addEventListener('mouseleave', startAuto);
+    root.addEventListener('mouseleave', () => { if (!dragging) startAuto(); });
+
+    // ---------- drag / swipe ----------
+    let dragging = false;
+    let startX = 0;
+    let startTime = 0;
+    let pointerId = null;
+
+    function onPointerDown(e) {
+      // Ignore right clicks
+      if (e.button !== undefined && e.button !== 0) return;
+      dragging = true;
+      startX = e.clientX;
+      startTime = performance.now();
+      dragOffsetPx = 0;
+      pointerId = e.pointerId;
+      stopAuto();
+      root.classList.add('is-dragging');
+      // Capture so we keep getting move events even if pointer leaves the element
+      try { root.setPointerCapture(pointerId); } catch {}
+    }
+    function onPointerMove(e) {
+      if (!dragging) return;
+      dragOffsetPx = e.clientX - startX;
+      // Resistance at edges (rubber band feel)
+      if (Math.abs(dragOffsetPx) > 200) {
+        const sign = dragOffsetPx > 0 ? 1 : -1;
+        dragOffsetPx = sign * (200 + (Math.abs(dragOffsetPx) - 200) * 0.4);
+      }
+      layout();
+    }
+    function onPointerUp(e) {
+      if (!dragging) return;
+      const dx = dragOffsetPx;
+      const dt = performance.now() - startTime;
+      const velocity = dx / Math.max(dt, 1); // px / ms
+      dragging = false;
+      dragOffsetPx = 0;
+      root.classList.remove('is-dragging');
+      try { root.releasePointerCapture(pointerId); } catch {}
+      pointerId = null;
+
+      // Decide whether to commit a slide change.
+      const fastSwipe = Math.abs(velocity) > 0.4;
+      const farEnough = Math.abs(dx) > SWIPE_THRESHOLD;
+      if (farEnough || fastSwipe) {
+        if (dx < 0) next();
+        else prev();
+      } else {
+        layout();
+      }
+      startAuto();
+    }
+    function onPointerCancel() {
+      if (!dragging) return;
+      dragging = false;
+      dragOffsetPx = 0;
+      root.classList.remove('is-dragging');
+      try { root.releasePointerCapture(pointerId); } catch {}
+      pointerId = null;
+      layout();
+      startAuto();
+    }
+
+    // Pointer events cover both mouse + touch + pen
+    root.addEventListener('pointerdown', onPointerDown);
+    root.addEventListener('pointermove', onPointerMove);
+    root.addEventListener('pointerup', onPointerUp);
+    root.addEventListener('pointercancel', onPointerCancel);
+    // Prevent native image drag stealing the gesture
+    root.querySelectorAll('img').forEach((img) => {
+      img.addEventListener('dragstart', (e) => e.preventDefault());
+    });
 
     layout();
     startAuto();

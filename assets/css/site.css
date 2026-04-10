@@ -1160,6 +1160,17 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   isolation: isolate;
   padding-top: 168px;
   padding-bottom: 120px;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .hero-v2 {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    min-height: auto;
+  }
 }
 .hero-v2::before {
   content: '';
@@ -1510,7 +1521,13 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   width: 100%;
   aspect-ratio: 4 / 5;
   perspective: 1400px;
+  cursor: grab;
+  touch-action: pan-y pinch-zoom; /* allow vertical scroll, capture horizontal */
+  -webkit-user-select: none;
+  user-select: none;
 }
+.carousel.is-dragging { cursor: grabbing; }
+.carousel.is-dragging .carousel-card { transition: none !important; }
 @media (min-width: 1024px) {
   .carousel { aspect-ratio: 3 / 4; }
 }

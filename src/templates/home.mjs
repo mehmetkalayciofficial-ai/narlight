@@ -118,7 +118,10 @@ export function renderHome({ projects, productCats, news, corporate }) {
 <section class="hero-v2">
   <!-- Full-bleed background image (warms up from dark sepia blur) -->
   <div class="hero-bg-image hero-warmup-img" aria-hidden="true">
-    <img src="/brand_assets/images/PROJELER/15-Temmuz-Demokrasi/Galeri.webp" alt="" fetchpriority="high">
+    <picture>
+      <source media="(max-width: 900px)" srcset="/brand_assets/images/hero-background-mobile.webp">
+      <img src="/brand_assets/images/hero-background.webp" alt="" fetchpriority="high">
+    </picture>
   </div>
   <div class="grain" aria-hidden="true"></div>
   <!-- Master light sweep overlay (single warm beam pass) -->
