@@ -90,6 +90,59 @@ a, button, input, select, textarea, [tabindex] { -webkit-tap-highlight-color: rg
 h1, h2, h3, h4 { scroll-margin-top: 120px; text-wrap: balance; }
 p, li { text-wrap: pretty; }
 
+/* ---------- Minimal utility classes (replaces Tailwind CDN) ---------- */
+.block { display: block; }
+.inline-flex { display: inline-flex; }
+.flex { display: flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-start { align-items: flex-start; }
+.items-stretch { align-items: stretch; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.gap-px { gap: 1px; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-5 { gap: 1.25rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.gap-12 { gap: 3rem; }
+.text-center { text-align: center; }
+.w-full { width: 100%; }
+.mt-auto { margin-top: auto; }
+.ml-auto { margin-left: auto; }
+.relative { position: relative; }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .md\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .md\:gap-6 { gap: 1.5rem; }
+  .md\:gap-8 { gap: 2rem; }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .lg\:grid-cols-\[260px_1fr\] { grid-template-columns: 260px 1fr; }
+  .lg\:grid-cols-\[1\.4fr_1fr\] { grid-template-columns: 1.4fr 1fr; }
+  .lg\:grid-cols-\[1fr_1\.4fr\] { grid-template-columns: 1fr 1.4fr; }
+  .lg\:gap-8 { gap: 2rem; }
+}
+
 /* Skip link for keyboard users */
 .skip-link {
   position: absolute;
@@ -799,28 +852,7 @@ html.no-scroll, html.no-scroll body { overflow: hidden; }
 .bg-ink { background: var(--color-ink); color: var(--color-paper); }
 .bg-ink-2 { background: var(--color-ink-soft); color: var(--color-paper); }
 
-/* ---------- Custom cursor ---------- */
-.cursor {
-  position: fixed;
-  top: 0; left: 0;
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid rgba(255, 179, 71, 0.7);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-  mix-blend-mode: difference;
-  opacity: 0;
-  transform: translate3d(-100px, -100px, 0);
-  transition: width 280ms var(--ease-out), height 280ms var(--ease-out), background-color 280ms var(--ease-out), opacity 280ms var(--ease-out);
-}
-.cursor.is-ready { opacity: 1; }
-.cursor.is-active {
-  width: 56px;
-  height: 56px;
-  background: rgba(255, 179, 71, 0.18);
-}
-@media (pointer: coarse), (max-width: 768px) { .cursor { display: none !important; } }
+/* (Custom cursor removed — site uses default OS cursor) */
 
 /* ---------- Hero v2 (blur reveal, large editorial) ---------- */
 .hero-v2 {
@@ -1217,6 +1249,106 @@ html.no-scroll, html.no-scroll body { overflow: hidden; }
   line-height: 1.65;
   color: var(--color-mute);
   margin: 0;
+}
+
+/* ---------- Spec card (dark engineered product data table) ---------- */
+.spec-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+.spec-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(100% 60% at 100% 0%, rgba(255, 179, 71, 0.1), transparent 55%);
+  z-index: -1;
+}
+.spec-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.spec-card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid var(--color-glow);
+  color: var(--color-glow);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.spec-table-wrap { padding: 8px 16px; }
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+}
+.spec-table th,
+.spec-table td {
+  padding: 16px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+.spec-table thead th {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.spec-table tbody td {
+  color: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.spec-table tbody tr:last-child td { border-bottom: none; }
+.spec-table tbody td strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-paper);
+  letter-spacing: -0.01em;
+}
+
+.spec-meta {
+  margin: 0;
+  padding: 24px 32px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 32px;
+  font-family: var(--font-body);
+}
+@media (min-width: 560px) { .spec-meta { grid-template-columns: 1fr 1fr 1fr; } }
+.spec-meta > div { display: flex; flex-direction: column; gap: 6px; }
+.spec-meta dt {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+.spec-meta dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* ---------- Code-block spec showcase (Evervault-style) ---------- */

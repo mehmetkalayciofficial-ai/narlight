@@ -205,6 +205,33 @@ writePage('404.html', renderLayout({
   `,
 }));
 
+// ---------- Copy runtime assets into dist/ ----------
+// Vercel (and any static host) serves from a single output directory, so we
+// need to materialise everything the generated HTML references inside dist/.
+// Locally, serve.mjs can still pass through from the project root.
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return 0;
+  fs.mkdirSync(dest, { recursive: true });
+  let count = 0;
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const s = path.join(src, entry.name);
+    const d = path.join(dest, entry.name);
+    if (entry.isDirectory()) count += copyDir(s, d);
+    else { fs.copyFileSync(s, d); count++; }
+  }
+  return count;
+}
+const assetsCopied = copyDir('assets', path.join(DIST, 'assets'));
+// Only ship the brand_assets bits the site actually references.
+fs.mkdirSync(path.join(DIST, 'brand_assets'), { recursive: true });
+for (const f of ['logo.svg', 'logo-original.png', 'favicon.ico']) {
+  if (fs.existsSync(path.join('brand_assets', f))) {
+    fs.copyFileSync(path.join('brand_assets', f), path.join(DIST, 'brand_assets', f));
+  }
+}
+const imagesCopied = copyDir(path.join('brand_assets', 'images'), path.join(DIST, 'brand_assets', 'images'));
+console.log(`  copied ${assetsCopied} assets + ${imagesCopied} images into dist/`);
+
 // ---------- robots.txt ----------
 fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: /sitemap.xml\n');
 

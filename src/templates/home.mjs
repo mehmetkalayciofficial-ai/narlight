@@ -326,49 +326,72 @@ export function renderHome({ projects, productCats, news, corporate }) {
 </section>
 
 <!-- ======================================================
-     SPEC SHOWCASE  —  Code-block style technical specs
+     SPEC SHOWCASE  —  Clean dark spec table (AGRESTIS sample)
 ====================================================== -->
 <section class="bg-ink section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr;gap:64px;align-items:center" class="lg:grid-cols-2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" style="align-items:center">
       <div data-reveal>
         <span class="section-tag dark"><span class="pulse"></span>Teknik Şeffaflık</span>
         <h2 class="display display-2" style="color:var(--color-paper);margin:32px 0 28px;max-width:16ch">
           Her ürün, son <em style="font-style:italic;color:var(--color-glow)">spesifikasyonuna kadar</em> ölçülür.
         </h2>
         <p style="color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;max-width:42ch;margin:0 0 36px">
-          40'tan fazla ürün serimizin her biri ölçülmüş, sertifikalanmış ve dökümante edilmiş teknik özelliklere sahiptir. Tasarımcıdan saha mühendisine, herkesin ihtiyaç duyduğu veriyi tek bir karta sığdırırız.
+          40'tan fazla ürün serimizin her biri ölçülmüş, sertifikalanmış ve dökümante edilmiştir. Tasarımcıdan saha mühendisine, ihtiyaç duyduğunuz tüm teknik veri her ürün sayfasında sizi bekliyor.
         </p>
         <a href="/urunler/urun/agrestis/" class="btn">
           AGRESTIS Detayı
-          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
-      <div class="code-show" data-reveal>
-        <div class="head">
-          <span class="dot dot-r"></span>
-          <span class="dot dot-y"></span>
-          <span class="dot dot-g"></span>
-          <span class="filename">agrestis.spec.json</span>
+      <div class="spec-card" data-reveal>
+        <div class="spec-card-head">
+          <div>
+            <span class="eyebrow" style="color:var(--color-glow);display:block;margin-bottom:8px">Örnek — Mimari Projektör</span>
+            <h3 style="font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-0.02em;margin:0;color:var(--color-paper)">AGRESTIS Serisi</h3>
+          </div>
+          <span class="spec-card-badge">IP67</span>
         </div>
-        <div class="body">
-<pre style="margin:0;font:inherit"><span class="punct">{</span>
-  <span class="key">"family"</span><span class="punct">:</span> <span class="str">"AGRESTIS"</span><span class="punct">,</span>
-  <span class="key">"series"</span><span class="punct">:</span> <span class="str">"Mimari Projektör"</span><span class="punct">,</span>
-  <span class="key">"variants"</span><span class="punct">:</span> <span class="punct">[</span>
-    <span class="punct">{</span> <span class="key">"model"</span><span class="punct">:</span> <span class="str">"LPR3050"</span><span class="punct">,</span> <span class="key">"power"</span><span class="punct">:</span> <span class="num">50</span><span class="punct">,</span> <span class="key">"lumen"</span><span class="punct">:</span> <span class="num">6000</span> <span class="punct">},</span>
-    <span class="punct">{</span> <span class="key">"model"</span><span class="punct">:</span> <span class="str">"LPR3100"</span><span class="punct">,</span> <span class="key">"power"</span><span class="punct">:</span> <span class="num">100</span><span class="punct">,</span> <span class="key">"lumen"</span><span class="punct">:</span> <span class="num">12000</span> <span class="punct">},</span>
-    <span class="punct">{</span> <span class="key">"model"</span><span class="punct">:</span> <span class="str">"LPR3150"</span><span class="punct">,</span> <span class="key">"power"</span><span class="punct">:</span> <span class="num">150</span><span class="punct">,</span> <span class="key">"lumen"</span><span class="punct">:</span> <span class="num">16500</span> <span class="punct">}</span>
-  <span class="punct">],</span>
-  <span class="key">"cri"</span><span class="punct">:</span> <span class="str">"&ge;80"</span><span class="punct">,</span>
-  <span class="key">"voltage"</span><span class="punct">:</span> <span class="str">"230V AC"</span><span class="punct">,</span>
-  <span class="key">"ip_class"</span><span class="punct">:</span> <span class="str">"IP67"</span><span class="punct">,</span>
-  <span class="key">"cct"</span><span class="punct">:</span> <span class="str">"3000K - 6500K"</span><span class="punct">,</span>
-  <span class="key">"housing"</span><span class="punct">:</span> <span class="str">"Aluminium Extrusion"</span><span class="punct">,</span>
-  <span class="key">"driver"</span><span class="punct">:</span> <span class="str">"Constant Current"</span><span class="punct">,</span>
-  <span class="com">// 1~10V / DALI dimming optional</span>
-<span class="punct">}</span></pre>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Güç</th>
+                <th>Işık Akısı</th>
+                <th>CRI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>LPR3050</strong></td>
+                <td>50&nbsp;W</td>
+                <td>6&nbsp;000&nbsp;lm</td>
+                <td>≥&nbsp;80</td>
+              </tr>
+              <tr>
+                <td><strong>LPR3100</strong></td>
+                <td>100&nbsp;W</td>
+                <td>12&nbsp;000&nbsp;lm</td>
+                <td>≥&nbsp;80</td>
+              </tr>
+              <tr>
+                <td><strong>LPR3150</strong></td>
+                <td>150&nbsp;W</td>
+                <td>16&nbsp;500&nbsp;lm</td>
+                <td>≥&nbsp;80</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <dl class="spec-meta">
+          <div><dt>Giriş Gerilimi</dt><dd>230&nbsp;V AC</dd></div>
+          <div><dt>Renk Sıcaklığı</dt><dd>3000K – 6500K</dd></div>
+          <div><dt>Gövde</dt><dd>Alüminyum Ekstrüzyon</dd></div>
+          <div><dt>Sürücü</dt><dd>Sabit Akımlı</dd></div>
+          <div><dt>Dimming</dt><dd>1~10V / DALI (ops.)</dd></div>
+          <div><dt>Sertifikalar</dt><dd>TSE · CE · RoHS</dd></div>
+        </dl>
       </div>
     </div>
   </div>

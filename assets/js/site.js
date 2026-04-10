@@ -230,34 +230,6 @@
   }
 
   // ============================================================
-  // Custom cursor (subtle ring)
-  // ============================================================
-  const cursor = document.querySelector('[data-cursor]');
-  if (cursor && window.matchMedia('(pointer: fine)').matches && window.innerWidth > 768) {
-    let mx = 0, my = 0, cx = 0, cy = 0;
-    let primed = false;
-    function loop() {
-      cx += (mx - cx) * 0.18;
-      cy += (my - cy) * 0.18;
-      cursor.style.transform = `translate3d(${cx - 16}px, ${cy - 16}px, 0)`;
-      requestAnimationFrame(loop);
-    }
-    window.addEventListener('mousemove', (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      if (!primed) {
-        primed = true;
-        cursor.classList.add('is-ready');
-      }
-    });
-    loop();
-    document.querySelectorAll('a, button, [role="button"], .card-link').forEach((el) => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
-    });
-  }
-
-  // ============================================================
   // Magnetic buttons
   // ============================================================
   document.querySelectorAll('[data-magnetic]').forEach((el) => {

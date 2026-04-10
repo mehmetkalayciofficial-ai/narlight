@@ -33,32 +33,9 @@ export function renderLayout({
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="theme-color" content="#0A0A0A">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#0A0A0A',
-            paper: '#FFFFFF',
-            'paper-2': '#FAFAFA',
-            'paper-3': '#F4F4F5',
-            line: '#E4E4E7',
-            navy: { DEFAULT: '#1A255A', deep: '#0F1739' },
-            glow: { DEFAULT: '#FFB347', soft: '#FFF5D6' },
-          },
-          fontFamily: {
-            display: ['"Cabinet Grotesk"', 'system-ui', 'sans-serif'],
-            body: ['Satoshi', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
 </head>
 <body class="${bodyClass}">
   <a href="#main" class="skip-link">İçeriğe geç</a>
-  <div class="cursor" data-cursor aria-hidden="true"></div>
   ${renderNav({ variant: navVariant })}
   <main id="main" data-sticky-trigger>${body}</main>
   ${renderFooter()}
