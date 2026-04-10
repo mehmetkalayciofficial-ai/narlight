@@ -381,6 +381,8 @@ p, li { text-wrap: pretty; }
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex: 0 0 auto;
   transition: transform 320ms var(--ease-out), background-color 320ms var(--ease-out);
 }
 .nav-cta:hover { background: #FFC368; transform: translateY(-1px); }
@@ -838,6 +840,7 @@ p, li { text-wrap: pretty; }
   color: var(--color-paper);
   transition: transform 320ms var(--ease-out), background-color 320ms var(--ease-out);
 }
+.btn { white-space: nowrap; }
 .btn .arrow { transition: transform 320ms var(--ease-out); }
 .btn:hover { background: var(--color-navy); }
 .btn:hover .arrow { transform: translateX(6px); }
@@ -1516,17 +1519,73 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 2000ms; }
 .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 2150ms; }
 
-/* Mobile: tighten the timing 20% (faster sequence on smaller screens) */
+/* Mobile: replace the heavy filter-chain warm-up with a simpler
+   opacity-only sequence so low/mid-end Android (Samsung Internet,
+   older Chrome) doesn't choke on the 4-filter paint pass per frame. */
 @media (max-width: 1024px) {
-  .hero-bg-image.hero-warmup-img { animation-duration: 1800ms; }
-  .hero-v2 .hero-sweep::before { animation-duration: 2000ms; animation-delay: 300ms; }
-  .hero-v2 .hero-warmup-eyebrow { animation-duration: 1100ms; animation-delay: 400ms; }
-  .hero-v2 .hero-warmup-title { animation-duration: 1500ms; animation-delay: 600ms; }
-  .hero-v2 .hero-warmup-accent { animation-delay: 1300ms; animation-duration: 1000ms; }
-  .hero-v2 .hero-warmup-fade[data-d="1"] { animation-delay: 1500ms; }
-  .hero-v2 .hero-warmup-fade[data-d="2"] { animation-delay: 1620ms; }
-  .hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 1740ms; }
-  .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 1860ms; }
+  /* Light sweep is a 40px-blur skewed gradient — too expensive for
+     mobile GPUs. Drop it. */
+  .hero-v2 .hero-sweep { display: none; }
+
+  /* Background image: just fade + slight scale, no filter chain */
+  @keyframes hero-img-warmup-mobile {
+    0% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .hero-bg-image.hero-warmup-img {
+    animation: hero-img-warmup-mobile 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Eyebrow: simple fade-up, target colour direct */
+  @keyframes hero-eyebrow-warmup-mobile {
+    0% { opacity: 0; transform: translateY(6px); }
+    100% { opacity: 1; transform: none; }
+  }
+  .hero-v2 .hero-warmup-eyebrow {
+    color: var(--color-glow);
+    animation: hero-eyebrow-warmup-mobile 600ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
+  }
+
+  /* Heading: fade up, no blur filter, snap straight to white */
+  @keyframes hero-heading-warmup-mobile {
+    0% { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: none; }
+  }
+  .hero-v2 .hero-warmup-title {
+    color: var(--color-paper);
+    animation: hero-heading-warmup-mobile 700ms cubic-bezier(0.22, 1, 0.36, 1) 400ms both;
+  }
+
+  /* Accent: fade in already lit (no dim → bright color tween) */
+  @keyframes hero-accent-mobile {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .hero-v2 .hero-warmup-accent {
+    color: var(--color-glow);
+    text-shadow:
+      0 0 16px rgba(255, 179, 71, 0.55),
+      0 0 38px rgba(255, 179, 71, 0.3),
+      0 0 78px rgba(255, 179, 71, 0.16);
+    animation: hero-accent-mobile 700ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both;
+  }
+
+  /* Generic fade-up for subtitle / actions / carousel / stats — simplified */
+  @keyframes hero-fade-up-mobile {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: none; }
+  }
+  .hero-v2 .hero-warmup-fade {
+    animation: hero-fade-up-mobile 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hero-v2 .hero-warmup-fade[data-d="1"] { animation-delay: 900ms; }
+  .hero-v2 .hero-warmup-fade[data-d="2"] { animation-delay: 1000ms; }
+  .hero-v2 .hero-warmup-fade[data-d="3"] { animation-delay: 1100ms; }
+  .hero-v2 .hero-warmup-fade[data-d="4"] { animation-delay: 1200ms; }
+
+  /* Reduce backdrop-blur cost on mobile */
+  .nav-shell { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .mobile-drawer { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 }
 
 /* Reduced motion — skip the entire warm-up choreography */
@@ -1680,6 +1739,55 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   transition: background-color 300ms var(--ease-out);
 }
 .carousel-dot.is-active::after { background: var(--color-glow); }
+
+/* ---------- Mobile carousel: horizontal scroll-snap slider ---------- */
+/* On phones the 3D rotating stack is hard to swipe naturally, so on
+   small screens we switch the same DOM into a native scroll-snap slider:
+   cards lay side-by-side, the user swipes with their finger, the
+   browser snaps to the next card. JS auto-rotate is disabled on mobile
+   so the user is in full control. */
+@media (max-width: 1023px) {
+  .carousel {
+    aspect-ratio: auto;
+    perspective: none;
+    cursor: auto;
+    touch-action: pan-x;
+    height: auto;
+    overflow: visible;
+  }
+  .carousel-stage {
+    position: static;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 6px 24px 18px;
+    margin: 0 -24px;
+    scroll-padding-left: 24px;
+  }
+  .carousel-stage::-webkit-scrollbar { display: none; }
+  .carousel-card {
+    position: relative;
+    flex: 0 0 86%;
+    width: 86%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    scroll-snap-align: start;
+    transition: none;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.06) inset,
+      0 18px 36px -16px rgba(0, 0, 0, 0.6);
+  }
+  .carousel-card .meta { left: 22px; right: 22px; bottom: 22px; }
+}
 
 /* ---------- Marquee (logos / stats) ---------- */
 .marquee {
@@ -2128,6 +2236,9 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   opacity: 1;
   visibility: visible;
   transition-delay: 0s;
+}
+@media (max-width: 1023px) {
+  .sticky-cta { display: none !important; }
 }
 .sticky-cta-text {
   font-family: var(--font-body);

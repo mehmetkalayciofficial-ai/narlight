@@ -127,11 +127,41 @@
   // - drag (mouse) + swipe (touch) support
   // ============================================================
   const carousels = document.querySelectorAll('[data-carousel]');
+  // On mobile we use native CSS scroll-snap so the carousel JS (3D
+  // stack + drag + auto-rotate) is disabled — the user just swipes.
+  const isMobileCarousel = () => window.matchMedia('(max-width: 1023px)').matches;
   carousels.forEach((root) => {
     const cards = Array.from(root.querySelectorAll('[data-carousel-card]'));
     const dots = Array.from(root.querySelectorAll('[data-carousel-dot]'));
     let idx = 0;
     let auto = null;
+
+    if (isMobileCarousel()) {
+      // Wire dots to scroll the active card into view, sync active dot
+      // with whichever card is currently snapped.
+      const stage = root.querySelector('.carousel-stage');
+      if (stage) {
+        function syncFromScroll() {
+          const sl = stage.scrollLeft + stage.offsetWidth / 2;
+          let best = 0, bestD = Infinity;
+          cards.forEach((c, i) => {
+            const cx = c.offsetLeft + c.offsetWidth / 2;
+            const d = Math.abs(cx - sl);
+            if (d < bestD) { bestD = d; best = i; }
+          });
+          dots.forEach((d, i) => d.classList.toggle('is-active', i === best));
+        }
+        stage.addEventListener('scroll', () => requestAnimationFrame(syncFromScroll), { passive: true });
+        dots.forEach((d, i) => {
+          d.addEventListener('click', () => {
+            const c = cards[i];
+            if (c) stage.scrollTo({ left: c.offsetLeft - 24, behavior: 'smooth' });
+          });
+        });
+        syncFromScroll();
+      }
+      return; // skip the desktop 3D stack handler
+    }
     // Live drag offset (in pixels). Layout adds it onto the active card position
     // so the user feels real-time tracking of their finger / mouse.
     let dragOffsetPx = 0;

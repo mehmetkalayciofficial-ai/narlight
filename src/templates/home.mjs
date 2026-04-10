@@ -207,12 +207,12 @@ export function renderHome({ projects, productCats, news, corporate }) {
 <!-- ======================================================
      INTRO / WHO WE ARE
 ====================================================== -->
-<section class="section">
+<section class="section" style="padding-bottom:0">
   <div class="container">
-    <div class="section-head" data-reveal>
+    <div class="section-head" data-reveal style="margin-bottom:0">
       <div>
         <span class="section-tag"><span class="pulse"></span>Hakkımızda</span>
-        <h2 class="display display-2 section-title" style="margin-top:32px">Çeyrek asırdır<br><span class="glow">ışığın</span> imzası.</h2>
+        <h2 class="display display-2 section-title" style="margin-top:24px">Çeyrek asırdır<br><span class="glow">ışığın</span> imzası.</h2>
       </div>
       <p class="section-intro">
         1995'te kurulan Narlight, Bornova/İzmir'deki üretim tesisinden Türkiye'nin 81 ilinde 200'den fazla projeye imza attı. Camiler, meydanlar, üniversiteler, otoyollar, müzeler, oteller, AVM'ler — her ölçekte ve her bağlamda kalıcı çözümler.
