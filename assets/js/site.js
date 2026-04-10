@@ -8,11 +8,75 @@
   'use strict';
 
   // ============================================================
+  // Hero title fit — scale each <span.hero-line> so all three
+  // lines render at the same visual width, forming a balanced
+  // "square block" of typography. Line 3 ("Türk markası.") is the
+  // longest at the base font-size; lines 1 and 2 are scaled UP
+  // to match its rendered width. On narrow screens where even
+  // line 3 can't fit, the whole block is scaled to fit the
+  // available container width.
+  // ============================================================
+  function fitHeroTitle() {
+    const h1 = document.querySelector('.hero-v2 h1.hero-title-fit');
+    if (!h1) return;
+    const lines = h1.querySelectorAll('.hero-line');
+    if (lines.length !== 3) return;
+
+    // Force every line to the SAME measurement font-size (1em, which
+    // inherits the h1's computed font-size). This gives us apples-to-
+    // apples width comparisons regardless of any per-line CSS rules.
+    for (let i = 0; i < lines.length; i++) {
+      lines[i].style.fontSize = '1em';
+    }
+    // Flush layout so the measurement reflects the inline 1em.
+    void h1.offsetWidth;
+
+    // Base font-size = h1's computed size. All lines render at this
+    // size thanks to the '1em' reset above.
+    const baseFontSize = parseFloat(getComputedStyle(h1).fontSize);
+    if (!baseFontSize || !isFinite(baseFontSize)) return;
+
+    // Natural rendered widths of each line at the uniform base size.
+    const widths = [];
+    for (let i = 0; i < lines.length; i++) {
+      widths.push(lines[i].getBoundingClientRect().width);
+    }
+    const naturalMax = Math.max.apply(null, widths);
+    if (naturalMax <= 0) return;
+
+    // How much horizontal room do we actually have? Use the h1's own
+    // content-box width (width:100% of its column parent) so per-line
+    // font-sizes can't make the h1 overflow its column.
+    const availableWidth = h1.clientWidth;
+    if (availableWidth <= 0) return;
+
+    // Target width: fit the longest line to the container (with a
+    // small safety margin) but cap the scale-up so we don't turn a
+    // 40px hero into a 200px monster on ultra-wide viewports.
+    const MAX_SCALE = 1.55;
+    const targetWidth = Math.min(availableWidth * 0.96, naturalMax * MAX_SCALE);
+
+    // Scale each line independently so its rendered width equals
+    // targetWidth. Shorter lines get larger font-sizes; the longest
+    // line gets the smallest scale factor.
+    for (let i = 0; i < lines.length; i++) {
+      const w = widths[i];
+      if (w <= 0) continue;
+      const ratio = targetWidth / w;
+      const newSize = baseFontSize * ratio;
+      lines[i].style.fontSize = newSize.toFixed(2) + 'px';
+    }
+  }
+
+  // ============================================================
   // Hero animation kickoff (JS-driven so Android Chrome / Samsung
-  // Internet always plays the warm-up choreography even if a CSS
+  // Internet always play the warm-up choreography even if a CSS
   // animation race or hard refresh would otherwise skip it).
+  // Also fits the hero title BEFORE the animations begin so the
+  // scaled spans fade in at their correct final sizes.
   // ============================================================
   function startHero() {
+    try { fitHeroTitle(); } catch (e) { /* ignore */ }
     document.documentElement.classList.add('is-ready');
   }
   if (document.readyState === 'loading') {
@@ -20,6 +84,29 @@
   } else {
     requestAnimationFrame(startHero);
   }
+
+  // Re-fit when fonts finish loading (widths change once the real
+  // Cabinet Grotesk arrives and replaces the fallback) and on resize.
+  if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
+    document.fonts.ready.then(function () {
+      try { fitHeroTitle(); } catch (e) { /* ignore */ }
+    });
+  }
+  let heroResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(heroResizeTimer);
+    heroResizeTimer = setTimeout(function () {
+      try { fitHeroTitle(); } catch (e) { /* ignore */ }
+    }, 120);
+  }, { passive: true });
+
+  // Safety net: if some CSS load race keeps the hero invisible past
+  // 2s, force .is-ready so users never see a blank hero.
+  setTimeout(function () {
+    if (!document.documentElement.classList.contains('is-ready')) {
+      document.documentElement.classList.add('is-ready');
+    }
+  }, 2000);
 
   // ============================================================
   // Sticky / scrolled nav state

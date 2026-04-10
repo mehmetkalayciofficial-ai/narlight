@@ -144,7 +144,11 @@ export function renderHome({ projects, productCats, news, corporate }) {
   <div class="container hero-v2-grid">
     <div>
       <span class="eyebrow hero-warmup-eyebrow">NARLIGHT — AYDINLATMANIN TASARIMI</span>
-      <h1 class="hero-warmup-title">Karanlığa<br><span class="accent hero-warmup-accent">imza atan</span><br>Türk markası.</h1>
+      <h1 class="hero-warmup-title hero-title-fit" data-fit-title>
+        <span class="hero-line hero-line-1">Karanlığa</span>
+        <span class="hero-line hero-line-2 accent hero-warmup-accent">imza atan</span>
+        <span class="hero-line hero-line-3">Türk markası.</span>
+      </h1>
       <p class="lede hero-warmup-fade" data-d="1">
         1995'ten bu yana camileri, meydanları, müzeleri, otobanları ve kent merkezlerini ışıkla yeniden yazıyoruz. Tek bir ekipten konsept, üretim, kurulum ve sertifikasyon.
       </p>
