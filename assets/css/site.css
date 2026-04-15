@@ -1915,6 +1915,16 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .carousel.is-dragging .carousel-card { transition: none !important; }
 @media (min-width: 1024px) {
   .carousel { aspect-ratio: 3 / 4; }
+  /* Clip the 3D rotating stack at its LEFT edge only. The "behind"
+     cards (slots -1, -2) otherwise translateX out into the text
+     column at x = slot * 24% of root width and visually overlap
+     the h1. Negative insets on top/right/bottom keep the fan on
+     those sides fully visible (for depth) while a hard 0 on the
+     left prevents any card from bleeding into the hero text. */
+  .hero-v2 .carousel {
+    clip-path: inset(-500px -500px -500px 0);
+    -webkit-clip-path: inset(-500px -500px -500px 0);
+  }
 }
 .carousel-stage {
   position: absolute;
