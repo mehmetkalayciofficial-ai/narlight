@@ -663,6 +663,62 @@
   });
 
   // ============================================================
+  // Products index — real-time search filter
+  //
+  // Every product card has data-search="title modelname..." (lower-
+  // cased by the template). The input's "input" event filters cards
+  // in place by toggling .is-hidden, then updates the visible count
+  // and empty-state panel. No page reloads, no debounce fuss — 40
+  // items filter instantly on every keystroke.
+  // ============================================================
+  const searchInput = document.querySelector('[data-product-search]');
+  if (searchInput) {
+    const grid = document.querySelector('[data-product-grid]');
+    const cards = grid ? Array.from(grid.querySelectorAll('[data-product-card]')) : [];
+    const countEl = document.querySelector('[data-product-count-visible]');
+    const emptyEl = document.querySelector('[data-product-empty]');
+    const clearBtn = document.querySelector('[data-product-search-clear]');
+    const wrapper = searchInput.closest('.products-search');
+
+    function applyFilter() {
+      const q = searchInput.value.trim().toLowerCase();
+      if (wrapper) wrapper.classList.toggle('has-value', q.length > 0);
+      let visible = 0;
+      for (let i = 0; i < cards.length; i++) {
+        const hay = cards[i].getAttribute('data-search') || '';
+        const hit = !q || hay.indexOf(q) !== -1;
+        cards[i].classList.toggle('is-hidden', !hit);
+        if (hit) visible++;
+      }
+      if (countEl) countEl.textContent = String(visible);
+      if (emptyEl) {
+        if (visible === 0) {
+          emptyEl.removeAttribute('hidden');
+          emptyEl.classList.add('is-visible');
+        } else {
+          emptyEl.setAttribute('hidden', '');
+          emptyEl.classList.remove('is-visible');
+        }
+      }
+    }
+    searchInput.addEventListener('input', applyFilter);
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+        applyFilter();
+      });
+    }
+    // Allow Esc to clear + unfocus
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && searchInput.value) {
+        searchInput.value = '';
+        applyFilter();
+      }
+    });
+  }
+
+  // ============================================================
   // Sticky bottom CTA bar (appears after first scroll past hero)
   // ============================================================
   const stickyBar = document.querySelector('[data-sticky-cta]');

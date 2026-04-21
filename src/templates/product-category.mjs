@@ -1,61 +1,81 @@
-import { esc, localImage } from '../utils.mjs';
+import { esc } from '../utils.mjs';
 
-export function renderProductCategory({ page, allProducts, allCategories }) {
-  // Naive guess: products that share a slug stem with the category, OR
-  // simply the first 8 products as samples.
-  const linked = allProducts.slice(0, 12);
+// Simplified category page — matches the new /urunler/ aesthetic:
+// same minimal card grid, no duplicated category-list, just the
+// filtered products for this category. The unified /urunler/ page
+// is the primary index; categories are secondary views for users
+// arriving from the nav mega-menu.
+export function renderProductCategory({ page, allProducts }) {
+  // Derive the list of products that belong to this category. We match
+  // by looking at each product's image URL: narlight organized product
+  // shots under /Urunler/<CATEGORY_FOLDER>/<MODEL>.png so the folder
+  // name maps reliably to the category. Falls back to a 12-product
+  // sample if no matches are found.
+  const slug = page.slug || '';
+  const title = (page.title || '').toLowerCase();
+
+  // Normalise helper for matching category-folder names to slugs.
+  const norm = (s) => (s || '')
+    .toLowerCase()
+    .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u')
+    .replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]/g, '');
+  const slugKey = norm(slug) || norm(title);
+
+  const matched = allProducts.filter(p => {
+    const imgs = p.images || [];
+    const firstProductImg = imgs.find(i => /\/Urunler\/[^/]+\//.test(i.src || ''));
+    if (!firstProductImg) return false;
+    const m = firstProductImg.src.match(/\/Urunler\/([^/]+)\//);
+    if (!m) return false;
+    const folder = norm(m[1]);
+    // Match either direction — folder name contains slug OR slug contains
+    // folder name. Loose match handles plurals and suffix variations.
+    return folder.includes(slugKey) || slugKey.includes(folder);
+  });
+
+  const linked = matched.length ? matched : allProducts.slice(0, 12);
 
   return `
-<section style="background:var(--color-ink);color:var(--color-paper);padding:160px 0 80px;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 0%, rgba(255,179,71,0.08), transparent 60%), radial-gradient(80% 60% at 0% 100%, rgba(26,37,90,0.5), transparent 60%);pointer-events:none"></div>
-  <div class="container" style="position:relative">
-    <a href="/urunler/" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;margin:0 -4px 24px -4px;font-family:var(--font-body);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.72)">
+<section class="products-hero products-hero-category">
+  <div class="products-hero-fx" aria-hidden="true"></div>
+  <div class="container products-hero-inner">
+    <a href="/urunler/" class="products-back-link">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Tüm Kategoriler
+      Tüm Ürünler
     </a>
-    <span class="section-tag dark"><span class="pulse"></span>Ürün Kategorisi</span>
-    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:18ch;margin:32px 0 0">${esc(page.title)}</h1>
+    <span class="section-tag dark"><span class="pulse"></span>Kategori</span>
+    <h1 class="display display-1 hero-rev" data-d="1" style="color:var(--color-paper);max-width:20ch;margin:24px 0 0">
+      ${esc(page.title)}
+    </h1>
+    <p class="hero-rev" data-d="2" style="font-family:var(--font-body);font-size:clamp(15px,1.05vw,18px);line-height:1.7;color:rgba(255,255,255,0.7);max-width:54ch;margin:28px 0 0">
+      ${linked.length} model bu kategoride. Tümünü görüntülemek için detay sayfasını açın, teknik dokümanlara ve paylaşım seçeneklerine oradan ulaşın.
+    </p>
   </div>
 </section>
 
-<section class="section">
+<section class="products-index section">
   <div class="container">
-    <div class="section-head" data-reveal>
-      <div>
-        <span class="section-tag"><span class="pulse"></span>Bu kategoride</span>
-        <h2 class="display display-3" style="margin-top:24px">Modeller ve seriler.</h2>
-      </div>
-      <p class="section-intro">Bu kategori altındaki tüm ürünleri inceleyin. Her modelin teknik özellikleri, sertifikaları ve uygulama örnekleri detay sayfasında.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-reveal-stagger>
-      ${linked.map(p => `
-        <a href="${esc(p.href)}" class="card-link" style="background:var(--color-paper-3);border:1px solid var(--color-line)">
-          <div class="card-image" style="aspect-ratio:1/1;background:#fff">
-            ${p.hero ? `<img src="${esc(p.hero)}" alt="${esc(p.title)}" loading="lazy" style="object-fit:contain;padding:24px">` : ''}
+    <div class="products-grid" data-product-grid>
+      ${linked.map(p => {
+        const pTitle = p.modelName || p.title;
+        return `
+        <a href="${esc(p.href)}" class="product-card">
+          <div class="product-card-image">
+            ${p.hero ? `<img src="${esc(p.hero)}" alt="${esc(pTitle)}" loading="lazy">` : `
+              <div class="product-card-placeholder" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M3 12h18"/></svg>
+              </div>`}
           </div>
-          <div style="padding:24px 28px 28px;background:var(--color-paper)">
-            <div class="eyebrow" style="margin-bottom:10px">— Model</div>
-            <h3 style="font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-0.02em;line-height:1.15;margin:0">${esc(p.modelName || p.title)}</h3>
+          <div class="product-card-body">
+            <h3 class="product-card-title">${esc(pTitle)}</h3>
+            <span class="product-card-more">
+              Detay
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
           </div>
-        </a>
-      `).join('')}
-    </div>
-  </div>
-</section>
-
-<!-- Other categories -->
-<section style="background:var(--color-paper-2);padding:96px 0">
-  <div class="container">
-    <h2 class="display display-3" style="margin:0 0 48px">Diğer kategoriler</h2>
-    <div class="marquee" style="--marquee-dur:50s">
-      <div class="marquee-content">
-        ${[...allCategories, ...allCategories].slice(0, 24).map(c => `
-          <a href="${esc(c.href)}" style="font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:-0.01em;color:var(--color-line-strong);white-space:nowrap;display:inline-flex;align-items:center;gap:18px;transition:color 240ms var(--ease-out)" onmouseover="this.style.color='var(--color-ink)'" onmouseout="this.style.color='var(--color-line-strong)'">
-            ${esc(c.title)}
-            <span style="display:inline-block;width:6px;height:6px;background:var(--color-glow);border-radius:50%"></span>
-          </a>
-        `).join('')}
-      </div>
+        </a>`;
+      }).join('')}
     </div>
   </div>
 </section>

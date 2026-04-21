@@ -146,7 +146,7 @@ for (const p of projectsHydrated) {
 writePage('urunler/index.html', renderLayout({
   title: 'Ürünler',
   description: 'Narlight\'ın 40\'tan fazla aydınlatma ürün serisi. İç ve dış mekan, endüstriyel, akıllı sistemler.',
-  body: renderProductList({ productCats: productCatsHydrated }),
+  body: renderProductList({ products: productsHydrated }),
 }));
 log('/urunler/');
 
@@ -155,7 +155,7 @@ for (const c of productCatsHydrated) {
   writePage(`urunler/${slug}/index.html`, renderLayout({
     title: c.title,
     description: `Narlight ${c.title} kategorisindeki ürünler ve modeller.`,
-    body: renderProductCategory({ page: c, allProducts: productsHydrated, allCategories: productCatsHydrated }),
+    body: renderProductCategory({ page: c, allProducts: productsHydrated }),
   }));
   log(`/urunler/${slug}/`);
 }
