@@ -363,5 +363,17 @@
   ],
   "slug": "TR__ilex-lpd1007-2-x-50w-16128",
   "urlPath": "/TR/ilex-lpd1007-2-x-50w-16128",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LPD1007-Ilex_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LPD1007-Ilex_Datasheet_TR.pdf"
+        }
+      ]
+    }
+  ]
 }

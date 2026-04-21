@@ -253,7 +253,19 @@ const imagesCopied = copyDir(
   path.join(DIST, 'brand_assets', 'images'),
   webpFilter,
 );
-console.log(`  copied ${assetsCopied} assets + ${imagesCopied} images (webp/svg only) into dist/`);
+
+// Ship product datasheet PDFs (+ any supporting docs) as-is so each
+// product page can serve its own downloadable files.
+const docFilter = (name) => /\.(pdf|zip|rar|docx?)$/i.test(name);
+const docsCopied = fs.existsSync(path.join('brand_assets', 'files'))
+  ? copyDir(
+      path.join('brand_assets', 'files'),
+      path.join(DIST, 'brand_assets', 'files'),
+      docFilter,
+    )
+  : 0;
+
+console.log(`  copied ${assetsCopied} assets + ${imagesCopied} images + ${docsCopied} docs (webp/svg/pdf only) into dist/`);
 
 // ---------- robots.txt ----------
 fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: /sitemap.xml\n');

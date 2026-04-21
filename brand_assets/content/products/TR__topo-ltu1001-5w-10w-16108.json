@@ -365,5 +365,17 @@
   ],
   "slug": "TR__topo-ltu1001-5w-10w-16108",
   "urlPath": "/TR/topo-ltu1001-5w-10w-16108",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LTU1001-Topo_Datasheet_TR_Rev1.pdf",
+          "localPath": "/brand_assets/files/datasheets/LTU1001-Topo_Datasheet_TR_Rev1.pdf"
+        }
+      ]
+    }
+  ]
 }

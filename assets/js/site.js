@@ -594,6 +594,75 @@
   }
 
   // ============================================================
+  // Social share buttons (product pages + news detail)
+  //
+  // Each share button has a data-share-* attribute. On page load we
+  // wire up the correct target URL using the current location and
+  // the product/article title from the wrapping [data-share] node.
+  // The "Copy link" button uses the Clipboard API with a fallback
+  // to a hidden <textarea>; the "Email" button builds a mailto: URL.
+  // ============================================================
+  const shareRoots = document.querySelectorAll('[data-share]');
+  shareRoots.forEach((root) => {
+    const title = root.getAttribute('data-share-title') || document.title;
+    const url = window.location.origin + window.location.pathname;
+    const encoded = {
+      url: encodeURIComponent(url),
+      title: encodeURIComponent(title),
+      both: encodeURIComponent(`${title} — ${url}`),
+    };
+
+    const fb = root.querySelector('[data-share-fb]');
+    const tw = root.querySelector('[data-share-tw]');
+    const li = root.querySelector('[data-share-li]');
+    const wa = root.querySelector('[data-share-wa]');
+    const em = root.querySelector('[data-share-email]');
+    const cp = root.querySelector('[data-share-copy]');
+
+    if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encoded.url}`;
+    if (tw) tw.href = `https://twitter.com/intent/tweet?text=${encoded.title}&url=${encoded.url}`;
+    if (li) li.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encoded.url}`;
+    if (wa) wa.href = `https://wa.me/?text=${encoded.both}`;
+    if (em) em.href = `mailto:?subject=${encoded.title}&body=${encoded.both}`;
+
+    if (cp) {
+      cp.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const iconCopy = cp.querySelector('.icon-copy');
+        const iconCopied = cp.querySelector('.icon-copied');
+        let ok = false;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(url);
+            ok = true;
+          } else {
+            // Fallback for older browsers and non-HTTPS contexts
+            const ta = document.createElement('textarea');
+            ta.value = url;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try { ok = document.execCommand('copy'); } catch {}
+            document.body.removeChild(ta);
+          }
+        } catch {}
+        if (ok) {
+          cp.classList.add('is-copied');
+          if (iconCopy) iconCopy.style.display = 'none';
+          if (iconCopied) iconCopied.style.display = '';
+          setTimeout(() => {
+            cp.classList.remove('is-copied');
+            if (iconCopy) iconCopy.style.display = '';
+            if (iconCopied) iconCopied.style.display = 'none';
+          }, 1800);
+        }
+      });
+    }
+  });
+
+  // ============================================================
   // Sticky bottom CTA bar (appears after first scroll past hero)
   // ============================================================
   const stickyBar = document.querySelector('[data-sticky-cta]');

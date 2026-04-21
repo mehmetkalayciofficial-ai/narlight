@@ -398,5 +398,17 @@
   ],
   "slug": "TR__topo-ltu1002-15w-20w-16109",
   "urlPath": "/TR/topo-ltu1002-15w-20w-16109",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LTU1002-Topo_Datasheet_TR_Rev1.pdf",
+          "localPath": "/brand_assets/files/datasheets/LTU1002-Topo_Datasheet_TR_Rev1.pdf"
+        }
+      ]
+    }
+  ]
 }

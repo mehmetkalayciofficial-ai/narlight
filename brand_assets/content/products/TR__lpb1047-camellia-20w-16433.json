@@ -313,5 +313,17 @@
   ],
   "slug": "TR__lpb1047-camellia-20w-16433",
   "urlPath": "/TR/lpb1047-camellia-20w-16433",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LPB1047-Camellia_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LPB1047-Camellia_TR.pdf"
+        }
+      ]
+    }
+  ]
 }

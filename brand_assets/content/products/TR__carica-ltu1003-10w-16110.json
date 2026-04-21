@@ -356,5 +356,17 @@
   ],
   "slug": "TR__carica-ltu1003-10w-16110",
   "urlPath": "/TR/carica-ltu1003-10w-16110",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LTU1003-Carica_Datasheet_TR_Rev3.pdf",
+          "localPath": "/brand_assets/files/datasheets/LTU1003-Carica_Datasheet_TR_Rev3.pdf"
+        }
+      ]
+    }
+  ]
 }

@@ -2683,3 +2683,157 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   }
   .marquee-content { animation: none !important; }
 }
+
+/* ============================================================
+   PRODUCT DOWNLOADS  —  Per-variant PDF cards
+   Uses native <details> for accessible expand/collapse.
+   ============================================================ */
+.downloads-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 48px;
+}
+@media (min-width: 768px) {
+  .downloads-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (min-width: 1024px) {
+  .downloads-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.download-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
+}
+.download-card:hover { border-color: var(--color-line-strong); box-shadow: 0 16px 40px -28px rgba(11, 11, 13, 0.28); }
+.download-card[open] { border-color: var(--color-ink); }
+.download-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 240ms var(--ease-out);
+}
+.download-card-head::-webkit-details-marker { display: none; }
+.download-card-head:hover { background: var(--color-paper-2); }
+.download-card-variant {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+.download-card-count {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+  margin-top: 4px;
+}
+.download-card-chevron { color: var(--color-ink); transition: transform 280ms var(--ease-out); flex-shrink: 0; }
+.download-card[open] .download-card-chevron { transform: rotate(180deg); }
+.download-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px;
+  border-top: 1px solid var(--color-line);
+}
+.download-card-list li { border-bottom: 1px solid var(--color-line); }
+.download-card-list li:last-child { border-bottom: 0; }
+.download-card-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out);
+}
+.download-card-list a:hover { background: var(--color-paper-2); color: var(--color-ink); }
+.download-icon { color: var(--color-glow); flex-shrink: 0; }
+.download-label { flex: 1; }
+.download-meta {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-mute);
+  padding: 4px 8px;
+  background: var(--color-paper-2);
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SHARE  —  Social share buttons for product / news pages
+   ============================================================ */
+.share-section { background: var(--color-paper); border-top: 1px solid var(--color-line); }
+.share-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .share-wrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+}
+.share-copy { max-width: 46ch; }
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.share-btn {
+  --share-size: 44px;
+  width: var(--share-size);
+  height: var(--share-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    color 240ms var(--ease-out),
+    background-color 240ms var(--ease-out),
+    border-color 240ms var(--ease-out),
+    transform 240ms var(--ease-out);
+  padding: 0;
+}
+.share-btn:hover,
+.share-btn:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+.share-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.35);
+}
+.share-btn:active { transform: translateY(0); }
+.share-fb:hover       { color: #fff; background: #1877F2; border-color: #1877F2; }
+.share-tw:hover       { color: #fff; background: #0F1419; border-color: #0F1419; }
+.share-li:hover       { color: #fff; background: #0A66C2; border-color: #0A66C2; }
+.share-wa:hover       { color: #fff; background: #25D366; border-color: #25D366; }
+.share-email:hover    { color: #fff; background: var(--color-ink); border-color: var(--color-ink); }
+.share-copy-btn:hover { color: #fff; background: var(--color-navy); border-color: var(--color-navy); }
+.share-copy-btn.is-copied { color: #fff; background: var(--color-glow); border-color: var(--color-glow); }

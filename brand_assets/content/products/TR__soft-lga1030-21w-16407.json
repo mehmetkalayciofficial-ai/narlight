@@ -329,5 +329,17 @@
   ],
   "slug": "TR__soft-lga1030-21w-16407",
   "urlPath": "/TR/soft-lga1030-21w-16407",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LGA1030-Soft_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LGA1030-Soft_Datasheet_TR.pdf"
+        }
+      ]
+    }
+  ]
 }

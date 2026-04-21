@@ -278,5 +278,17 @@
   ],
   "slug": "TR__cupresus-lpd1055-50w-16538",
   "urlPath": "/TR/cupresus-lpd1055-50w-16538",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LPD1055-Cupresus_3m_Datasheet_Rev1.pdf",
+          "localPath": "/brand_assets/files/datasheets/LPD1055-Cupresus_3m_Datasheet_Rev1.pdf"
+        }
+      ]
+    }
+  ]
 }

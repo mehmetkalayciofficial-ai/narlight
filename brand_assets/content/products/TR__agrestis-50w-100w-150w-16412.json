@@ -365,5 +365,37 @@
   ],
   "slug": "TR__agrestis-50w-100w-150w-16412",
   "urlPath": "/TR/agrestis-50w-100w-150w-16412",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "LPR3050",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LPR3050-Repens_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LPR3050-Repens_Datasheet_TR.pdf"
+        }
+      ]
+    },
+    {
+      "variant": "LPR3100",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LPR3100-Repens_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LPR3100-Repens_Datasheet_TR.pdf"
+        }
+      ]
+    },
+    {
+      "variant": "LPR3150",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LPR3150-Repens_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LPR3150-Repens_Datasheet_TR.pdf"
+        }
+      ]
+    }
+  ]
 }

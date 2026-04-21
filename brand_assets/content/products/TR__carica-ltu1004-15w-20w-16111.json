@@ -387,5 +387,17 @@
   ],
   "slug": "TR__carica-ltu1004-15w-20w-16111",
   "urlPath": "/TR/carica-ltu1004-15w-20w-16111",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LTU1004-Carica_Datasheet_Rev2.pdf",
+          "localPath": "/brand_assets/files/datasheets/LTU1004-Carica_Datasheet_Rev2.pdf"
+        }
+      ]
+    }
+  ]
 }

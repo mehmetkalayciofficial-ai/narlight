@@ -288,5 +288,17 @@
   ],
   "slug": "TR__grandis-ldu1037-30w-16406",
   "urlPath": "/TR/grandis-ldu1037-30w-16406",
-  "category": "products"
+  "category": "products",
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LDU1037-Grandis_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LDU1037-Grandis_Datasheet_TR.pdf"
+        }
+      ]
+    }
+  ]
 }
