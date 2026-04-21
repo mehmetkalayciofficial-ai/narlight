@@ -91,9 +91,38 @@ export function loadCategory(sub) {
     .map(f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
 }
 
-// HTML escape.
+// Decode the common HTML named + numeric entities produced by the
+// narlight.com.tr scrape (e.g. &Uuml; → Ü, &ge; → ≥, &#39; → '). Run
+// this on raw scraped text BEFORE `esc()` so the final HTML has clean
+// characters, not literal "&Uuml;" strings in the DOM.
+const ENTITY_MAP = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+  // Turkish
+  Auml: 'Ä', auml: 'ä',
+  Uuml: 'Ü', uuml: 'ü',
+  Ouml: 'Ö', ouml: 'ö',
+  Iuml: 'Ï', iuml: 'ï',
+  ccedil: 'ç', Ccedil: 'Ç',
+  scedil: 'ş', Scedil: 'Ş',
+  gbreve: 'ğ', Gbreve: 'Ğ',
+  Idot: 'İ', idotless: 'ı',
+  // Common math / symbols
+  ge: '≥', le: '≤', deg: '°', times: '×', plusmn: '±',
+  ndash: '–', mdash: '—', hellip: '…', copy: '©', reg: '®', trade: '™',
+  lsquo: "'", rsquo: "'", ldquo: '"', rdquo: '"',
+};
+export function decodeEntities(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n, 10)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&([a-zA-Z]+);/g, (m, name) => ENTITY_MAP[name] != null ? ENTITY_MAP[name] : m);
+}
+
+// HTML escape. Decodes any stray entities first so double-escaped
+// text like "&Uuml;" doesn't survive through to the DOM.
 export function esc(s) {
-  return String(s ?? '')
+  return decodeEntities(s)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
