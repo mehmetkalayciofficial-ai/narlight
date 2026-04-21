@@ -40,9 +40,13 @@ fs.mkdirSync(DIST, { recursive: true });
 // ---------- Load all content ----------
 const corporate = loadCategory('corporate');
 const projects  = loadCategory('projects');
-const productCats = loadCategory('product-categories');
-const products  = loadCategory('products');
 const news      = loadCategory('news');
+
+// Products v2: scraped 1:1 from narlight.com.tr by fetch-all-products.mjs.
+// Flat list of 750 products + a 23-entry categories-v2.json tree that
+// maps category slug → product URLs and exposes the menu grouping.
+const products = loadCategory('products-v2');
+const productCats = JSON.parse(fs.readFileSync('brand_assets/content/categories-v2.json', 'utf8'));
 
 // ---------- Hydrate ----------
 const projectsHydrated = projects.map(p => ({
@@ -52,16 +56,34 @@ const projectsHydrated = projects.map(p => ({
   shortName: nameFromTitle(p.title),
   city: cityFromTitle(p.title),
 }));
-const productCatsHydrated = productCats.map(p => ({
-  ...p,
-  href: productCategoryHref(p),
-  hero: pickHeroImage(p.images),
-}));
-const productsHydrated = products.map(p => ({
-  ...p,
-  href: productHref(p),
-  hero: pickHeroImage(p.images),
-  modelName: nameFromTitle(p.title),
+
+// v2 products: slug already lives on the JSON, plus localHero points
+// at the downloaded webp copy of the main photo. Build a hydrated
+// record that the templates can render directly.
+const productsHydrated = products.map(p => {
+  const localWebp = p.localHero ? p.localHero.replace(/\.(png|jpg|jpeg)$/i, '.webp') : null;
+  return {
+    ...p,
+    href: `/urunler/urun/${p.slug}/`,
+    hero: localWebp || pickHeroImage(p.images),
+    modelName: nameFromTitle(p.title),
+  };
+});
+
+// Hydrate categories: compute href, resolve the list of product slugs
+// into hydrated product objects, and keep the group / label metadata.
+const productsBySlug = new Map(productsHydrated.map(p => [p.slug, p]));
+const productCatsHydrated = productCats.map(c => ({
+  ...c,
+  href: `/urunler/${c.slug}/`,
+  title: c.label,
+  products: (c.products || [])
+    .map(url => {
+      // category.products contains "/TR/slug-id" URLs; map each to a slug.
+      const slug = url.replace(/^\/TR\//, '').replace(/-\d+$/, '');
+      return productsBySlug.get(slug);
+    })
+    .filter(Boolean),
 }));
 const newsHydrated = news.map(p => ({
   ...p,
@@ -151,23 +173,21 @@ writePage('urunler/index.html', renderLayout({
 log('/urunler/');
 
 for (const c of productCatsHydrated) {
-  const slug = slugify(c.title);
-  writePage(`urunler/${slug}/index.html`, renderLayout({
+  writePage(`urunler/${c.slug}/index.html`, renderLayout({
     title: c.title,
     description: `Narlight ${c.title} kategorisindeki ürünler ve modeller.`,
     body: renderProductCategory({ page: c, allProducts: productsHydrated }),
   }));
-  log(`/urunler/${slug}/`);
+  log(`/urunler/${c.slug}/`);
 }
 
 for (const p of productsHydrated) {
-  const slug = slugify(p.modelName || p.slug);
-  writePage(`urunler/urun/${slug}/index.html`, renderLayout({
+  writePage(`urunler/urun/${p.slug}/index.html`, renderLayout({
     title: p.modelName || p.title,
     description: `${p.modelName || p.title} - Narlight ürün detayı, teknik özellikler ve sertifikalar.`,
     body: renderProductDetail({ page: p, allProducts: productsHydrated }),
   }));
-  log(`/urunler/urun/${slug}/`);
+  log(`/urunler/urun/${p.slug}/`);
 }
 
 // ---------- News list + details ----------

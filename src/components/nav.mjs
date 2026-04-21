@@ -41,40 +41,48 @@ const menus = {
   urunler: {
     label: 'Ürünler',
     href: '/urunler/',
-    feature: {
-      eyebrow: 'Yeni Ürünler 2025',
-      title: 'AGRESTIS projektör serisi.',
-      href: '/urunler/urun/agrestis/',
-      bg: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2-feature.webp',
-    },
-    sections: [
+    // Dense 3-column layout matching narlight.com.tr's mega menu
+    // exactly. No feature-image tile — pure category lists.
+    type: 'dense',
+    columns: [
+      {
+        title: 'İç Aydınlatma',
+        items: [
+          { href: '/urunler/dekoratif-sarjli-masa-lambasi/',    label: 'Dekoratif Şarjlı Masa Lambası' },
+          { href: '/urunler/yatak-basi-aplikler/',              label: 'Yatak Başı Aplikler' },
+          { href: '/urunler/dekoratif-merdiven-spotlari/',      label: 'Dekoratif Merdiven Spotları' },
+          { href: '/urunler/sarkit-armaturler/',                label: 'Sarkıt Armatürler' },
+          { href: '/urunler/magnet-ray-armaturler/',            label: 'Magnet Ray Armatürler' },
+          { href: '/urunler/covid-19-sterilizatorleri/',        label: 'Covid-19 Sterilizatörleri' },
+          { href: '/urunler/sivaalti-led-panel-armaturleri/',   label: 'Sıvaaltı LED Panel Armatürleri' },
+          { href: '/urunler/sivaustu-led-panel-armaturleri/',   label: 'Sıvaüstü LED Panel Armatürleri' },
+          { href: '/urunler/led-downlight-ve-spot-armaturler/', label: 'LED Downlight ve Spot Armatürler' },
+          { href: '/urunler/lineer-ve-ledbar-armaturler/',      label: 'Lineer ve LEDBar Armatürler' },
+          { href: '/urunler/acil-cikis-levhalari/',             label: 'Acil Çıkış Levhaları' },
+          { href: '/urunler/led-ampuller/',                     label: 'LED Ampuller' },
+        ],
+      },
       {
         title: 'Dış Aydınlatma',
+        split: true, // rendered as two sub-columns side-by-side
         items: [
-          { href: '/urunler/aydinlatma-direkleri/', label: 'Aydınlatma Direkleri', desc: '4–12m park, cadde ve meydan direkleri', thumb: '/brand_assets/images/PROJELER/Cine-Otogari1-thumb.webp' },
-          { href: '/urunler/mimari-projektorler/', label: 'Mimari Projektörler', desc: 'AGRESTIS, GLAUCA, ELATA', thumb: '/brand_assets/images/Urunler/Projektorler/AGRESTIS_yeni_2-thumb.webp' },
-          { href: '/urunler/park-bahce-armaturleri/', label: 'Park & Bahçe', desc: 'Bollard ve dekoratif seriler', thumb: '/brand_assets/images/PROJELER/Karap%C4%B1nar-SuPark%C4%B1/buyukresimm-thumb.webp' },
+          { href: '/urunler/tavan-armaturleri/',                          label: 'Tavan Armatürleri' },
+          { href: '/urunler/duvar-armaturleri/',                          label: 'Duvar Armatürleri' },
+          { href: '/urunler/yere-gomme-armaturleri/',                     label: 'Yere Gömme Armatürleri' },
+          { href: '/urunler/projektorler/',                               label: 'Projektörler' },
+          { href: '/urunler/wallwasher-ve-ledbar-armaturler/',            label: 'Wallwasher ve LEDBar Armatürler' },
+          { href: '/urunler/havuz-armaturleri/',                          label: 'Havuz Armatürleri' },
+          { href: '/urunler/led-sokak-aydinlatma-armaturleri/',           label: 'LED Sokak Aydınlatma Armatürleri' },
+          { href: '/urunler/park-bahce-armaturleri/',                     label: 'Park - Bahçe Armatürleri' },
+          { href: '/urunler/endustriyel-aydinlatma/',                     label: 'Endüstriyel Aydınlatma' },
+          { href: '/urunler/aydinlatma-elemanlari-ve-yedek-parcalari/',   label: 'Aydınlatma Elemanları ve Yedek Parçaları' },
         ],
       },
       {
-        title: 'İç & Endüstriyel',
-        type: 'simple',
+        title: 'Yeni Ürünler',
         items: [
-          { href: '/urunler/sivaalti-led-panel-armaturleri/', label: 'Sıvaaltı LED Panel' },
-          { href: '/urunler/lineer-ve-ledbar-armaturler/', label: 'Lineer & LED Bar' },
-          { href: '/urunler/ray-spot-armatur-aksesuarlari/', label: 'Ray Spot' },
-          { href: '/urunler/magnet-ray-armaturler/', label: 'Magnet Ray Sistemleri' },
-          { href: '/urunler/havuz-armaturleri/', label: 'Havuz Armatürleri' },
-          { href: '/urunler/', label: 'Tüm Kategoriler →' },
-        ],
-      },
-      {
-        title: 'Akıllı Sistemler',
-        type: 'simple',
-        items: [
-          { href: '/urunler/astronomik-zaman-saati/', label: 'Astronomik Saat' },
-          { href: '/urunler/hareket-sensorleri/', label: 'Hareket Sensörü' },
-          { href: '/kurumsal/akilli-aydinlatma/', label: 'Smart Lighting' },
+          { href: '/urunler/yeni-urunler/', label: 'Yeni Ürünler' },
+          { href: '/urunler/',              label: 'Tüm Katalog →' },
         ],
       },
     ],
@@ -128,6 +136,25 @@ const flatLinks = [
 ];
 
 function renderMega(key, m) {
+  // Dense list-mode mega menu (matches narlight.com.tr's 3-column
+  // product layout exactly). Used only on the Ürünler entry.
+  if (m.type === 'dense') {
+    return `
+    <div class="mega mega-dense" id="mega-${key}" data-mega="${key}" role="region" aria-label="${m.label} alt menüsü">
+      <div class="mega-dense-grid">
+        ${m.columns.map(col => `
+          <div class="mega-dense-col">
+            <p class="mega-dense-title">${col.title}</p>
+            <ul class="mega-dense-list ${col.split ? 'mega-dense-list-split' : ''}">
+              ${col.items.map(i => `<li><a href="${i.href}">${i.label}</a></li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Default: feature-image mega menu (Kurumsal, Projeler).
   return `
   <div class="mega" id="mega-${key}" data-mega="${key}" role="region" aria-label="${m.label} alt menüsü">
     <div class="mega-grid">
@@ -196,26 +223,35 @@ export function renderNav() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="m-mega-body">
-            <a class="m-mega-feature" href="${m.feature.href}" style="--bg: url('${m.feature.bg}')">
-              <span class="ey">${m.feature.eyebrow}</span>
-              <span class="title">${m.feature.title}</span>
-            </a>
-            ${m.sections.map(s => `
-              <div class="m-mega-section">
-                <p class="m-mega-section-title">${s.title}</p>
-                ${s.type === 'simple'
-                  ? `<ul class="m-mega-simple">${s.items.map(i => `<li><a href="${i.href}">${i.label}</a></li>`).join('')}</ul>`
-                  : `<ul class="m-mega-cards">${s.items.map(i => `
-                      <li><a href="${i.href}">
-                        <span class="thumb" style="background-image:url('${i.thumb}')"></span>
-                        <span class="text">
-                          <span class="lbl">${i.label}</span>
-                          ${i.desc ? `<span class="dsc">${i.desc}</span>` : ''}
-                        </span>
-                      </a></li>
-                    `).join('')}</ul>`}
-              </div>
-            `).join('')}
+            ${m.type === 'dense'
+              ? m.columns.map(col => `
+                  <div class="m-mega-section">
+                    <p class="m-mega-section-title">${col.title}</p>
+                    <ul class="m-mega-simple">${col.items.map(i => `<li><a href="${i.href}">${i.label}</a></li>`).join('')}</ul>
+                  </div>
+                `).join('')
+              : `
+                <a class="m-mega-feature" href="${m.feature.href}" style="--bg: url('${m.feature.bg}')">
+                  <span class="ey">${m.feature.eyebrow}</span>
+                  <span class="title">${m.feature.title}</span>
+                </a>
+                ${m.sections.map(s => `
+                  <div class="m-mega-section">
+                    <p class="m-mega-section-title">${s.title}</p>
+                    ${s.type === 'simple'
+                      ? `<ul class="m-mega-simple">${s.items.map(i => `<li><a href="${i.href}">${i.label}</a></li>`).join('')}</ul>`
+                      : `<ul class="m-mega-cards">${s.items.map(i => `
+                          <li><a href="${i.href}">
+                            <span class="thumb" style="background-image:url('${i.thumb}')"></span>
+                            <span class="text">
+                              <span class="lbl">${i.label}</span>
+                              ${i.desc ? `<span class="dsc">${i.desc}</span>` : ''}
+                            </span>
+                          </a></li>
+                        `).join('')}</ul>`}
+                  </div>
+                `).join('')}
+              `}
           </div>
         </details>
       `).join('')}

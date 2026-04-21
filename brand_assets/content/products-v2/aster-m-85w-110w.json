@@ -1,0 +1,347 @@
+{
+  "title": "ASTER M / 85W - 110W",
+  "url": "/TR/aster-m-85w-110w-16704",
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/ASTER_M_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/ASTER_M_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/120_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/asimetrik_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/ASTER_M_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/120_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/asimetrik_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Teknik_Cizimler/ASTER_M_teknik_cizim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7022.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7021.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7020.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7019.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7018.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7017.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7016.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7015.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7014.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7013.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/hipermedya-icon.png",
+      "alt": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "&Uuml;r&uuml;n&uuml; Adı",
+        "Koli Ebatları (mm)",
+        "Br&uuml;t Ağırlık (kg)"
+      ],
+      [
+        "ASTER M",
+        "710 x 305 x 200",
+        "6.2 &plusmn;%10"
+      ]
+    ],
+    [
+      [
+        "Kod",
+        "Renk Sıcaklığı",
+        "G&uuml;&ccedil; T&uuml;ketimi",
+        "Giriş Gerilimi",
+        "Işık Akısı",
+        "Verimlilik (lm/W)",
+        "CRI",
+        "Ebat (metre)",
+        "IP Sınıfı"
+      ],
+      [
+        "LEC6085",
+        "3000K - 4000K - 6500K",
+        "85W",
+        "230V AC",
+        "9700",
+        "114",
+        "&ge;80",
+        "516 x 282 x 76",
+        "66"
+      ],
+      [
+        "LEC6110",
+        "3000K - 4000K - 6500K",
+        "110W",
+        "230V AC",
+        "12000",
+        "109",
+        "&ge;80",
+        "516 x 282 x 76",
+        "66"
+      ],
+      [
+        "LEC6110 HE",
+        "3000K - 4000K - 6500K",
+        "110W",
+        "230V AC",
+        "14000",
+        "127",
+        "&ge;80",
+        "516 x 282 x 76",
+        "66"
+      ]
+    ],
+    [
+      [
+        "Gövde",
+        "Alüminyum Enjeksiyon Gövde"
+      ],
+      [
+        "Sürücü",
+        "Yüksek Verimlilikte Sabit Akımlı Sürücü"
+      ],
+      [
+        "Optik Kapak",
+        "Temperli Cam"
+      ],
+      [
+        "Opsiyon",
+        "1~10V / DALI"
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "ASTER M / 85W - 110W"
+      ],
+      [
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ASTER M / 85W - 110W"
+      ],
+      [
+        ""
+      ],
+      [
+        "Opsiyon",
+        "1~10V / DALI"
+      ],
+      [
+        ""
+      ],
+      [
+        "Optik Kapak",
+        "Temperli Cam"
+      ],
+      [
+        ""
+      ],
+      [
+        "Sürücü",
+        "Yüksek Verimlilikte Sabit Akımlı Sürücü"
+      ],
+      [
+        ""
+      ],
+      [
+        "Gövde",
+        "Alüminyum Enjeksiyon Gövde"
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "RAL RENK KODLARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "Narlight",
+        "Özel",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "7016",
+        "Antrasit",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9005",
+        "Siyah",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9006",
+        "Gri",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9016",
+        "Beyaz",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "Özel Renk",
+        "‏‏‏‏‏‏‏‏",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "IŞIK AÇILARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "120o",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "Asimetriko",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ÜRÜN AÇIKLAMASI"
+      ],
+      [
+        ""
+      ],
+      [
+        ""
+      ]
+    ]
+  ],
+  "paragraphs": [
+    "SOPHORA - LSU7016 / 24W - 48W - 60W",
+    "MOLLE - LSU7015 / 51W - 63W - 76W",
+    "&copy; T&uuml;m Hakları Saklıdır - NARLIGHT &copy; 2018"
+  ],
+  "downloads": [
+    {
+      "variant": "LEC6110",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LEC6110%20M-Aster_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LEC6110%20M-Aster_Datasheet_TR.pdf"
+        }
+      ]
+    },
+    {
+      "variant": "LEC6110 HE",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LEC6110%20HE-Aster_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LEC6110%20HE-Aster_Datasheet_TR.pdf"
+        }
+      ]
+    }
+  ],
+  "slug": "aster-m-85w-110w",
+  "categories": [
+    "led-sokak-aydinlatma-armaturleri"
+  ],
+  "localHero": "/brand_assets/images/Urunler-v2/aster-m-85w-110w.png"
+}

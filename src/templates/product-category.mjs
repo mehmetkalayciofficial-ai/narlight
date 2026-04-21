@@ -1,40 +1,12 @@
 import { esc } from '../utils.mjs';
 
-// Simplified category page — matches the new /urunler/ aesthetic:
-// same minimal card grid, no duplicated category-list, just the
-// filtered products for this category. The unified /urunler/ page
-// is the primary index; categories are secondary views for users
-// arriving from the nav mega-menu.
+// Category page — v2 data flow. `page.products` is already the
+// hydrated list of this category's products (set by build.mjs from
+// categories-v2.json), so we just render them with our minimal grid.
 export function renderProductCategory({ page, allProducts }) {
-  // Derive the list of products that belong to this category. We match
-  // by looking at each product's image URL: narlight organized product
-  // shots under /Urunler/<CATEGORY_FOLDER>/<MODEL>.png so the folder
-  // name maps reliably to the category. Falls back to a 12-product
-  // sample if no matches are found.
-  const slug = page.slug || '';
-  const title = (page.title || '').toLowerCase();
-
-  // Normalise helper for matching category-folder names to slugs.
-  const norm = (s) => (s || '')
-    .toLowerCase()
-    .replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u')
-    .replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c')
-    .replace(/[^a-z0-9]/g, '');
-  const slugKey = norm(slug) || norm(title);
-
-  const matched = allProducts.filter(p => {
-    const imgs = p.images || [];
-    const firstProductImg = imgs.find(i => /\/Urunler\/[^/]+\//.test(i.src || ''));
-    if (!firstProductImg) return false;
-    const m = firstProductImg.src.match(/\/Urunler\/([^/]+)\//);
-    if (!m) return false;
-    const folder = norm(m[1]);
-    // Match either direction — folder name contains slug OR slug contains
-    // folder name. Loose match handles plurals and suffix variations.
-    return folder.includes(slugKey) || slugKey.includes(folder);
-  });
-
-  const linked = matched.length ? matched : allProducts.slice(0, 12);
+  const linked = Array.isArray(page.products) && page.products.length
+    ? page.products
+    : allProducts.slice(0, 12);
 
   return `
 <section class="products-hero products-hero-category">

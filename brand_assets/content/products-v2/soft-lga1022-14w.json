@@ -1,0 +1,292 @@
+{
+  "title": "SOFT - LGA1022 / 14W",
+  "url": "/TR/soft-lga1022-14w-1688",
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Diktortgen_Yere_Gomme_Armaturleri/LGA1022_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Diktortgen_Yere_Gomme_Armaturleri/LGA1022_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/tse_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/ce_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/isik_serttifika_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/serttifika_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/500000_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/10_95_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/20_50_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/hz_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yeni_serttifikalar/20v_sari.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Diktortgen_Yere_Gomme_Armaturleri/LGA1022_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Isik_Efekti/LGA1002_isik_efekti.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Teknik_Cizimler/LGA1022_SOFT_teknik_cizim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Montaj_Kasalari/Ankastre_Montaj_Kasasi_LGA1022.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/RGB.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yuk_Dayanimi/LGA1013_Yuk_Dayanimi.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1011_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1016_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1017_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1009_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Kare_Yere_Gomme_Armaturleri/LGA1006_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1005_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1013_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1014_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1015_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Dairesel_Yere_Gomme_Armaturleri/LGA1002_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/hipermedya-icon.png",
+      "alt": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "Renk Sıcaklığı",
+        "G&uuml;&ccedil; T&uuml;ketimi",
+        "Giriş Gerilimi",
+        "Işık Akısı",
+        "CRI",
+        "Ebat (mm)",
+        "IP Sınıfı"
+      ],
+      [
+        "3000K - 4000K - 6500K&nbsp;",
+        "14W",
+        "24V DC",
+        "1400",
+        "&ge;80",
+        "1010 x 54 x 80",
+        "67"
+      ]
+    ],
+    [
+      [
+        "Gövde",
+        "Dudaksız Alüminyum Profil Gövde, Polimer Kaplama"
+      ],
+      [
+        "Optik Kapak",
+        "Epoksi Polimer Kaplama"
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "SOFT - LGA1022 / 14W"
+      ],
+      [
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "SOFT - LGA1022 / 14W"
+      ],
+      [
+        ""
+      ],
+      [
+        "Gövde",
+        "Dudaksız Alüminyum Profil Gövde, Polimer Kaplama"
+      ],
+      [
+        ""
+      ],
+      [
+        "Optik Kapak",
+        "Epoksi Polimer Kaplama"
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "RAL RENK KODLARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "Narlight",
+        "Özel",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "7016",
+        "Antrasit",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9005",
+        "Siyah",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9006",
+        "Gri",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9016",
+        "Beyaz",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "Özel Renk",
+        "‏‏‏‏‏‏‏‏",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ÜRÜN AÇIKLAMASI"
+      ],
+      [
+        ""
+      ],
+      [
+        ""
+      ]
+    ]
+  ],
+  "paragraphs": [
+    "Klasik aydınlatma armat&uuml;rlerine oranla % 80&rsquo;e kadar enerji tasarrufu",
+    "Y&uuml;ksek verimlilikte Led&rsquo;li aydınlatma sistemleri&nbsp;",
+    "Uzun &ouml;m&uuml;rl&uuml;, y&uuml;ksek kaliteli Led ve y&uuml;ksek verimlilikte driver",
+    "Armat&uuml;r&uuml;n y&uuml;zeyine elektrostatik toz boyadan &ouml;nce korozyon direncini artırıcı zincoprim uygulanır",
+    "Sızdırmazlığı sağlayan kaliteli silikon conta&nbsp;",
+    "Hareketli Y&uuml;k Dayanımı : 2000 kg - 20 km/h",
+    "&copy; T&uuml;m Hakları Saklıdır - NARLIGHT &copy; 2018"
+  ],
+  "downloads": [
+    {
+      "variant": "Datasheet",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LGA1022-Soft_Datasheet_TR.pdf",
+          "localPath": "/brand_assets/files/datasheets/LGA1022-Soft_Datasheet_TR.pdf"
+        }
+      ]
+    }
+  ],
+  "slug": "soft-lga1022-14w",
+  "categories": [
+    "yere-gomme-armaturleri"
+  ],
+  "localHero": "/brand_assets/images/Urunler-v2/soft-lga1022-14w.png"
+}

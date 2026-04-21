@@ -1,0 +1,365 @@
+{
+  "title": "ARDEN / 20W - 30W - 40W - 54W - 68W",
+  "url": "/TR/arden-20w-30w-40w-54w-68w-16772",
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yuksek_Tavan_Ayd%C4%B1nlatma/ARDEN-LSU2028-LSU2040-LSU2040-LSU2040-LSU2054-LSU2068-Buyuk-Resim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yuksek_Tavan_Ayd%C4%B1nlatma/ARDEN-LSU2028-LSU2040-LSU2040-LSU2040-LSU2054-LSU2068-Buyuk-Resim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/120_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Yuksek_Tavan_Ayd%C4%B1nlatma/ARDEN-LSU2028-LSU2040-LSU2040-LSU2040-LSU2054-LSU2068-Buyuk-Resim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/120_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Teknik_Cizimler/ARDEN_teknik_cizim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7022.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7021.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7020.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7019.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7018.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7017.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7016.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7015.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7014.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7013.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/hipermedya-icon.png",
+      "alt": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "Kod",
+        "Renk Sıcaklığı",
+        "G&uuml;&ccedil; T&uuml;ketimi",
+        "Giriş Gerilimi",
+        "Işık Akısı",
+        "CRI",
+        "Ebat (mm)",
+        "IP Sınıfı"
+      ],
+      [
+        "LSU2020",
+        "3000K - 4000K - 6500K",
+        "20W",
+        "230V AC",
+        "2100",
+        "&ge;80",
+        "600 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2020 HE",
+        "3000K - 4000K - 6500K",
+        "20W",
+        "230V AC",
+        "2500",
+        "&ge;70",
+        "600 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2028",
+        "3000K - 4000K - 6500K",
+        "30W",
+        "230V AC",
+        "3150",
+        "&ge;80",
+        "800 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2028 HE",
+        "3000K - 4000K - 6500K",
+        "30W",
+        "230V AC",
+        "3600",
+        "&ge;70",
+        "800 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2040",
+        "3000K - 4000K - 6500K",
+        "40W",
+        "230V AC",
+        "4200",
+        "&ge;80",
+        "1200 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2040 HE&nbsp;",
+        "3000K - 4000K - 6500K",
+        "40W",
+        "230V AC",
+        "5000",
+        "&ge;70",
+        "1200 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2054",
+        "3000K - 4000K - 6500K",
+        "54W",
+        "230V AC",
+        "5670",
+        "&ge;80",
+        "1600 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2054 HE",
+        "3000K - 4000K - 6500K",
+        "54W",
+        "230V AC",
+        "6750",
+        "&ge;70",
+        "1600 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2068",
+        "3000K - 4000K - 6500K",
+        "68W",
+        "230V AC",
+        "7140",
+        "&ge;80",
+        "2000 x 45 x 78",
+        "65"
+      ],
+      [
+        "LSU2068 HE",
+        "3000K - 4000K - 6500K",
+        "68W",
+        "230V AC",
+        "8500",
+        "&ge;70",
+        "2000 x 45 x 78",
+        "65"
+      ]
+    ],
+    [
+      [
+        "Gövde",
+        "Alüminyum Ekstrüzyon Gövde"
+      ],
+      [
+        "Sürücü",
+        "Yüksek Verimlilikte Sabit Akımlı Sürücü"
+      ],
+      [
+        "Optik Kapak",
+        "Polikarbon Difüzör"
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "ARDEN / 20W - 30W - 40W - 54W - 68W"
+      ],
+      [
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ARDEN / 20W - 30W - 40W - 54W - 68W"
+      ],
+      [
+        ""
+      ],
+      [
+        "Optik Kapak",
+        "Polikarbon Difüzör"
+      ],
+      [
+        ""
+      ],
+      [
+        "Sürücü",
+        "Yüksek Verimlilikte Sabit Akımlı Sürücü"
+      ],
+      [
+        ""
+      ],
+      [
+        "Gövde",
+        "Alüminyum Ekstrüzyon Gövde"
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "RAL RENK KODLARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "Narlight",
+        "Özel",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "7016",
+        "Antrasit",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9005",
+        "Siyah",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9006",
+        "Gri",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9016",
+        "Beyaz",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "Özel Renk",
+        "‏‏‏‏‏‏‏‏",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "IŞIK AÇILARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "120o",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ÜRÜN AÇIKLAMASI"
+      ],
+      [
+        ""
+      ],
+      [
+        ""
+      ]
+    ]
+  ],
+  "paragraphs": [
+    "SOPHORA - LSU7016 / 24W - 48W - 60W",
+    "MOLLE - LSU7015 / 51W - 63W - 76W",
+    "&copy; T&uuml;m Hakları Saklıdır - NARLIGHT &copy; 2018"
+  ],
+  "downloads": [
+    {
+      "variant": "LSU2040",
+      "files": [
+        {
+          "label": "Datasheet",
+          "url": "/Content/files/data/LSU2040-Arden_Datasheet.pdf",
+          "localPath": "/brand_assets/files/datasheets/LSU2040-Arden_Datasheet.pdf"
+        }
+      ]
+    }
+  ],
+  "slug": "arden-20w-30w-40w-54w-68w",
+  "categories": [
+    "endustriyel-aydinlatma"
+  ],
+  "localHero": "/brand_assets/images/Urunler-v2/arden-20w-30w-40w-54w-68w.png"
+}

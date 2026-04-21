@@ -1,0 +1,348 @@
+{
+  "title": "ASTER L / 150W - 180W - 200W",
+  "url": "/TR/aster-l-150w-180w-200w-16705",
+  "images": [
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/ASTER_L_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/ASTER_L_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/120_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/asimetrik_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/ASTER_L_yeni_1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/120_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Outtor_Acilar/asimetrik_yeni.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler/Teknik_Cizimler/ASTER_L_teknik_cizim.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7022.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7021.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7020.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7019.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7018.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7017.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7016.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7015.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7014.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/Urunler-2020/LSU7013.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.narlight.com.tr/Content/images/hipermedya-icon.png",
+      "alt": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "&Uuml;r&uuml;n&uuml; Adı",
+        "Koli Ebatları (mm)",
+        "Br&uuml;t Ağırlık (kg)"
+      ],
+      [
+        "ASTER L",
+        "690 X 325 X 115",
+        "8.1 &plusmn;%10"
+      ]
+    ],
+    [
+      [
+        "Kod",
+        "Renk Sıcaklığı",
+        "G&uuml;&ccedil; T&uuml;ketimi",
+        "Giriş Gerilimi",
+        "Işık Akısı",
+        "Verimlilik (lm/W)",
+        "CRI",
+        "Ebat (metre)",
+        "IP Sınıfı"
+      ],
+      [
+        "LEC6150",
+        "3000K - 4000K - 6500K",
+        "150W",
+        "230V AC",
+        "17700",
+        "118",
+        "&ge;80",
+        "653 x 305 x 95",
+        "66"
+      ],
+      [
+        "LEC6150 HE",
+        "3000K - 4000K - 6500K",
+        "150W",
+        "230V AC",
+        "20700",
+        "138",
+        "&ge;80",
+        "653 x 305 x 95",
+        "66"
+      ],
+      [
+        "LEC6180",
+        "3000K - 4000K - 6500K",
+        "180W",
+        "230V AC",
+        "20300",
+        "112",
+        "&ge;80",
+        "653 x 305 x 95",
+        "66"
+      ],
+      [
+        "LEC6200",
+        "3000K - 4000K - 6500K",
+        "200W",
+        "230V AC",
+        "22000",
+        "110",
+        "&ge;80",
+        "653 x 305 x 95",
+        "66"
+      ],
+      [
+        "LEC6200 HE",
+        "3000K - 4000K - 6500K",
+        "200W",
+        "230V AC",
+        "25500",
+        "127",
+        "&ge;80",
+        "653 x 305 x 95",
+        "66"
+      ]
+    ],
+    [
+      [
+        "Gövde",
+        "Alüminyum Enjeksiyon Gövde"
+      ],
+      [
+        "Sürücü",
+        "Yüksek Verimlilikte Sabit Akımlı Sürücü"
+      ],
+      [
+        "Optik Kapak",
+        "Temperli Cam"
+      ],
+      [
+        "Opsiyon",
+        "1~10V / DALI"
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "ASTER L / 150W - 180W - 200W"
+      ],
+      [
+        ""
+      ],
+      [
+        "",
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ASTER L / 150W - 180W - 200W"
+      ],
+      [
+        ""
+      ],
+      [
+        "Opsiyon",
+        "1~10V / DALI"
+      ],
+      [
+        ""
+      ],
+      [
+        "Optik Kapak",
+        "Temperli Cam"
+      ],
+      [
+        ""
+      ],
+      [
+        "Sürücü",
+        "Yüksek Verimlilikte Sabit Akımlı Sürücü"
+      ],
+      [
+        ""
+      ],
+      [
+        "Gövde",
+        "Alüminyum Enjeksiyon Gövde"
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "RAL RENK KODLARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "Narlight",
+        "Özel",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "7016",
+        "Antrasit",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9005",
+        "Siyah",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9006",
+        "Gri",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "9016",
+        "Beyaz",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "Özel Renk",
+        "‏‏‏‏‏‏‏‏",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "IŞIK AÇILARI"
+      ],
+      [
+        ""
+      ],
+      [
+        "120o",
+        ""
+      ],
+      [
+        ""
+      ],
+      [
+        "Asimetriko",
+        ""
+      ],
+      [
+        ""
+      ]
+    ],
+    [
+      [
+        ""
+      ],
+      [
+        "ÜRÜN AÇIKLAMASI"
+      ],
+      [
+        ""
+      ],
+      [
+        ""
+      ]
+    ]
+  ],
+  "paragraphs": [
+    "SOPHORA - LSU7016 / 24W - 48W - 60W",
+    "MOLLE - LSU7015 / 51W - 63W - 76W",
+    "&copy; T&uuml;m Hakları Saklıdır - NARLIGHT &copy; 2018"
+  ],
+  "downloads": [],
+  "slug": "aster-l-150w-180w-200w",
+  "categories": [
+    "led-sokak-aydinlatma-armaturleri"
+  ],
+  "localHero": "/brand_assets/images/Urunler-v2/aster-l-150w-180w-200w.png"
+}

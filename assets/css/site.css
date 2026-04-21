@@ -3101,3 +3101,84 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 @media (min-width: 900px) {
   .products-cta-wrap { grid-template-columns: 1fr 1fr; gap: 64px; }
 }
+
+/* ============================================================
+   DENSE MEGA MENU  —  3-column product list (Ürünler)
+   Matches narlight.com.tr's corporate mega layout but on our
+   dark cinematic surface. No feature image, just clean typography.
+   ============================================================ */
+.mega.mega-dense { min-width: min(1040px, 96vw); }
+.mega-dense-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.7fr 0.9fr;
+  gap: 44px;
+  padding: 36px 40px 40px;
+}
+@media (max-width: 1200px) {
+  .mega-dense-grid { grid-template-columns: 1fr 1.4fr 0.8fr; gap: 32px; padding: 28px 32px 32px; }
+}
+.mega-dense-col { min-width: 0; }
+.mega-dense-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-line);
+  position: relative;
+}
+.mega-dense-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 32px;
+  height: 2px;
+  background: var(--color-glow);
+}
+.mega-dense-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mega-dense-list li { margin: 0; }
+.mega-dense-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: color 200ms var(--ease-out), padding-left 260ms var(--ease-out);
+  position: relative;
+}
+.mega-dense-list a::before {
+  content: '';
+  width: 0;
+  height: 1px;
+  background: var(--color-glow);
+  transition: width 260ms var(--ease-out);
+  flex-shrink: 0;
+}
+.mega-dense-list a:hover {
+  color: var(--color-ink);
+  padding-left: 4px;
+}
+.mega-dense-list a:hover::before { width: 14px; }
+
+/* Split the dış-aydınlatma list into 2 columns of items */
+.mega-dense-list.mega-dense-list-split {
+  columns: 2;
+  column-gap: 32px;
+}
+.mega-dense-list.mega-dense-list-split li {
+  break-inside: avoid;
+}
