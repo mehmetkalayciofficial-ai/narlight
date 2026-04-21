@@ -64,9 +64,9 @@ ${specs ? `
     <div class="section-head" data-reveal>
       <div>
         <span class="section-tag dark"><span class="pulse"></span>Teknik Veriler</span>
-        <h2 class="display display-2" style="color:var(--color-paper);margin-top:32px;max-width:16ch">Her rakam,<br><span class="glow">bir taahhüt.</span></h2>
+        <h2 class="display display-2" style="color:var(--color-paper);margin-top:32px">Teknik özellikler.</h2>
       </div>
-      <p class="section-intro" style="color:rgba(255,255,255,0.65)">Güç, lümen, CRI, IP sınıfı, giriş gerilimi — her değer laboratuvarda ölçüldü, TSE/CE/RoHS ile sertifikalandı. Sahanın karşısına rakamla çıkıyoruz.</p>
+      <p class="section-intro" style="color:rgba(255,255,255,0.65)">Tüm modeller, güç ve lümen değerleri. Sertifikalar ve kontrol seçenekleri.</p>
     </div>
     <div class="code-show" data-reveal>
       <div class="head">
